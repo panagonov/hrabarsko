@@ -604,6 +604,7 @@ $localisation->load(function($memory) use($dbs, &$sysconf) {
 require_once LIB . "helper.inc.php";
 
 $localisation->registerLanguages([
+    ['bg_BG', __('Bulgarian'), 'Български'],
     ['ar_SA', __('Arabic'), 'Arabic'],
     ['bn_BD', __('Bengali'), 'Bengali'],
     ['pt_BR', __('Brazilian Portuguese'), 'Brazilian Portuguese'],

@@ -43,6 +43,18 @@ EOF
 echo "PHP configuration file created: /var/www/html/config/database.php"
 cat /var/www/html/config/database.php
 
+# URL настройки: зад nginx с HTTPS генерираните абсолютни адреси са https://,
+# а при директен достъп по HTTP (порт HTTP_PORT) остават http://
+cat <<'EOF' >/var/www/html/config/url.php
+<?php
+return [
+    'base' => '',
+    'force_https' => (($_SERVER['HTTPS'] ?? '') === 'on'),
+];
+EOF
+
+echo "PHP configuration file created: /var/www/html/config/url.php"
+
 # Wait for database to be ready
 echo "Waiting for database to be ready..."
 until php -r "

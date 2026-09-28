@@ -57,12 +57,13 @@ class BiblioController extends Controller
             foreach ($return as $k => $v) {
                 $a_not_in[$k] = $v['biblio_id'];
             }
-            $not_in = '('.implode(', ', $a_not_in).')';
+            // без заемания списъкът е празен, а „NOT IN ()“ е невалиден SQL
+            $not_in = count($a_not_in) ? ' AND biblio_id NOT IN ('.implode(', ', $a_not_in).')' : '';
             $need = $limit - $query->num_rows;
             if ($need < 0) {
                 $need = $limit;
             }
-            $sql = "SELECT biblio_id, title, image FROM biblio WHERE opac_hide < 1 AND biblio_id NOT IN ".$not_in." ORDER BY last_update DESC LIMIT {$need}";
+            $sql = "SELECT biblio_id, title, image FROM biblio WHERE opac_hide < 1".$not_in." ORDER BY last_update DESC LIMIT {$need}";
             $query = $this->db->query($sql);
             while ($data = $query->fetch_assoc()) {
                 $data['image'] = $this->getImagePath($data['image']);

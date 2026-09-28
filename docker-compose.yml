@@ -18,20 +18,81 @@ services:
       - appimages:/var/www/html/images
       - apprepo:/var/www/html/repository
     ports:
-      - "${HTTP_PORT}:80"
+      # Директен достъп без nginx, само от този компютър: http://localhost:${HTTP_PORT}
+      # (отвън се влиза единствено през nginx на 80/443)
+      - "127.0.0.1:${HTTP_PORT}:80"
     networks:
       - proxy
     depends_on:
       - db
 
+  # Обратно прокси: приема 80/443 от интернет и препраща към slims:80.
+  # Готов образ + bind mounts, по модела на /Volumes/storage/projects/docker.
+  nginx:
+    image: nginx:stable
+    container_name: slims-nginx
+    restart: unless-stopped
+    environment:
+      - DOMAIN=${DOMAIN}
+      # templates/*.template -> sites-enabled/ (включва се от nginx.conf)
+      - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx/sites-enabled
+    ports:
+      - "${PROXY_HTTP_PORT:-80}:80"
+      - "${PROXY_HTTPS_PORT:-443}:443"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/blockips.conf:/etc/nginx/blockips.conf:ro
+      - ./docker/nginx/templates:/etc/nginx/templates:ro
+      - ./docker/nginx/snippets:/etc/nginx/snippets:ro
+      - ./docker/nginx/40-ssl-select.sh:/docker-entrypoint.d/40-ssl-select.sh:ro
+      - certbot-www:/var/www/certbot:ro
+      - letsencrypt:/etc/letsencrypt:ro
+    tmpfs:
+      # генерираният сайт конфиг се пише тук при всяко стартиране
+      - /etc/nginx/sites-enabled
+    networks:
+      - proxy
+    depends_on:
+      - slims
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  # Let's Encrypt: издава сертификата при първо стартиране и го подновява автоматично
+  certbot:
+    container_name: slims-certbot
+    image: certbot/certbot:latest
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "/run-certbot.sh"]
+    environment:
+      - DOMAIN=${DOMAIN}
+      - LE_EMAIL=${LE_EMAIL:-}
+    volumes:
+      - ./docker/certbot/run-certbot.sh:/run-certbot.sh:ro
+      - certbot-www:/var/www/certbot
+      - letsencrypt:/etc/letsencrypt
+    depends_on:
+      - nginx
+
   db:
     image: mariadb:lts
     container_name: db
     ports:
-      - "${DB_PORT}:3306"
+      # само localhost — slims говори с базата по вътрешната мрежа "proxy"
+      - "127.0.0.1:${DB_PORT}:3306"
     volumes:
-      - ./install/senayan.sql:/docker-entrypoint-initdb.d/01-senayan.sql
-      - ./install/sampledata.sql:/docker-entrypoint-initdb.d/02-sampledata.sql
+      # Начални данни. Зареждат се САМО при първо стартиране, когато томът dbdata е празен.
+      # Смяна на файла тук не засяга вече съществуваща база.
+      #   full_dump.sql           - чиста база: структура, настройки, български по подразбиране, без книги
+      #   full_dump_with_demo.sql - същото + демо каталог (69 заглавия, 108 екземпляра, 1 читател)
+      # За нова инсталация с демо данни смени файла на реда долу с full_dump_with_demo.sql.
+      - ./install/full_dump.sql:/docker-entrypoint-initdb.d/01-full_dump.sql
+      # Оригиналните файлове на SLiMS (английски по подразбиране), вместо реда горе:
+      # - ./install/senayan.sql:/docker-entrypoint-initdb.d/01-senayan.sql
+      # - ./install/sampledata.sql:/docker-entrypoint-initdb.d/02-sampledata.sql
+      # Име, публични страници и новини на НЧ „Просвета 1925“ (зарежда се след дъмпа)
+      - ./install/prosveta_1925.sql:/docker-entrypoint-initdb.d/03-prosveta_1925.sql
       - dbdata:/var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASS}
@@ -48,3 +109,5 @@ volumes:
   appfiles:
   appimages:
   apprepo:
+  certbot-www:
+  letsencrypt:

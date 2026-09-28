@@ -75,7 +75,7 @@ if (isset($_GET['select_lang'])) {
             </form>
         </div>
         <div class="text-right">
-            <small class="text-grey-dark"><?= __('Powered by ')?> <code>SLiMS</code></small>
+            <small class="text-grey-dark"><?= $sysconf['template']['prosveta_full_name'] ?? '' ?> · <?= __('Powered by ')?> <code>SLiMS</code></small>
         </div>
     </div>
     <div class="flex-1 hidden md:block">
@@ -126,21 +126,15 @@ if (isset($_GET['select_lang'])) {
                 this.image = './images/persons/photo.png'
             },
             getQuotes: function() {
-                // Alternative Free Quotes API: https://api.quotable.io/random
-                axios.get('https://slims.web.id/kutipan/')
-                    .then(res => {
-                        res.data.content = he.decode(res.data.content)
-                        this.quotes = res.data
-                    })
-                    .catch(() => {
-                        this.quotes = {
-                            content: "Sing penting madhiang.",
-                            author: "Pai-Jo"
-                        }
-                    })
-                    .finally(() => {
-                        this.textInfo = ''
-                    })
+                const quotes = [
+                    { content: "Голи са без книги всички народи.", author: "Константин-Кирил Философ, „Проглас към Евангелието“" },
+                    { content: "Винаги съм си представял рая като някаква библиотека.", author: "Хорхе Луис Борхес" },
+                    { content: "Внимавайте вие, читатели и слушатели, роде български, които обичате и милеете своя род и своето българско отечество.", author: "Паисий Хилендарски, „История славянобългарска“" },
+                    { content: "Четенето е за ума това, което е упражнението за тялото.", author: "Джоузеф Адисън" },
+                    { content: "Книгите са кораби на мисълта, които плават през необятното море на времето.", author: "Франсис Бейкън" }
+                ]
+                this.quotes = quotes[Math.floor(Math.random() * quotes.length)]
+                this.textInfo = ''
             },
             onSubmit: function() {
                 if (this.memberId === '') {

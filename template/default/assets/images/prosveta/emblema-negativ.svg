@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="56 1044 1049 648">
+<title>НЧ „Просвета 1925“ – емблема</title>
+<defs>
+<linearGradient id="redSpine" gradientUnits="userSpaceOnUse" x1="0" y1="1516" x2="0" y2="1682">
+  <stop offset="0" stop-color="#8c3c3e"/><stop offset=".1" stop-color="#b15d59"/>
+  <stop offset=".3" stop-color="#e09d89"/><stop offset=".42" stop-color="#f2c2a9"/>
+  <stop offset=".56" stop-color="#df9985"/><stop offset=".76" stop-color="#b75f5f"/>
+  <stop offset=".92" stop-color="#984547"/><stop offset="1" stop-color="#763134"/>
+</linearGradient>
+<linearGradient id="redC" gradientUnits="userSpaceOnUse" x1="574" y1="0" x2="642" y2="0">
+  <stop offset="0" stop-color="#e7a898"/><stop offset=".25" stop-color="#b86a67"/>
+  <stop offset=".7" stop-color="#9a5153"/><stop offset="1" stop-color="#7e3d41"/>
+</linearGradient>
+<linearGradient id="redPages" gradientUnits="userSpaceOnUse" x1="615" y1="0" x2="1054" y2="0">
+  <stop offset="0" stop-color="#d9c095"/><stop offset=".12" stop-color="#f6e6c2"/>
+  <stop offset=".75" stop-color="#fbefd4"/><stop offset="1" stop-color="#ecd8af"/>
+</linearGradient>
+<linearGradient id="board" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1"
+  gradientTransform="translate(0,1496) scale(1,44)">
+  <stop offset="0" stop-color="#8a5157"/><stop offset=".5" stop-color="#6b3a40"/><stop offset="1" stop-color="#4f2a2f"/>
+</linearGradient>
+<linearGradient id="blueSpine" gradientUnits="userSpaceOnUse" x1="0" y1="1322" x2="0" y2="1499">
+  <stop offset="0" stop-color="#d4edff"/><stop offset=".33" stop-color="#abd3f8"/>
+  <stop offset=".48" stop-color="#83b4ee"/><stop offset=".62" stop-color="#5f90d9"/>
+  <stop offset=".82" stop-color="#3f68b6"/><stop offset="1" stop-color="#2a4b93"/>
+</linearGradient>
+<linearGradient id="blueCover" gradientUnits="userSpaceOnUse" x1="0" y1="1310" x2="0" y2="1532">
+  <stop offset="0" stop-color="#d7e6f7"/><stop offset=".5" stop-color="#b3cbea"/><stop offset="1" stop-color="#9ab5de"/>
+</linearGradient>
+<linearGradient id="bluePages" gradientUnits="userSpaceOnUse" x1="100" y1="0" x2="545" y2="0">
+  <stop offset="0" stop-color="#fbf0cf"/><stop offset=".08" stop-color="#f6e5bb"/>
+  <stop offset=".85" stop-color="#f4e1b3"/><stop offset="1" stop-color="#dcc493"/>
+</linearGradient>
+<linearGradient id="capBoard" gradientUnits="userSpaceOnUse" x1="112" y1="1060" x2="1004" y2="1270">
+  <stop offset="0" stop-color="#2e2933"/><stop offset=".35" stop-color="#17141b"/>
+  <stop offset=".7" stop-color="#1d1922"/><stop offset="1" stop-color="#2a2530"/>
+</linearGradient>
+<linearGradient id="capSkull" gradientUnits="userSpaceOnUse" x1="262" y1="0" x2="850" y2="0">
+  <stop offset="0" stop-color="#1c171d"/><stop offset=".05" stop-color="#3a3037"/>
+  <stop offset=".12" stop-color="#241e25"/><stop offset=".6" stop-color="#2b242b"/>
+  <stop offset=".88" stop-color="#3a3238"/><stop offset=".96" stop-color="#211b22"/>
+  <stop offset="1" stop-color="#161217"/>
+</linearGradient>
+<linearGradient id="skullShade" gradientUnits="userSpaceOnUse" x1="0" y1="1236" x2="0" y2="1375">
+  <stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset=".35" stop-color="#000" stop-opacity="0"/>
+  <stop offset="1" stop-color="#000" stop-opacity=".25"/>
+</linearGradient>
+<linearGradient id="green" gradientUnits="userSpaceOnUse" x1="399" y1="0" x2="490" y2="0">
+  <stop offset="0" stop-color="#9adf82"/><stop offset=".35" stop-color="#76cb65"/>
+  <stop offset=".62" stop-color="#4ea64b"/><stop offset="1" stop-color="#2d7a34"/>
+</linearGradient>
+<linearGradient id="hlL" gradientUnits="userSpaceOnUse" x1="0" y1="1222" x2="0" y2="1306">
+  <stop offset="0" stop-color="#7a6f74" stop-opacity=".2"/><stop offset=".3" stop-color="#7a6f74" stop-opacity=".85"/>
+  <stop offset="1" stop-color="#5e5358" stop-opacity=".5"/>
+</linearGradient>
+<linearGradient id="hlR" gradientUnits="userSpaceOnUse" x1="0" y1="1230" x2="0" y2="1336">
+  <stop offset="0" stop-color="#a2959a" stop-opacity=".25"/><stop offset=".35" stop-color="#a2959a" stop-opacity=".85"/>
+  <stop offset="1" stop-color="#b3a6ab" stop-opacity=".9"/>
+</linearGradient>
+<radialGradient id="tassel" gradientUnits="userSpaceOnUse" cx="962" cy="1428" r="70">
+  <stop offset="0" stop-color="#5b5560"/><stop offset=".45" stop-color="#34303a"/><stop offset="1" stop-color="#1b181f"/>
+</radialGradient>
+
+<linearGradient id="capBoardN" gradientUnits="userSpaceOnUse" x1="112" y1="1060" x2="1004" y2="1270">
+  <stop offset="0" stop-color="#f7f5fa"/><stop offset=".35" stop-color="#dcd7e2"/>
+  <stop offset=".7" stop-color="#e4e0ea"/><stop offset="1" stop-color="#cdc7d5"/>
+</linearGradient>
+<linearGradient id="capSkullN" gradientUnits="userSpaceOnUse" x1="262" y1="0" x2="850" y2="0">
+  <stop offset="0" stop-color="#9f97a9"/><stop offset=".05" stop-color="#d6d0dd"/>
+  <stop offset=".12" stop-color="#b5aebf"/><stop offset=".6" stop-color="#c3bdcb"/>
+  <stop offset=".88" stop-color="#d6d0dd"/><stop offset=".96" stop-color="#aba3b5"/>
+  <stop offset="1" stop-color="#958d9f"/>
+</linearGradient>
+<linearGradient id="skullShadeN" gradientUnits="userSpaceOnUse" x1="0" y1="1236" x2="0" y2="1375">
+  <stop offset="0" stop-color="#2a2430" stop-opacity=".45"/><stop offset=".35" stop-color="#2a2430" stop-opacity="0"/>
+  <stop offset="1" stop-color="#2a2430" stop-opacity=".18"/>
+</linearGradient>
+<linearGradient id="hlLN" gradientUnits="userSpaceOnUse" x1="0" y1="1222" x2="0" y2="1306">
+  <stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".3" stop-color="#fff" stop-opacity=".9"/>
+  <stop offset="1" stop-color="#fff" stop-opacity=".5"/>
+</linearGradient>
+<linearGradient id="hlRN" gradientUnits="userSpaceOnUse" x1="0" y1="1230" x2="0" y2="1336">
+  <stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset=".35" stop-color="#fff" stop-opacity=".9"/>
+  <stop offset="1" stop-color="#fff" stop-opacity=".95"/>
+</linearGradient>
+<radialGradient id="tasselN" gradientUnits="userSpaceOnUse" cx="962" cy="1428" r="70">
+  <stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#dcd7e2"/><stop offset="1" stop-color="#a9a1b3"/>
+</radialGradient>
+</defs>
+<g id="emblem">
+<g id="red-book">
+<path fill="url(#redSpine)" d="M 614,1516 L 214,1519 C 180,1520 164,1556 164,1598 C 164,1642 180,1677 214,1678 L 614,1682 Z"/>
+<path fill="none" stroke="#7a3336" stroke-width="2" opacity=".6" d="M 214,1519 C 180,1520 164,1556 164,1598 C 164,1642 180,1677 214,1678"/>
+<g fill="#f7c4ab" opacity=".85"><rect x="228" y="1600" width="11" height="13" rx="2"/><rect x="244" y="1600" width="11" height="13" rx="2"/><rect x="260" y="1600" width="11" height="13" rx="2"/><rect x="276" y="1600" width="11" height="13" rx="2"/><rect x="292" y="1600" width="11" height="13" rx="2"/><rect x="330" y="1600" width="11" height="13" rx="2"/><rect x="346" y="1600" width="11" height="13" rx="2"/><rect x="362" y="1600" width="11" height="13" rx="2"/><rect x="378" y="1600" width="11" height="13" rx="2"/><rect x="394" y="1600" width="11" height="13" rx="2"/><rect x="410" y="1600" width="11" height="13" rx="2"/><rect x="426" y="1600" width="11" height="13" rx="2"/><rect x="442" y="1600" width="11" height="13" rx="2"/><rect x="458" y="1600" width="11" height="13" rx="2"/><rect x="474" y="1600" width="11" height="13" rx="2"/></g>
+<path fill="url(#redPages)" d="M 615,1515.7 L 1052,1535.4 C 1045,1575 1043,1620 1049,1665.7 L 615,1662.1 Z"/>
+<g stroke="#e4d0a5" stroke-width="1.2" opacity="0.35" fill="none"><path d="M 650,1535.4 L 1044,1551.3"/><path d="M 650,1553.5 L 1044,1567.7"/><path d="M 650,1571.7 L 1044,1584.0"/><path d="M 650,1589.8 L 1044,1600.3"/><path d="M 650,1608.0 L 1044,1616.7"/><path d="M 650,1626.1 L 1044,1633.0"/><path d="M 650,1644.3 L 1044,1649.3"/></g>
+<path fill="none" stroke="#d7bf8f" stroke-width="3" opacity=".8" d="M 890,1530 C 872,1562 868,1628 886,1664"/>
+<path fill="none" stroke="#dcc69a" stroke-width="2.5" opacity=".8" d="M 1036,1535 C 1022,1570 1020,1626 1034,1664"/>
+<path fill="url(#board)" d="M 598,1498 L 1087,1520 Q 1097,1521 1097,1529 Q 1097,1537 1087,1537 L 598,1515 Z" transform="translate(0,0)"/>
+<path fill="#643a40" d="M 598,1661 L 1086,1665 Q 1095,1666 1095,1673 Q 1095,1681 1086,1681 L 598,1683 Z"/>
+<path fill="none" stroke="#9a6a6f" stroke-width="2" opacity=".7" d="M 600,1499.5 L 1086,1521.5"/>
+<path fill="url(#redC)" d="M 616,1497 C 588,1518 574,1556 574,1592 C 574,1630 590,1664 616,1684 L 642,1664 C 624,1648 614,1622 614,1592 C 614,1562 624,1536 642,1517 Z"/>
+<path fill="none" stroke="#f0bcad" stroke-width="3" opacity=".8" d="M 606,1510 C 588,1530 580,1562 580,1592 C 580,1624 590,1654 606,1672"/>
+</g>
+<g id="cap">
+<path fill="url(#capSkullN)" d="M 262,1190 L 262,1331 C 420,1337 690,1350 843,1371 L 843,1190 Z"/>
+<path fill="#e6e2eb" opacity=".75" d="M 310,1194 L 794,1204 L 794,1296 C 794,1308 786,1314 774,1313 C 600,1306 420,1298 322,1294 C 314,1294 310,1288 310,1280 Z"/>
+<path fill="url(#skullShadeN)" d="M 262,1190 L 262,1331 C 420,1337 690,1350 843,1371 L 843,1190 Z"/>
+<path fill="url(#hlLN)" d="M 286,1222 C 292,1222 300,1224 304,1228 L 303,1298 C 298,1306 291,1306 286,1300 Z"/>
+<path fill="url(#hlRN)" d="M 796,1230 C 804,1230 812,1233 815,1238 L 816,1314 C 826,1316 836,1318 841,1321 L 842,1336 C 820,1334 804,1332 796,1328 Z"/>
+<path fill="none" stroke="#9d95a6" stroke-width="3" d="M 264,1330 C 420,1336 690,1349 841,1370"/>
+<path fill="#b3acbd" d="M 116,1214 L 262,1243 L 262,1250 L 116,1219 Z"/>
+<path fill="#b3acbd" d="M 1002,1230 L 842,1270 L 842,1277 L 1002,1235 Z"/>
+<path fill="url(#capBoardN)" d="M 534,1053 L 1002,1230 L 842,1270 C 836,1250 826,1226 800,1210 C 700,1200 420,1196 300,1203 C 280,1212 268,1228 262,1243 L 116,1214 Z"/>
+<path fill="#ffffff" opacity=".4" d="M 250,1190 L 530,1096 L 900,1222 L 800,1205 C 650,1196 420,1193 300,1200 Z"/>
+<path fill="none" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" opacity=".85" d="M 120,1212 L 534,1056"/>
+<path fill="none" stroke="#f4f1f7" stroke-width="4" opacity=".8" d="M 536,1056 L 998,1229"/>
+<path fill="#ffffff" opacity=".75" d="M 503,1066 L 534,1054 L 578,1070 L 540,1082 Z"/>
+</g>
+<g id="blue-book">
+<path fill="url(#blueSpine)" d="M 530,1318 L 850,1370 C 880,1375 898,1382 910,1392 C 932,1420 934,1472 910,1498 L 530,1500 Z"/>
+<path fill="none" stroke="#e6f4ff" stroke-width="3" opacity=".9" d="M 560,1324 L 850,1372 C 878,1377 896,1384 906,1393"/>
+<g fill="#b3d7f8" opacity=".6"><rect x="622" y="1404.1" width="12" height="20" rx="2"/><rect x="639" y="1404.6" width="12" height="20" rx="2"/><rect x="656" y="1405.1" width="12" height="20" rx="2"/><rect x="673" y="1405.6" width="12" height="20" rx="2"/><rect x="690" y="1406.1" width="12" height="20" rx="2"/><rect x="707" y="1406.6" width="12" height="20" rx="2"/><rect x="724" y="1407.1" width="12" height="20" rx="2"/><rect x="741" y="1407.6" width="12" height="20" rx="2"/><rect x="775" y="1408.7" width="12" height="20" rx="2"/><rect x="792" y="1409.2" width="12" height="20" rx="2"/><rect x="809" y="1409.7" width="12" height="20" rx="2"/><rect x="826" y="1410.2" width="12" height="20" rx="2"/><rect x="843" y="1410.7" width="12" height="20" rx="2"/><rect x="860" y="1411.2" width="12" height="20" rx="2"/><rect x="877" y="1411.7" width="12" height="20" rx="2"/></g>
+<path fill="url(#bluePages)" d="M 98,1381.1 L 490,1337.2 C 524,1336 546,1368 546,1410 C 546,1452 524,1490 490,1492 L 98,1505.0 Z"/>
+<g stroke="#e3cc9b" stroke-width="1.2" opacity="0.35" fill="none"><path d="M 104,1398.2 L 505,1357.6"/><path d="M 104,1416.0 L 505,1379.6"/><path d="M 104,1433.7 L 505,1401.7"/><path d="M 104,1451.5 L 505,1423.8"/><path d="M 104,1469.3 L 505,1445.8"/><path d="M 104,1487.0 L 505,1467.9"/></g>
+<path fill="none" stroke="#fff8e2" stroke-width="3" d="M 101,1382.8 L 101,1502.9"/>
+<path fill="url(#blueCover)" stroke="#6d8ec4" stroke-width="2.5" stroke-linejoin="round" d="M 72,1360 L 488,1312 C 538,1307 568,1352 568,1405 C 568,1464 538,1504 490,1506 L 74,1532 C 64,1532 62,1508 72,1507 L 100,1504 L 490,1491 C 522,1490 542,1452 542,1410 C 542,1368 522,1337 488,1337 L 74,1384 C 64,1384 62,1361 72,1360 Z"/>
+<path fill="none" stroke="#eef5fd" stroke-width="3" opacity=".9" d="M 76,1363 L 488,1316 C 530,1312 558,1350 561,1400"/>
+</g>
+<g id="bookmark">
+<path fill="url(#green)" d="M 399,1452 L 491,1438 L 460,1496 L 460,1575 L 429,1555 L 399,1579 Z"/>
+<path fill="#cdeeb0" opacity=".65" d="M 399,1452 L 491,1438 L 474,1466 L 399,1474 Z"/>
+<path fill="none" stroke="#2f7a33" stroke-width="1.5" opacity=".6" d="M 399,1452 L 491,1438 L 460,1496 L 460,1575 L 429,1555 L 399,1579 Z"/>
+</g>
+<g id="tassel">
+<path fill="none" stroke="#eeebf2" stroke-width="5" stroke-linecap="round" d="M 997.0,1232.0 C 995.2,1238.3 988.7,1258.3 986.0,1270.0 C 983.3,1281.7 980.8,1290.3 981.0,1302.0 C 981.2,1313.7 983.0,1326.7 987.0,1340.0 C 991.0,1353.3 997.8,1367.7 1005.0,1382.0 C 1012.2,1396.3 1022.7,1411.3 1030.0,1426.0 C 1037.3,1440.7 1043.8,1455.3 1049.0,1470.0 C 1054.2,1484.7 1058.5,1499.5 1061.0,1514.0 C 1063.5,1528.5 1064.5,1543.5 1064.0,1557.0 C 1063.5,1570.5 1061.7,1584.5 1058.0,1595.0 C 1054.3,1605.5 1048.8,1613.8 1042.0,1620.0 C 1035.2,1626.2 1025.3,1630.5 1017.0,1632.0 C 1008.7,1633.5 1000.3,1632.0 992.0,1629.0 C 983.7,1626.0 974.2,1620.7 967.0,1614.0 C 959.8,1607.3 954.8,1598.5 949.0,1589.0 C 943.2,1579.5 936.5,1568.5 932.0,1557.0 C 927.5,1545.5 923.3,1529.5 922.0,1520.0 C 920.7,1510.5 923.7,1503.3 924.0,1500.0 "/>
+<path fill="url(#tasselN)" d="M 930,1373 C 924,1392 911,1410 910,1442 C 909,1480 925,1507 951,1508 C 976,1507 989,1481 988,1450 C 987,1418 966,1401 949,1394 C 940,1390 934,1385 930,1373 Z"/>
+<path fill="#ffffff" opacity=".55" d="M 952,1410 C 968,1418 977,1432 978,1450 C 970,1440 960,1428 950,1420 Z"/>
+<circle cx="998" cy="1231" r="5" fill="#eeebf2"/>
+</g>
+</g>
+</svg>

@@ -15,10 +15,10 @@ html {
 
 .c-header {
     min-height: 460px;
-    background: url('../images/slide1.jpg');
+    background: #5a2624 url('../images/prosveta/slides/01-biblioteka.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 90%;
+    background-position: center;
     position: relative;
 }
 
@@ -28,7 +28,7 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, rgba(40, 14, 12, 0.72) 0%, rgba(40, 14, 12, 0.25) 45%, rgba(40, 14, 12, 0.35) 100%);
 }
 
 .search {
@@ -993,3 +993,187 @@ pre.sf-dump, pre.sf-dump .sf-dump-default {
 .item-onreserve {
     background-color: orange; 
 }
+
+/* ==========================================================================
+   НЧ „Просвета 1925“ – с. Храбърско
+   Цветове от табелата на читалището: бордо #7d3632, сиво #6e6c73
+   ========================================================================== */
+:root {
+    --prosveta-bordo: #7d3632;
+    --prosveta-bordo-dark: #5a2624;
+    --prosveta-bordo-deep: #3a1b19;
+    --prosveta-cream: #fbf6ee;
+    --prosveta-sand: #f1e6d6;
+    --prosveta-grey: #6e6c73;
+}
+
+/* lang="bg" включва българските форми на кирилицата в някои шрифтове (т като m, д като g);
+   запазваме познатите форми, както в администрацията на SLiMS */
+body {
+    font-feature-settings: "locl" 0;
+}
+
+.navbar-brand h1 {
+    font-weight: 600;
+    letter-spacing: .01em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .45);
+}
+.navbar-brand h2 {
+    opacity: .9;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .45);
+}
+.prosveta-logo {
+    height: 46px;
+    width: auto;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .5));
+}
+.navbar-dark .navbar-nav .nav-link {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+@media (max-width: 575px) {
+    .navbar-brand h1 { font-size: 1rem; }
+    .navbar-brand h2 { font-size: .75rem; }
+    .prosveta-logo { height: 36px; }
+}
+
+.btn-primary,
+.btn-primary:disabled {
+    background-color: var(--prosveta-bordo);
+    border-color: var(--prosveta-bordo);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: var(--prosveta-bordo-dark);
+    border-color: var(--prosveta-bordo-dark);
+}
+.btn-outline-primary {
+    color: var(--prosveta-bordo);
+    border-color: var(--prosveta-bordo);
+}
+.btn-outline-primary:hover {
+    background-color: var(--prosveta-bordo);
+    border-color: var(--prosveta-bordo);
+    color: #fff;
+}
+
+/* Вътрешни страници: ниският хедър е само фон зад менюто */
+.result-search .c-header .mask {
+    background: linear-gradient(180deg, rgba(40, 14, 12, 0.82) 0%, rgba(58, 27, 25, 0.7) 100%);
+}
+
+/* Приветствие на началната страница */
+.prosveta-welcome {
+    background: var(--prosveta-cream);
+    border: 1px solid var(--prosveta-sand);
+    border-radius: 12px;
+}
+.prosveta-welcome h3 {
+    color: var(--prosveta-bordo);
+    font-weight: 600;
+}
+.prosveta-welcome .ck-content { padding: 0 !important; }
+.prosveta-kicker {
+    color: var(--prosveta-grey);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .8rem;
+}
+.prosveta-info-card {
+    background: #fff;
+    border-radius: 10px;
+    border-top: 4px solid var(--prosveta-bordo);
+    box-shadow: 0 2px 12px rgba(58, 27, 25, .08);
+}
+.prosveta-muted {
+    font-size: .85em;
+    opacity: .8;
+}
+.prosveta-info-card h5 {
+    color: var(--prosveta-bordo);
+    font-weight: 600;
+}
+
+/* Списъци с контакти (начало, футър, карта) */
+.prosveta-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: .6rem;
+}
+.prosveta-contact-list li > i {
+    width: 1.5rem;
+    flex-shrink: 0;
+    margin-top: .25rem;
+    color: var(--prosveta-bordo);
+}
+.prosveta-contact-list a { color: inherit; text-decoration: underline; text-decoration-color: rgba(125, 54, 50, .35); }
+.prosveta-contact-list a:hover { color: var(--prosveta-bordo); }
+
+/* Карта */
+.prosveta-map iframe {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(58, 27, 25, .12);
+}
+.prosveta-map h4 { color: var(--prosveta-bordo); font-weight: 600; }
+.prosveta-map a:not(.btn) { color: var(--prosveta-bordo); text-decoration: underline; }
+
+/* Страници със съдържание */
+@media (max-width: 767px) {
+    .ck-content.p-5 { padding: 1rem 0 !important; }
+}
+.ck-content h3 {
+    color: var(--prosveta-bordo);
+    margin-top: 1.5rem;
+    margin-bottom: .75rem;
+    font-weight: 600;
+}
+.ck-content h3:first-child { margin-top: 0; }
+.ck-content a { color: var(--prosveta-bordo); text-decoration: underline; }
+.ck-content .prosveta-figure {
+    margin: 0 0 1.5rem;
+}
+.ck-content .prosveta-figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+@media (min-width: 768px) {
+    .ck-content .prosveta-figure-right {
+        float: right;
+        max-width: 300px;
+        margin: 0 0 1rem 2rem;
+    }
+}
+.ck-content::after { content: ""; display: table; clear: both; }
+.ck-content .prosveta-figure figcaption {
+    font-size: .85rem;
+    color: var(--prosveta-grey);
+    margin-top: .4rem;
+}
+.ck-content .prosveta-note {
+    background: var(--prosveta-cream);
+    border-left: 4px solid var(--prosveta-bordo);
+    padding: .75rem 1rem;
+    border-radius: 0 8px 8px 0;
+}
+.ck-content table.prosveta-table { width: 100%; max-width: 560px; }
+.ck-content table.prosveta-table td { padding: .35rem .5rem; border-bottom: 1px solid var(--prosveta-sand); }
+.ck-content iframe { max-width: 100%; }
+
+/* Футър */
+.prosveta-footer {
+    background: var(--prosveta-bordo-deep);
+    color: #efe4df;
+}
+.prosveta-footer h4 { color: #fff; font-size: 1.15rem; }
+.prosveta-footer hr { border-color: rgba(255, 255, 255, .15); }
+.prosveta-footer a { color: #fff; }
+.prosveta-footer a:hover { color: #f3c9b8; }
+.prosveta-footer .prosveta-contact-list li > i { color: #e7a898; }
+.prosveta-footer .prosveta-contact-list a { text-decoration-color: rgba(255, 255, 255, .35); }
+.prosveta-footer .prosveta-contact-list a:hover { color: #f3c9b8; }
+.prosveta-footer-logo { height: 64px; width: auto; }
+.prosveta-footer-links li { margin-bottom: .45rem; }
+.prosveta-footer-about p:last-child { margin-bottom: 0; }
+.prosveta-credit, .prosveta-credit a { color: rgba(239, 228, 223, .7); }

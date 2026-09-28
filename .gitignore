@@ -28,6 +28,8 @@ plugins/*
 !plugins/read_counter/
 
 template/*
+# шаблонът на НЧ „Просвета 1925“ (лого, снимки, карусел) се пази в репото
+!template/default/
 
 # Windows image file caches
 Thumbs.db

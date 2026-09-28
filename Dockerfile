@@ -9,7 +9,11 @@ RUN apt-get update \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-enable gd
 
-RUN a2enmod rewrite
+RUN a2enmod rewrite remoteip
+
+# Работа зад nginx обратно прокси (HTTPS и реален IP на клиента)
+COPY docker/apache/reverse-proxy.conf /etc/apache2/conf-available/reverse-proxy.conf
+RUN a2enconf reverse-proxy
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -22,7 +26,8 @@ RUN composer install
 RUN chown -R www-data:www-data /var/www/html/files
 RUN chown -R www-data:www-data /var/www/html/images
 RUN chown -R www-data:www-data /var/www/html/repository
-RUN rm -rf /var/www/html/install
+RUN chown -R www-data:www-data /var/www/html/config
+RUN rm -rf /var/www/html/install /var/www/html/docker
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

@@ -1,0 +1,71 @@
+# SLiMS зад nginx.
+# ${DOMAIN} се замества от .env при старт на контейнера: nginx образът прави
+# envsubst на /etc/nginx/templates/*.template и записва резултата в sites-enabled.
+# Променливите на nginx (с малки букви) не се пипат, защото не са в средата.
+
+upstream slims_backend {
+    server slims:80;
+}
+
+server {
+    listen              80 default_server;
+    server_name         ${DOMAIN};
+
+    # Let's Encrypt HTTP-01 проверка (certbot контейнерът пише тук)
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+        default_type text/plain;
+    }
+
+    location / {
+        return 301 https://${DOMAIN}$request_uri;
+    }
+}
+
+server {
+    listen              443 ssl default_server;
+    http2               on;
+    server_name         ${DOMAIN};
+
+    # Качване на корици, дигитални файлове, импорт на записи
+    client_max_body_size 64M;
+
+    # Пътищата до сертификата се записват от 40-ssl-select.sh:
+    # Let's Encrypt, ако е издаден, иначе временен самоподписан.
+    include /etc/nginx/ssl/active.conf;
+    add_header Strict-Transport-Security "max-age=31536000" always;
+
+    # Блокиране на скенерски пътища (.env, wp-admin, дъмпове ...)
+    include /etc/nginx/snippets/security-blocks.conf;
+
+    # ВАЖНО: Docker Desktop за Mac не запазва IP адреса на клиента. Всички
+    # заявки идват от 192.168.65.1, затова лимитите "на IP" тук са общи за
+    # всички посетители. Стойностите са вдигнати съответно. На Linux сървър
+    # (Docker Engine) реалният IP се вижда и могат да се върнат към
+    # 30r/s burst=100 и limit_conn 20 от projects/docker.
+    limit_req  zone=zone_general burst=400 nodelay;
+    limit_conn conn_perip 300;
+
+    location / {
+        # limit_req в location отменя наследените, затова се повтаря и общият.
+        limit_req  zone=zone_general burst=400 nodelay;
+        # Вход: 10 опита в минута (+5 наведнъж). На Mac това е общо за всички,
+        # което забавя налучкване на пароли, но атака може временно да попречи
+        # и на легитимен вход (отговор 429).
+        limit_req  zone=zone_auth burst=5 nodelay;
+
+        proxy_pass http://slims_backend;
+        proxy_redirect off;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+    }
+}

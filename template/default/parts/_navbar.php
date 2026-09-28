@@ -11,36 +11,33 @@ $main_menus = [
     'text' => __('Home'),
     'url' => 'index.php'
   ],
+  'chitalishte' => [
+    'text' => 'Читалището',
+    'url' => 'index.php?p=chitalishte'
+  ],
   'libinfo' => [
-    'text' => __('Information'),
+    'text' => 'Библиотеката',
     'url' => 'index.php?p=libinfo'
   ],
   'news' => [
     'text' => __('News'),
     'url' => 'index.php?p=news'
   ],
-  'help' => [
-    'text' => __('Help'),
-    'url' => 'index.php?p=help'
-  ],
-  'librarian' => [
-    'text' => __('Librarian'),
-    'url' => 'index.php?p=librarian'
+  'kontakti' => [
+    'text' => 'Контакти',
+    'url' => 'index.php?p=kontakti'
   ]
 ];
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <a class="navbar-brand inline-flex items-center" href="index.php">
+    <a class="navbar-brand inline-flex items-center" href="index.php" title="<?= htmlspecialchars($sysconf['template']['prosveta_full_name']); ?>">
         <?php
         if(isset($sysconf['logo_image']) && $sysconf['logo_image'] != '' && $imagesDisk->isExists($path = 'default/'.$sysconf['logo_image'])){
             echo '<img class="h-10 w-15" src="'.SWB . 'lib/minigalnano/createthumb.php?filename=images/' . $path.'&width=350">';
-        }
-        elseif (file_exists(__DIR__ . '/../assets/images/logo.png')) {
-            echo '<img class="h-8 w-8" src="'.assets('images/logo.png').'">';
         } else {
+            echo '<img class="prosveta-logo" src="'.assets('images/prosveta/emblema-negativ.png').'" alt="Емблема на читалището">';
+        }
         ?>
-        <img src="https://static.slims.web.id/logo.svg" class="fill-current text-white inline-block h-8 w-8"/>
-        <?php } ?>
         <div class="inline-flex flex-col leading-tight ml-2">
             <h1 class="text-lg m-0 p-0"><?php echo $sysconf['library_name']; ?></h1>
             <?php if ($sysconf['template']['classic_library_subname']) : ?>

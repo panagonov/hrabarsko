@@ -38,8 +38,8 @@ class Content
         $summary = strip_tags($text);
         // $summary = substr($summary, 0, $max_chars);
 
-        // making sure substr finishes on a word
-        if (preg_match('/^.{1,'.$max_chars.'}\b/s', $summary, $match)) {
+        // making sure substr finishes on a word (UTF-8: брои букви, не байтове, и реже на интервал)
+        if (preg_match('/^.{1,'.$max_chars.'}(?=\s|$)/su', $summary, $match)) {
             $summary= $match[0];
         }
         

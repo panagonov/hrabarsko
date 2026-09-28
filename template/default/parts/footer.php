@@ -8,77 +8,52 @@
 ?>
 
 
-<footer class="py-4 bg-grey-darkest text-grey-lighter">
+<footer class="prosveta-footer py-4">
     <div class="container">
         <div class="row py-4">
-            <div class="col-md-3">
+            <div class="col-lg-4">
               <?php
               if(isset($sysconf['logo_image']) && $sysconf['logo_image'] != '' && $imagesDisk->isExists($path = 'default/'.$sysconf['logo_image'])){
-                echo '<img class="h-10 w-15" src="'.SWB . 'lib/minigalnano/createthumb.php?filename=images/' . $path.'&width=350">';
-              }
-              elseif (file_exists(__DIR__ . '/../assets/images/logo.png')) {
-                echo '<img class="h-12 w-12 mb-2" src="' . assets(v('images/logo.png')) . '">';
+                echo '<img class="h-10 w-15 mb-3" src="'.SWB . 'lib/minigalnano/createthumb.php?filename=images/' . $path.'&width=350">';
               } else {
-                ?>
-                  <svg
-                          class="fill-current text-grey-lighter block h-12 w-12 mb-2"
-                          version="1.1"
-                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                          viewBox="0 0 118.4 135" style="enable-background:new 0 0 118.4 135;"
-                          xml:space="preserve">
-                    <path d="M118.3,98.3l0-62.3l0-0.2c-0.1-1.6-1-3-2.3-3.9c-0.1,0-0.1-0.1-0.2-0.1L61.9,0.8c-1.7-1-3.9-1-5.4-0.1l-54,31.1
-                    l-0.4,0.2C0.9,33,0.1,34.4,0,36c0,0.1,0,0.2,0,0.3l0,62.4l0,0.3c0.1,1.6,1,3,2.3,3.9c0.1,0.1,0.2,0.1,0.2,0.2l53.9,31.1l0.3,0.2
-                    c0.8,0.4,1.6,0.6,2.4,0.6c0.8,0,1.5-0.2,2.2-0.5l53.9-31.1c0.3-0.1,0.6-0.3,0.9-0.5c1.2-0.9,2-2.3,2.1-3.7c0-0.1,0-0.3,0-0.4
-                    C118.4,98.6,118.3,98.5,118.3,98.3z M114.4,98.8c0,0.3-0.2,0.7-0.5,0.9c-0.1,0.1-0.2,0.1-0.2,0.1l-20.6,11.9L59.2,92.1l-33.9,19.6
-                    L4.6,99.7l0,0l0,0C4.2,99.5,4,99.2,4,98.8l0-62.5l0,0l0-0.1c0-0.4,0.2-0.7,0.5-0.9l20.8-12l33.9,19.6l33.9-19.6l20.6,11.9l0.1,0
-                    c0.3,0.2,0.5,0.5,0.6,0.9l0,62.3L114.4,98.8L114.4,98.8z M95.3,68.6v39.4L23.1,66.4V26.9L95.3,68.6z"/>
-                </svg>
-              <?php } ?>
-                <div class="mb-4"><?php echo $sysconf['library_name']; ?></div>
-                <ul class="list-reset">
-                    <li><a class="text-light" href="index.php?p=libinfo"><?= __('Information'); ?></a></li>
-                    <li><a class="text-light" href="index.php?p=services"><?= __('Services'); ?></a></li>
-                    <li><a class="text-light" href="index.php?p=librarian"><?= __('Librarian'); ?></a></li>
-                    <li><a class="text-light" href="index.php?p=member"><?= __('Member Area'); ?></a></li>
+                echo '<img class="prosveta-footer-logo mb-3" src="' . assets('images/prosveta/emblema-negativ.png') . '" alt="Емблема на читалището" loading="lazy">';
+              }
+              ?>
+                <h4 class="mb-3"><?= $sysconf['template']['prosveta_full_name']; ?></h4>
+                <div class="prosveta-footer-about"><?= $sysconf['template']['classic_footer_about_us']; ?></div>
+            </div>
+            <div class="col-lg-3 col-md-5 pt-8 lg:pt-0">
+                <h4 class="mb-3">Страници</h4>
+                <ul class="list-reset prosveta-footer-links">
+                    <li><a href="index.php?p=chitalishte">За читалището</a></li>
+                    <li><a href="index.php?p=libinfo">Библиотеката</a></li>
+                    <li><a href="index.php?p=news"><?= __('News'); ?></a></li>
+                    <li><a href="index.php?p=kontakti">Контакти</a></li>
+                    <li><a href="index.php?p=help">Как да търся в каталога</a></li>
+                    <li><a href="index.php?p=member"><?= __('Member Area'); ?></a></li>
                 </ul>
             </div>
-            <div class="col-md-5 pt-8 md:pt-0">
-                <h4 class="mb-4"><?= __('About Us'); ?></h4>
-                <p>
-                    <?= $sysconf['template']['classic_footer_about_us']; ?>
-                </p>
-            </div>
-            <div class="col-md-4 pt-8 md:pt-0">
-                <h4 class="mb-4"><?= __('Search'); ?></h4>
-                <div class="mb-2"><?= __('start it by typing one or more keywords for title, author or subject'); ?></div>
-                <form action="index.php">
-                    <input type="hidden" ref="csrf_token" value="<?= $_SESSION['csrf_token']??'' ?>">
-                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']??'' ?>">
-                    <div class="input-group mb-3">
-                        <input name="keywords" type="text" class="form-control"
-                               placeholder="<?= __('Enter keywords'); ?>"
-                               aria-label="Enter keywords"
-                               aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit" value="search" name="search"
-                                    id="button-addon2"><?= __('Find Collection'); ?>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <hr>
-                <a target="_blank" title="Support Us" class="btn btn-outline-success mb-2"
-                   href="https://slims.web.id/web/pages/support-us/"><i
-                            class="fas fa-heart mr-2"></i><?= __('Keep SLiMS Alive'); ?></a>
-                <a target="_blank" title="Contribute" class="btn btn-outline-light mb-2"
-                   href="https://github.com/slims/"><i
-                            class="fab fa-github mr-2"></i><?= __('Want to Contribute?'); ?></a>
+            <div class="col-lg-5 col-md-7 pt-8 lg:pt-0">
+                <h4 class="mb-3">Контакти</h4>
+                <ul class="list-reset prosveta-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i><span><?= $sysconf['template']['prosveta_address_html']; ?></span></li>
+                    <?php if (!empty($sysconf['template']['prosveta_phone'])): ?>
+                    <li><i class="fas fa-phone"></i><span><a href="tel:<?= preg_replace('/[^0-9+]/', '', $sysconf['template']['prosveta_phone']); ?>"><?= $sysconf['template']['prosveta_phone']; ?></a></span></li>
+                    <?php endif; ?>
+                    <?php if (!empty($sysconf['template']['prosveta_email'])): ?>
+                    <li><i class="fas fa-envelope"></i><span><a href="mailto:<?= $sysconf['template']['prosveta_email']; ?>"><?= $sysconf['template']['prosveta_email']; ?></a></span></li>
+                    <?php endif; ?>
+                    <?php if (!empty($sysconf['template']['classic_fb_link'])): ?>
+                    <li><i class="fab fa-facebook-square"></i><span><a target="_blank" rel="noopener" href="<?= $sysconf['template']['classic_fb_link']; ?>">Facebook</a></span></li>
+                    <?php endif; ?>
+                    <li><i class="far fa-clock"></i><span><?= $sysconf['template']['prosveta_hours']; ?></span></li>
+                </ul>
             </div>
         </div>
         <hr>
-        <div class="flex font-thin text-sm">
-            <p class="flex-1">&copy; <?php echo date('Y'); ?> &mdash; Senayan Developer Community</p>
-            <div class="flex-1 text-right text-grey"><?= __('Powered by '); ?><code>SLiMS</code></div>
+        <div class="flex flex-wrap font-thin text-sm">
+            <p class="flex-1">&copy; <?php echo date('Y'); ?> &mdash; <?= $sysconf['template']['prosveta_full_name']; ?></p>
+            <div class="flex-1 text-right prosveta-credit">Снимки: <a target="_blank" rel="noopener" href="https://www.bozhurishte.bg/">Община Божурище</a> · Електронният каталог работи със <a target="_blank" rel="noopener" href="https://slims.web.id/">SLiMS</a></div>
         </div>
     </div>
 </footer>

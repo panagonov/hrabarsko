@@ -1,0 +1,6193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SLiMS 9 Bulian (bg)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-10 00:00+0300\n"
+"PO-Revision-Date: 2026-08-10 00:00+0300\n"
+"Last-Translator: Читалищна библиотека\n"
+"Language-Team: Bulgarian\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "ID Already exists! Please use another ID"
+msgstr "Идентификаторът вече съществува! Изберете друг."
+
+msgid "ID Available"
+msgstr "Идентификаторът е свободен"
+
+msgid "Add New"
+msgstr "Добави нов"
+
+msgid "Shortcut"
+msgstr "Бърз достъп"
+
+msgid "Dashboard"
+msgstr "Табло"
+
+msgid "OPAC"
+msgstr "Каталог (OPAC)"
+
+msgid "Logout"
+msgstr "Изход"
+
+msgid "Help"
+msgstr "Помощ"
+
+msgid "Chat With Members"
+msgstr "Чат с читатели"
+
+msgid "Please type and hit Enter button to send your messages"
+msgstr "Напишете съобщението си и натиснете Enter"
+
+msgid "Members"
+msgstr "Читатели"
+
+msgid "Librarian"
+msgstr "Библиотекар"
+
+msgid "Library Administration"
+msgstr "Управление на библиотеката"
+
+msgid "<strong>PHP GD</strong> extension is not installed. Please install it or application won't be able to create image thumbnail and barcode."
+msgstr ""
+
+msgid "<strong>Freetype</strong> support is not enabled in PHP GD extension. Rebuild PHP GD extension with Freetype support or application won't be able to create barcode."
+msgstr ""
+
+msgid "There is currently <strong>{num_overdue}</strong> library members having overdue. Please check at <b>Circulation</b> module at <b>Overdues</b> section for more detail"
+msgstr ""
+
+msgid "<strong>Images</strong> directory and directories under it is not writable. Make sure it is writable by changing its permission or you won't be able to upload any images and create barcodes"
+msgstr ""
+
+msgid "<strong>Repository</strong> directory is not writable. Make sure it is writable (and all directories under it) by changing its permission or you won't be able to upload any bibliographic attachments."
+msgstr ""
+
+msgid "<strong>File upload</strong> directory is not writable. Make sure it is writable (and all directories under it) by changing its permission or you won't be able to upload any file, create report files and create database backups."
+msgstr ""
+
+msgid "The PATH for <strong>mysqldump</strong> program is not right! Please check configuration file or you won't be able to do any database backups."
+msgstr ""
+
+msgid "Installer folder is still exist inside your server. Please remove it or rename to another name for security reason."
+msgstr "Папката на инсталатора още съществува на сървъра. Премахнете я или я преименувайте от съображения за сигурност."
+
+msgid "<strong><i>You are logged in as Super User. With great power comes great responsibility.</i></strong>"
+msgstr ""
+
+msgid "Click Here To Repair The Tables"
+msgstr "Щракнете тук, за да поправите таблиците"
+
+msgid "You are not authorized to view this section"
+msgstr "Нямате права да разглеждате този раздел"
+
+msgid "Your Login Session has already timeout!"
+msgstr "Сесията ви изтече!"
+
+msgid "Change User Profiles"
+msgstr "Промяна на потребителския профил"
+
+msgid "Change Current User Profiles and Password"
+msgstr "Промяна на профила и паролата"
+
+msgid "File Not Found"
+msgstr "Файлът не е намерен"
+
+msgid "Cannot Access This File Directly"
+msgstr "Файлът не може да се достъпва директно"
+
+msgid "Library Automation System"
+msgstr "Система за библиотечна автоматизация"
+
+msgid "You are currently logged in as"
+msgstr "В момента сте влезли като"
+
+msgid "You Have Been Logged Out From Library Automation System"
+msgstr "Излязохте от системата"
+
+msgid "Hidden in OPAC"
+msgstr "Скрит в каталога"
+
+msgid "Promoted To Homepage"
+msgstr "Изведен на началната страница"
+
+msgid "Checkout Items"
+msgstr "Заети екземпляри"
+
+msgid "Search"
+msgstr "Търсене"
+
+msgid "Item Code"
+msgstr "Код на екземпляр (баркод)"
+
+msgid "Member ID"
+msgstr "Читателски №"
+
+msgid "Title"
+msgstr "Заглавие"
+
+msgid "Loan Date"
+msgstr "Дата на заемане"
+
+msgid "Due Date"
+msgstr "Срок за връщане"
+
+msgid "Found <strong>{result->num_rows}</strong> from your keywords"
+msgstr "Намерени <strong>{result->num_rows}</strong> по вашите ключови думи"
+
+msgid "Selected items NOT ADDED to print queue. Only {max_print} can be printed at once"
+msgstr ""
+
+msgid "Selected items added to print queue"
+msgstr "Избраните са добавени към опашката за печат"
+
+msgid "Print queue cleared!"
+msgstr "Опашката за печат е изчистена!"
+
+msgid "There is no data to print!"
+msgstr "Няма данни за печат!"
+
+msgid "Labels Printing"
+msgstr "Печат на етикети"
+
+msgid "Clear Print Queue"
+msgstr "Изчисти опашката за печат"
+
+msgid "Print Labels for Selected Data"
+msgstr "Печат на етикети за избраните"
+
+msgid "Change print barcode settings"
+msgstr "Промени настройките за печат на баркодове"
+
+msgid "Maximum"
+msgstr "Максимум"
+
+msgid "records can be printed at once. Currently there is"
+msgstr "записа могат да се отпечатат наведнъж. В момента има"
+
+msgid "in queue waiting to be printed."
+msgstr "в опашката за печат."
+
+msgid "Call Number"
+msgstr "Сигнатура"
+
+msgid "Add"
+msgstr "Добави"
+
+msgid "Add To Print Queue"
+msgstr "Добави към опашката за печат"
+
+msgid "Add to print queue?"
+msgstr "Да се добави ли към опашката за печат?"
+
+msgid "Query took"
+msgstr "Заявката отне"
+
+msgid "second(s) to complete"
+msgstr "секунди"
+
+msgid "Required fields (*)  must be filled correctly!"
+msgstr "Задължителните полета (*) трябва да са попълнени коректно!"
+
+msgid "Error on query to database, Export FAILED!"
+msgstr "Грешка в заявката към базата — експортът е неуспешен!"
+
+msgid "There is no record in bibliographic database yet, Export FAILED!"
+msgstr "Няма записи в библиографската база — експортът е неуспешен!"
+
+msgid "Export Tool"
+msgstr "Инструмент за експорт"
+
+msgid "Export bibliographics data to CSV file"
+msgstr "Експорт на библиографски данни в CSV файл"
+
+msgid "Export Now"
+msgstr "Експортирай сега"
+
+msgid "Field Separator"
+msgstr "Разделител на полета"
+
+msgid "Field Enclosed With"
+msgstr "Ограждане на полетата с"
+
+msgid "Record Separator"
+msgstr "Разделител на записи"
+
+msgid "Number of Records To Export (0 for all records)"
+msgstr "Брой записи за експорт (0 за всички)"
+
+msgid "Start From Record"
+msgstr "Започни от запис"
+
+msgid "Are you sure to remove the file attachment data?"
+msgstr "Сигурни ли сте, че искате да премахнете това?"
+
+msgid "Do you also want to remove {filename} file from repository?"
+msgstr "Искате ли да премахнете и файла {filename} от хранилището?"
+
+msgid "Attachment removed!"
+msgstr "Премахнато!"
+
+msgid "Attachment {filename} succesfully removed!"
+msgstr "Успешно премахнато!"
+
+msgid "Delete"
+msgstr "Изтрий"
+
+msgid "File Attachments"
+msgstr "Прикачени файлове"
+
+msgid "Edit"
+msgstr "Редактирай"
+
+msgid "Remove"
+msgstr "Премахни"
+
+msgid "Are you sure to remove selected author?"
+msgstr "Сигурни ли сте, че искате да премахнете избраното?"
+
+msgid "Once deleted, it cannot be restored!"
+msgstr "След изтриване не може да се възстанови!"
+
+msgid "Author succesfully removed!"
+msgstr "Авторът е премахнат успешно!"
+
+msgid "Author removed!"
+msgstr "Авторът е премахнат!"
+
+msgid "Are you sure to remove selected title?"
+msgstr "Сигурни ли сте, че искате да премахнете избраното?"
+
+msgid "Biblio relation succesfully removed!"
+msgstr "Успешно премахнато!"
+
+msgid "Biblio relation removed!"
+msgstr "Премахнато!"
+
+msgid "Are you sure to remove selected item?"
+msgstr "Сигурни ли сте, че искате да премахнете избраното?"
+
+msgid "Item data can not be deleted because still on hold by members"
+msgstr "Екземплярът не може да се изтрие, защото е резервиран от читатели"
+
+msgid "Item succesfully removed!"
+msgstr "Екземплярът е премахнат успешно!"
+
+msgid "Item FAILED to removed!"
+msgstr "Премахнато!"
+
+msgid "Items/Copies"
+msgstr "Екземпляри / копия"
+
+msgid "Are you sure to remove selected topic?"
+msgstr "Сигурни ли сте, че искате да премахнете избраното?"
+
+msgid "Topic removed!"
+msgstr "Темата е премахната!"
+
+msgid "Topic succesfully removed!"
+msgstr "Темата е премахната успешно!"
+
+msgid "Please select the file to import!"
+msgstr "Моля, изберете файл за импорт!"
+
+msgid "Upload failed! File type not allowed or the size is more than"
+msgstr "Качването е неуспешно! Непозволен тип или размерът надвишава"
+
+msgid "Import Tool"
+msgstr "Инструмент за импорт"
+
+msgid "Import for bibliographics data from CSV file. For guide on CVS fields order and format please refer to documentation or visit <a href=\"http://slims.web.id\" target=\"_blank\">Official Website</a>"
+msgstr ""
+
+msgid "Import Now"
+msgstr "Импортирай сега"
+
+msgid "File To Import"
+msgstr "Файл за импорт"
+
+msgid "Title can not be empty"
+msgstr "Заглавието не може да е празно"
+
+msgid "Image Uploaded Successfully"
+msgstr "Изображението е качено успешно"
+
+msgid "Image Uploaded Failed"
+msgstr "Качването на изображението е неуспешно"
+
+msgid "Bibliography Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Bibliography Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Bibliography Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Bibliography Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Below data can not be deleted:"
+msgstr "Долните данни не могат да се изтрият:"
+
+msgid "All Data Successfully Deleted"
+msgstr "Всички данни са изтрити успешно"
+
+msgid "Some or All Data NOT deleted successfully!\\nPlease contact system administrator"
+msgstr ""
+
+msgid "Bibliographic"
+msgstr "Библиография"
+
+msgid "Bibliographic List"
+msgstr "Списък на библиографските записи"
+
+msgid "Add New Bibliography"
+msgstr "Нов библиографски запис"
+
+msgid "All Fields"
+msgstr "Всички полета"
+
+msgid "Title/Series Title"
+msgstr "Заглавие / поредица"
+
+msgid "Topics"
+msgstr "Теми"
+
+msgid "Authors"
+msgstr "Автори"
+
+msgid "ISBN/ISSN"
+msgstr "ISBN/ISSN"
+
+msgid "Publisher"
+msgstr "Издател"
+
+msgid "Upload Selected Bibliographic data to Union Catalog Server*"
+msgstr "Качи избраните записи към Съюзния каталог*"
+
+msgid "Save"
+msgstr "Запази"
+
+msgid "Update"
+msgstr "Обнови"
+
+msgid "Main title of collection. Separate child title with colon and pararel title with equal (=) sign."
+msgstr "Основно заглавие. Отделяйте подзаглавието с двоеточие, а паралелното заглавие със знак „=“."
+
+msgid "Authors/Roles"
+msgstr "Автори / роли"
+
+msgid "Add Author(s)"
+msgstr "Добави автор(и)"
+
+msgid "Author(s)"
+msgstr "Автор(и)"
+
+msgid "Statement of Responsibility"
+msgstr "Сведение за отговорност"
+
+msgid "Main source of information to show who has written, composed, illustrated, or in other ways contributed to the existence of the item."
+msgstr "Основен източник на информация кой е написал, съставил, илюстрирал или по друг начин допринесъл за изданието."
+
+msgid "Edition"
+msgstr "Издание"
+
+msgid "A version of publication having substantial changes or additions."
+msgstr "Издание със съществени промени или допълнения."
+
+msgid "Specific Detail Info"
+msgstr "Специфични данни"
+
+msgid "explain more details about an item e.g. scale within a map, running time in a movie dvd."
+msgstr "обяснете допълнителни подробности, напр. мащаб на карта, времетраене на филм."
+
+msgid "Add new pattern"
+msgstr "Нов шаблон"
+
+msgid "Total item(s)"
+msgstr "Общо екземпляри"
+
+msgid "Collection Type"
+msgstr "Тип колекция"
+
+msgid "Item(s) code batch generator"
+msgstr "Групов генератор на кодове за екземпляри"
+
+msgid "Add New Items"
+msgstr "Добави екземпляри"
+
+msgid "Item(s) Data"
+msgstr "Данни за екземпляра"
+
+msgid "GMD"
+msgstr "Вид материал (GMD)"
+
+msgid "General material designation. The physical form of publication."
+msgstr "Общо означение на материала. Физическата форма на изданието."
+
+msgid "Not set"
+msgstr "Не е зададено"
+
+msgid "RDA "
+msgstr "RDA "
+
+msgid "Not Applicable"
+msgstr "Неприложимо"
+
+msgid "Use this for Serial publication"
+msgstr "Използвай за периодични издания"
+
+msgid "Frequency"
+msgstr "Периодичност"
+
+msgid "Unique publishing number for each title of publication."
+msgstr "Уникален издателски номер за всяко заглавие."
+
+msgid "Publishing Year"
+msgstr "Година на издаване"
+
+msgid "Year of publication"
+msgstr "Година на издаване"
+
+msgid "Publishing Place"
+msgstr "Място на издаване"
+
+msgid "Collation"
+msgstr "Обем/описание"
+
+msgid "Physical description of a publication e.g. publication length, width, page numbers, etc."
+msgstr "Физическо описание на изданието, напр. обем, размери, брой страници."
+
+msgid "Series Title"
+msgstr "Заглавие на поредица"
+
+msgid "Classification"
+msgstr "Класификация (УДК)"
+
+msgid "Sets of ID that put in the book spine."
+msgstr "Сигнатура, поставяна на гърба на книгата."
+
+msgid "Subjects/Topics"
+msgstr "Предметни рубрики / теми"
+
+msgid "Add Subject(s)"
+msgstr "Добави предметна рубрика"
+
+msgid "Subject(s)"
+msgstr "Предметни рубрики"
+
+msgid "Language"
+msgstr "Език"
+
+msgid "Language use by publication."
+msgstr "Език на изданието."
+
+msgid "Abstract/Notes"
+msgstr "Анотация/бележки"
+
+msgid "Insert here any abstract or notes from the publication."
+msgstr "Въведете анотация или бележки за изданието."
+
+msgid "REMOVE IMAGE"
+msgstr "ПРЕМАХНИ ИЗОБРАЖЕНИЕТО"
+
+msgid "or scan a cover"
+msgstr "или сканирайте корица"
+
+msgid "Show scan dialog"
+msgstr "Покажи прозореца за сканиране"
+
+msgid "Reset"
+msgstr "Изчисти"
+
+msgid "Scan a cover"
+msgstr "Сканирай корица"
+
+msgid "Format:"
+msgstr "Формат:"
+
+msgid "Scan"
+msgstr "Сканирай"
+
+msgid "Click to show or hide options"
+msgstr "Щракнете, за да покажете/скриете опциите"
+
+msgid "History index:"
+msgstr "Индекс на историята:"
+
+msgid "Recall"
+msgstr "Извикай"
+
+msgid "Host:"
+msgstr "Хост:"
+
+msgid "Get machine"
+msgstr "Вземи устройство"
+
+msgid "Scanner:"
+msgstr "Скенер:"
+
+msgid "Default"
+msgstr "По подразбиране"
+
+msgid "Resolution"
+msgstr "Резолюция"
+
+msgid "Horizontal:"
+msgstr "Хоризонтално:"
+
+msgid "Vertical:"
+msgstr "Вертикално:"
+
+msgid "Capture"
+msgstr "Заснеми"
+
+msgid "Width:"
+msgstr "Ширина:"
+
+msgid "Height:"
+msgstr "Височина:"
+
+msgid "Result"
+msgstr "Резултат"
+
+msgid "Max Width:"
+msgstr "Макс. ширина:"
+
+msgid "Max Height:"
+msgstr "Макс. височина:"
+
+msgid "Scan result"
+msgstr "Резултат от сканирането"
+
+msgid "Preview"
+msgstr "Преглед"
+
+msgid "Rotate Left"
+msgstr "Завърти наляво"
+
+msgid "Rotate Right"
+msgstr "Завърти надясно"
+
+msgid "Image"
+msgstr "Изображение"
+
+msgid "Add Attachment"
+msgstr "Добави притурка"
+
+msgid "File Attachment"
+msgstr "Прикачен файл"
+
+msgid "Biblio Relation"
+msgstr "Свързани записи"
+
+msgid "Add Relation"
+msgstr "Добави връзка"
+
+msgid "Related Biblio Data"
+msgstr "Свързани записи"
+
+msgid "Show"
+msgstr "Покажи"
+
+msgid "Hide"
+msgstr "Скрий"
+
+msgid "Hide in OPAC"
+msgstr "Скрий в каталога"
+
+msgid "Don't Promote"
+msgstr "Не извеждай"
+
+msgid "Promote"
+msgstr "Изведи"
+
+msgid "Promote To Homepage"
+msgstr "Изведи на началната страница"
+
+msgid "You are going to edit biblio data"
+msgstr "Ще редактирате данните"
+
+msgid "Last Updated"
+msgstr "Последна промяна"
+
+msgid "None"
+msgstr "Няма"
+
+msgid "Copies"
+msgstr "Копия"
+
+msgid "Last Update"
+msgstr "Последна промяна"
+
+msgid "Item Code can't be empty!"
+msgstr "Кодът на екземпляра е задължителен!"
+
+msgid "Item Data Successfully Updated"
+msgstr "Екземплярът е обновен успешно"
+
+msgid "Item Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "New Item Data Successfully Saved"
+msgstr "Новият екземпляр е запазен успешно"
+
+msgid "Items"
+msgstr "Екземпляри"
+
+msgid "Others"
+msgstr "Други"
+
+msgid "Edit Biblographic data"
+msgstr "Редакция на библиографски запис"
+
+msgid "Inventory Code"
+msgstr "Инвентарен номер"
+
+msgid "Location"
+msgstr "Локация"
+
+msgid "Shelf Location"
+msgstr "Разположение на рафт"
+
+msgid "Available"
+msgstr "Наличен"
+
+msgid "Item Status"
+msgstr "Статус на екземпляра"
+
+msgid "Order Number"
+msgstr "Номер на поръчка"
+
+msgid "Order Date"
+msgstr "Дата на поръчка"
+
+msgid "Receiving Date"
+msgstr "Дата на получаване"
+
+msgid "Supplier"
+msgstr "Доставчик"
+
+msgid "Buy"
+msgstr "Закупуване"
+
+msgid "Prize/Grant"
+msgstr "Дарение"
+
+msgid "Source"
+msgstr "Източник"
+
+msgid "Invoice"
+msgstr "Фактура"
+
+msgid "Invoice Date"
+msgstr "Дата на фактурата"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "You are going to edit Item data"
+msgstr "Ще редактирате данните на екземпляр"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Item Barcodes Printing"
+msgstr "Печат на баркодове"
+
+msgid "Print Barcodes for Selected Data"
+msgstr "Печат на баркодове за избраните"
+
+msgid "There is no record in item database yet, Export FAILED!"
+msgstr "Няма записи за екземпляри — експортът е неуспешен!"
+
+msgid "Item Export Tool"
+msgstr "Инструмент за експорт на екземпляри"
+
+msgid "Export item data to CSV file"
+msgstr "Експорт на екземпляри в CSV файл"
+
+msgid "Item Import tool"
+msgstr "Инструмент за импорт на екземпляри"
+
+msgid "Import for item data from CSV file"
+msgstr "Импорт на екземпляри от CSV файл"
+
+msgid "You don't have enough privileges to access this area!"
+msgstr "Нямате достатъчно права за този раздел!"
+
+msgid "<a href=\"http://pear.php.net/index.php\">PEAR</a>, <a href=\"http://pear.php.net/package/File_MARC\">File_MARC</a>\n    packages need to be installed in order to export MARC record"
+msgstr ""
+
+msgid "Export queue cleared!"
+msgstr "Опашката за експорт е изчистена!"
+
+msgid "There is no data to export!*"
+msgstr "Няма данни за експорт!*"
+
+msgid "There is no data to export!"
+msgstr "Няма данни за експорт!"
+
+msgid "Export Catalog to Marc Format "
+msgstr "Експорт на каталога във формат MARC "
+
+msgid "Clear selected catalog"
+msgstr "Изчисти избраните записи"
+
+msgid "Export now"
+msgstr "Експортирай сега"
+
+msgid "Batch Export"
+msgstr "Групов експорт"
+
+msgid "Currently there is"
+msgstr "В момента има"
+
+msgid "in queue waiting to be processed."
+msgstr "в опашката за обработка."
+
+msgid "Export Type"
+msgstr "Тип експорт"
+
+msgid "Add To Export Queue"
+msgstr "Добави към опашката за експорт"
+
+msgid "Add to export queue?"
+msgstr "Да се добави ли към опашката за експорт?"
+
+msgid "<a href=\"http://pear.php.net/index.php\">PEAR</a>, <a href=\"http://pear.php.net/package/File_MARC\">File_MARC</a>\n    and <a href=\"http://pear.php.net/package/Structures_LinkedList/\">Structures_LinkedList</a>\n    packages need to be installed in order\n    to import MARC record"
+msgstr ""
+
+msgid "MARC Import tool"
+msgstr "Инструмент за MARC импорт"
+
+msgid "Import bibliographic records from MARC file. The file can be native MARC record format file (.mrc) or\n        MARCXML XML file (.xml).\n        You need to have PHP PEAR and PEAR's File_MARC package installed in your system.\n        To convert native/legacy MARC file to MARCXML\n        you can use <a class=\"notAJAX\" href=\"http://www.loc.gov/standards/marcxml/marcxml.zip\">MARCXML Toolkit</a>"
+msgstr ""
+
+msgid "Number of records to import (0 for all records)"
+msgstr "Брой записи за импорт (0 за всички)"
+
+msgid "Sorry, no result found from %s OR maybe XML result and detail disabled."
+msgstr ""
+
+msgid "P2P Service"
+msgstr "P2P услуга"
+
+msgid "Server"
+msgstr "Сървър"
+
+msgid "* Please make sure you have a working Internet connection."
+msgstr "* Уверете се, че имате интернет връзка."
+
+msgid "Upload FAILED! Forbidden file type or file size too big!"
+msgstr "Качването е неуспешно! Забранен тип или твърде голям файл!"
+
+msgid "File Attachment data updated!"
+msgstr "Обновено!"
+
+msgid "File Attachment data FAILED to update!"
+msgstr "Неуспешно обновяване на прикачения файл!"
+
+msgid "File Attachment uploaded succesfully!"
+msgstr "Прикаченият файл е качен успешно!"
+
+msgid "File Attachment data FAILED to save!"
+msgstr "Неуспешно запазване на прикачения файл!"
+
+msgid "Upload Now"
+msgstr "Качи сега"
+
+msgid "Repository ROOT"
+msgstr "Коренна папка на хранилището"
+
+msgid "Repo. Directory"
+msgstr "Папка на хранилището"
+
+msgid "File To Attach"
+msgstr "Файл за прикачване"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Public"
+msgstr "Публичен"
+
+msgid "Private"
+msgstr "Частен"
+
+msgid "Access"
+msgstr "Достъп"
+
+msgid "Access Limit by Member Type"
+msgstr "Ограничение по тип читател"
+
+msgid "Author succesfully updated!"
+msgstr "Авторът е обновен успешно!"
+
+msgid "Author FAILED to Add. Please Contact System Administrator"
+msgstr "Неуспешно добавяне. Свържете се със системния администратор."
+
+msgid "Author added!"
+msgstr "Авторът е добавен!"
+
+msgid "Add Author"
+msgstr "Добави автор"
+
+msgid "Author Name"
+msgstr "Име на автор"
+
+msgid "Type to search for existing authors or to add a new one"
+msgstr "Пишете, за да търсите автор или да добавите нов"
+
+msgid "Insert To Bibliography"
+msgstr "Вмъкни в записа"
+
+msgid "Biblio relation succesfully updated!"
+msgstr "Успешно обновено!"
+
+msgid "Biblio relation FAILED to Add. Please Contact System Administrator"
+msgstr "Неуспешно добавяне. Свържете се със системния администратор."
+
+msgid "Biblio relation added!"
+msgstr "Добавено!"
+
+msgid "Add Biblio Relation"
+msgstr "Добави свързан запис"
+
+msgid "Type to search for existing biblio data"
+msgstr "Пишете, за да търсите съществуващ запис"
+
+msgid "Prefix"
+msgstr "Представка"
+
+msgid "Suffix"
+msgstr "Наставка"
+
+msgid "Length serial number"
+msgstr "Дължина на серийния номер"
+
+msgid "Topic succesfully updated!"
+msgstr "Успешно обновено!"
+
+msgid "Subject FAILED to Add. Please Contact System Administrator"
+msgstr "Неуспешно добавяне. Свържете се със системния администратор."
+
+msgid "Subject added!"
+msgstr "Предметната рубрика е добавена!"
+
+msgid "Add Subject"
+msgstr "Добави предметна рубрика"
+
+msgid "Keyword"
+msgstr "Ключова дума"
+
+msgid "Primary"
+msgstr "Основен"
+
+msgid "Additional"
+msgstr "Допълнителен"
+
+msgid "Type to search for existing topics or to add a new one"
+msgstr "Пишете, за да търсите тема или да добавите нова"
+
+msgid "Settings saved"
+msgstr "Настройките са запазени"
+
+msgid "Save Settings"
+msgstr "Запази настройките"
+
+msgid "(px)"
+msgstr "(пиксели)"
+
+msgid "(default is 3)"
+msgstr "(по подразбиране 3)"
+
+msgid "(cm)"
+msgstr "(см)"
+
+msgid "(0=No or 1=Yes)"
+msgstr "(0=Не или 1=Да)"
+
+msgid "(empty if you want to use Library Name)"
+msgstr "(празно, за да се използва името на библиотеката)"
+
+msgid "(name of the font used)"
+msgstr "(име на използвания шрифт)"
+
+msgid "(pt)"
+msgstr "(пункта)"
+
+msgid "(percent relative to box width and height)"
+msgstr "(процент спрямо размера на кутията)"
+
+msgid "(decimal value. default is 0.2)"
+msgstr "(десетична стойност; по подразбиране 0.2)"
+
+msgid "(decimal value. default is 0.05)"
+msgstr "(десетична стойност; по подразбиране 0.05)"
+
+msgid "font name. default is Courier"
+msgstr "име на шрифт (по подразбиране Courier)"
+
+msgid "(hexa color code)"
+msgstr "(шестнайсетичен цветови код)"
+
+msgid "px"
+msgstr "пиксела"
+
+msgid "px style hexa"
+msgstr ""
+
+msgid "pt"
+msgstr "пункта"
+
+msgid "(number)"
+msgstr "(число)"
+
+msgid "(decimal)"
+msgstr "(десетично)"
+
+msgid "(filename)"
+msgstr "(име на файл)"
+
+msgid "(text - add <br> tag for line break)"
+msgstr "(текст – използвайте <br> за нов ред)"
+
+msgid "(hexa color)"
+msgstr "(шестнайсетичен цвят)"
+
+msgid "(normal or bold)"
+msgstr "(нормален или удебелен)"
+
+msgid "1-100 percent"
+msgstr "1–100 процента"
+
+msgid "(list of rules)"
+msgstr "(списък с правила)"
+
+msgid "Print setting for"
+msgstr "Настройки за печат на"
+
+msgid "Catalog Printing"
+msgstr "Печат на каталог"
+
+msgid "Print Catalog Format"
+msgstr "Формат за печат на каталог"
+
+msgid "Print Catalog for Selected Data"
+msgstr "Печат на каталог за избраните"
+
+msgid "Item"
+msgstr "Екземпляр"
+
+msgid "Show Existing Bibliographic Data"
+msgstr "Съществуващи библиографски данни"
+
+msgid "Add New Bibliographic Data/Catalog"
+msgstr "Нов библиографски запис/каталог"
+
+msgid "Item List"
+msgstr "Списък на екземплярите"
+
+msgid "Show List of Library Items"
+msgstr "Списък на екземплярите"
+
+msgid "Show List of Checkout Items"
+msgstr "Списък на заетите екземпляри"
+
+msgid "Copy Cataloguing"
+msgstr "Копиращо каталогизиране"
+
+msgid "Z3950 SRU"
+msgstr "Z3950 SRU"
+
+msgid "Grab Bibliographic Data from Z3950 SRU Web Services"
+msgstr "Изтегли записи от Z3950 SRU услуги"
+
+msgid "Z3950 Service"
+msgstr "Z3950 услуга"
+
+msgid "Grab Bibliographic Data from Z3950 Web Services"
+msgstr "Изтегли записи от Z3950 услуги"
+
+msgid "Grab Bibliographic Data from Other SLiMS Web Services"
+msgstr "Изтегли записи от други SLiMS услуги"
+
+msgid "Tools"
+msgstr "Инструменти"
+
+msgid "Print Document Labels"
+msgstr "Печат на етикети за документи"
+
+msgid "Print Item Barcodes"
+msgstr "Печат на баркодове"
+
+msgid "MARC Export"
+msgstr "MARC експорт"
+
+msgid "Export Bibliographic Data to MARC file"
+msgstr "Експорт на записи в MARC файл"
+
+msgid "MARC Import"
+msgstr "MARC импорт"
+
+msgid "Import Bibliographic Data from MARC file"
+msgstr "Импорт на записи от MARC файл"
+
+msgid "Print Catalog Card"
+msgstr "Печат на каталожна картичка"
+
+msgid "Data Export"
+msgstr "Експорт на данни"
+
+msgid "Export Bibliographic Data To CSV format"
+msgstr "Експорт на записи в CSV формат"
+
+msgid "Data Import"
+msgstr "Импорт на данни"
+
+msgid "Import Data to Bibliographic Database from CSV file"
+msgstr "Импорт на записи от CSV файл"
+
+msgid "Item Export"
+msgstr "Експорт на екземпляри"
+
+msgid "Export Item/Copies data To CSV format"
+msgstr "Експорт на екземпляри/копия в CSV формат"
+
+msgid "Item Import"
+msgstr "Импорт на екземпляри"
+
+msgid "Import Data to Item/Copies database from CSV file"
+msgstr "Импорт на екземпляри/копия от CSV файл"
+
+msgid "UCS is not enabled! Change global system configuration to enable UCS"
+msgstr "Съюзният каталог (UCS) не е активиран! Активирайте го от общата конфигурация."
+
+msgid "YAZ extension library is not loaded/installed yet. YAZ library is needed to use z3950 enabled service. Please refer to official <a href=\"http://www.php.net/manual/en/book.yaz.php\" class=\"notAJAX\" target=\"_blank\">YAZ PHP Manual</a> on how to setup/install YAZ extension library in PHP."
+msgstr ""
+
+msgid "{recordCount} records inserted into the database."
+msgstr ""
+
+msgid "Found {hits} records from Z3950 Server, {maxHits} listed."
+msgstr ""
+
+msgid "Save Z3950 Records to Database"
+msgstr "Запази Z3950 записите в базата"
+
+msgid "No Results Found!"
+msgstr "Няма намерени резултати!"
+
+msgid "No Keywords Supplied!"
+msgstr "Не са въведени ключови думи!"
+
+msgid "Z3950"
+msgstr ""
+
+msgid "Found {hits} records from Z3950 SRU Server."
+msgstr ""
+
+msgid "Z3950 Search/Retrieve via URL (SRU)"
+msgstr "Z3950 търсене/извличане чрез URL (SRU)"
+
+msgid "All fields"
+msgstr "Всички полета"
+
+msgid "SRU Server"
+msgstr "SRU сървър"
+
+msgid "ERROR! Can't insert visitor counter data"
+msgstr "ГРЕШКА! Данните за брояча на посетители не могат да се запишат"
+
+msgid "ERROR! Loan data can't be saved to database"
+msgstr "ГРЕШКА! Данните за заемане не могат да се запишат"
+
+msgid "Transaction finished"
+msgstr "Операцията е приключена"
+
+msgid "Overdue fines inserted to fines database"
+msgstr "Глобите за просрочие са записани"
+
+msgid "Item CANNOT BE Extended! This Item is being reserved by other member"
+msgstr "Заемането НЕ може да се продължи! Екземплярът е резервиран от друг читател"
+
+msgid "Loan Extended"
+msgstr "Заемането е продължено"
+
+msgid "Loan Limit Reached!"
+msgstr "Достигнат е лимитът на заемания!"
+
+msgid "Do You Want To Overide This?"
+msgstr "Искате ли да продължите въпреки това?"
+
+msgid "WARNING! This Item is reserved by another member"
+msgstr "ВНИМАНИЕ! Екземплярът е резервиран от друг читател"
+
+msgid "This Item is not registered in database"
+msgstr "Този екземпляр не е регистриран в базата"
+
+msgid "This Item is currently not available"
+msgstr "Този екземпляр в момента не е наличен"
+
+msgid "Loan NOT PERMITTED! Membership already EXPIRED!"
+msgstr "Заемането е ЗАБРАНЕНО! Членството е ИЗТЕКЛО!"
+
+msgid "Loan NOT PERMITTED! Membership under PENDING State!"
+msgstr "Заемането е ЗАБРАНЕНО! Членството е в изчакване!"
+
+msgid "Loan Forbidden for this Item!"
+msgstr "Заемането на този екземпляр е забранено!"
+
+msgid "Item {removeID} removed from session"
+msgstr ""
+
+msgid "This is item already returned or not exists in loan database"
+msgstr "Екземплярът вече е върнат или липсва в базата на заеманията"
+
+msgid "OVERDUED for {overdueDays} days(s) with fines value of"
+msgstr ""
+
+msgid "Item {itemCode} is being reserved by member {member}"
+msgstr ""
+
+msgid " successfully returned on"
+msgstr " е върнат успешно на"
+
+msgid "Member Name"
+msgstr "Име на читателя"
+
+msgid "NO DATA Selected to reserve!"
+msgstr "Не е избрано какво да се резервира!"
+
+msgid "Can not add more reservation. Maximum limit reached"
+msgstr "Не могат да се добавят повече резервации. Достигнат е лимитът"
+
+msgid "Can't reserve this Item. Loan Forbidden!"
+msgstr "Този екземпляр не може да се резервира. Заемането е забранено!"
+
+msgid "Reservation added"
+msgstr "Резервацията е добавена"
+
+msgid "Item for this title is already available or already on hold by this member!"
+msgstr "Екземпляр от това заглавие вече е наличен или резервиран от този читател!"
+
+msgid "Reservation removed"
+msgstr "Резервацията е премахната"
+
+msgid "Fines data removed"
+msgstr "Глобата е премахната"
+
+msgid " not valid (unregistered in database)"
+msgstr " е невалиден (нерегистриран в базата)"
+
+msgid "Circulation"
+msgstr "Заемна дейност"
+
+msgid "Finish Transaction"
+msgstr "Приключи операцията"
+
+msgid "Are you sure want to finish current transaction?"
+msgstr "Сигурни ли сте, че искате да приключите операцията?"
+
+msgid "Member Email"
+msgstr "Имейл на читателя"
+
+msgid "Member Type"
+msgstr "Тип читател"
+
+msgid "Register Date"
+msgstr "Дата на регистрация"
+
+msgid "Membership Already Expired"
+msgstr "Членството е изтекло"
+
+msgid "Expiry Date"
+msgstr "Валиден до"
+
+msgid "Membership currently in pending state, loan transaction is locked."
+msgstr "Членството е в изчакване; заемането е заключено."
+
+msgid "Loans"
+msgstr "Заемания"
+
+msgid "Current Loans"
+msgstr "Текущи заемания"
+
+msgid "Reserve"
+msgstr "Резервирай"
+
+msgid "Fines"
+msgstr "Глоби"
+
+msgid "Loan History"
+msgstr "История на заемания"
+
+msgid "Fines Description and Debet value can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Value of Credit can not be higher that Debet Value"
+msgstr "Кредитът не може да е по-голям от дебита"
+
+msgid "Fines Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Fines Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Fines Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Fines Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Add New Fines"
+msgstr "Нова глоба"
+
+msgid "Fines List"
+msgstr "Списък на глобите"
+
+msgid "View Balanced Overdue"
+msgstr "Виж изравнените просрочия"
+
+msgid "Fines Date"
+msgstr "Дата на глобата"
+
+msgid "Description/Name"
+msgstr "Описание / име"
+
+msgid "Debit"
+msgstr "Дебит"
+
+msgid "Credit"
+msgstr "Кредит"
+
+msgid "You are going to edit fines data"
+msgstr "Ще редактирате данните"
+
+msgid "You don't have enough privileges to view this section"
+msgstr "Нямате достатъчно права за този раздел"
+
+msgid "CIRCULATION - Insert a member ID to start transaction with keyboard or barcode reader"
+msgstr "ЗАЕМНА ДЕЙНОСТ – въведете читателски номер с клавиатура или баркод четец, за да започнете"
+
+msgid "Start Transaction"
+msgstr "Започни операция"
+
+msgid "Transaction with member {member_id} is completed"
+msgstr ""
+
+msgid "Insert Item Code/Barcode"
+msgstr "Въведете код/баркод на екземпляр"
+
+msgid "Loan"
+msgstr "Заеми"
+
+msgid "Click To Change Loan Date"
+msgstr "Щракнете, за да промените датата на заемане"
+
+msgid "Click To Change Due Date"
+msgstr "Щракнете, за да промените срока за връщане"
+
+msgid "Are you sure you want to return the item"
+msgstr "Сигурни ли сте, че искате да върнете екземпляра"
+
+msgid "Are you sure to extend loan for"
+msgstr "Сигурни ли сте, че искате да продължите заемането за"
+
+msgid "Return"
+msgstr "Връщане"
+
+msgid "Extend"
+msgstr "Продължи"
+
+msgid "Col. Type"
+msgstr "Тип колекция"
+
+msgid "Return this item"
+msgstr "Върни този екземпляр"
+
+msgid "No Extend"
+msgstr "Без продължаване"
+
+msgid "Extend loan for this item"
+msgstr "Продължи заемането"
+
+msgid "Extended"
+msgstr "Продължено"
+
+msgid "OVERDUED for"
+msgstr "ПРОСРОЧЕН с"
+
+msgid "days(s) with fines value"
+msgstr "ден(дни) с глоба"
+
+msgid "Send overdues notice e-mail"
+msgstr "Изпрати имейл за просрочие"
+
+msgid "Loan Rules Successfully Updated"
+msgstr "Правилата за заемане са обновени успешно"
+
+msgid "Loan Rules FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване на правилата. Свържете се със системния администратор."
+
+msgid "New Loan Rules Successfully Saved"
+msgstr "Новите правила за заемане са запазени успешно"
+
+msgid "Loan Rules FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване на правилата. Свържете се със системния администратор."
+
+msgid "Loan Rules"
+msgstr "Правила за заемане"
+
+msgid "Loan Rules List"
+msgstr "Списък на правилата за заемане"
+
+msgid "Add New Loan Rules"
+msgstr "Ново правило за заемане"
+
+msgid "ALL"
+msgstr "Всички"
+
+msgid "Loan Limit"
+msgstr "Лимит на заемания"
+
+msgid "Loan Period"
+msgstr "Срок на заемане"
+
+msgid "Reborrow Limit"
+msgstr "Лимит на презаемане"
+
+msgid "Fines Each Day"
+msgstr "Глоба на ден"
+
+msgid "Overdue Grace Periode"
+msgstr "Гратисен период"
+
+msgid "You are going to edit loan rules"
+msgstr "Ще редактирате правилата за заемане"
+
+msgid "Not Returned Yet"
+msgstr "Все още не е върнато"
+
+msgid "Returned Date"
+msgstr "Дата на връщане"
+
+msgid "Quick Return is disabled"
+msgstr "Бързото връщане е изключено"
+
+msgid "Quick Return"
+msgstr "Бързо връщане"
+
+msgid "Insert an item ID to return collection with keyboard or barcode reader"
+msgstr "Въведете код на екземпляр с клавиатура или баркод четец, за да върнете"
+
+msgid "Item ID"
+msgstr "Код на екземпляр"
+
+msgid "Are you sure to remove reservation for"
+msgstr "Сигурни ли сте, че искате да премахнете резервацията за"
+
+msgid "Search Collection"
+msgstr "Търсене в каталога"
+
+msgid "Add Reserve"
+msgstr "Добави резервация"
+
+msgid "Reserve Date"
+msgstr "Дата на резервация"
+
+msgid "ALREADY EXPIRED"
+msgstr "ИЗТЕКЛО"
+
+msgid "Start Circulation Transaction Proccess"
+msgstr "Започни операция по заемане"
+
+msgid "Quick Return Collection"
+msgstr "Бързо връщане на екземпляр"
+
+msgid "View and Modify Circulation Loan Rules"
+msgstr "Преглед и промяна на правилата за заемане"
+
+msgid "Loan History Overview"
+msgstr "Преглед на заеманията"
+
+msgid "Overdued List"
+msgstr "Списък на просрочените"
+
+msgid "View Members Having Overdues"
+msgstr "Читатели с просрочия"
+
+msgid "Reservation"
+msgstr "Резервация"
+
+msgid "Author name can't be empty"
+msgstr "Името на автора е задължително"
+
+msgid "Author Data Successfully Updated"
+msgstr "Авторът е обновен успешно"
+
+msgid "Author Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Author Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Author Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Author List"
+msgstr "Списък на авторите"
+
+msgid "Add New Author"
+msgstr "Нов автор"
+
+msgid "Author Birth Year"
+msgstr "Година на раждане"
+
+msgid "Authority Type"
+msgstr "Тип на нормализирания запис"
+
+msgid "Authority Files"
+msgstr "Нормализирани записи"
+
+msgid "You are going to edit author data"
+msgstr "Ще редактирате данните"
+
+msgid "Author Year"
+msgstr "Година на автора"
+
+msgid "Collection type name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Colllection Type Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Colllection Type Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Colllection Type Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Location ({item_name}) still used by {number_items} item(s)"
+msgstr ""
+
+msgid "Collection Type List"
+msgstr "Списък на типовете колекции"
+
+msgid "Add New Collection Type"
+msgstr "Нов тип колекция"
+
+msgid "You are going to edit collection type data"
+msgstr "Ще редактирате данните"
+
+msgid "Cross Reference Code AND Description can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Cross Reference Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Cross Reference Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Cross Reference Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Cross Reference Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Cross Reference"
+msgstr "Препратка"
+
+msgid "Cross Reference List"
+msgstr "Списък на препратките"
+
+msgid "Add New Term"
+msgstr "Нов термин"
+
+msgid "Subject List"
+msgstr "Списък на предметните рубрики"
+
+msgid "Cross Reference Code"
+msgstr "Код на препратката"
+
+msgid "Cross Reference Description"
+msgstr "Описание на препратката"
+
+msgid "You are going to edit Subject data"
+msgstr "Ще редактирате данните"
+
+msgid "Language ID or Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Language Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Language Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Language Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Language Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Doc. Language"
+msgstr "Език на документа"
+
+msgid "Language List"
+msgstr "Списък на езиците"
+
+msgid "Add New Language"
+msgstr "Нов език"
+
+msgid "Language Code"
+msgstr "Код на езика"
+
+msgid "You are going to edit language data"
+msgstr "Ще редактирате данните"
+
+msgid "Frequency Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Frequency Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Frequency Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Frequency Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Frequency Available"
+msgstr "Налични периодичности"
+
+msgid "Add New Frequency"
+msgstr "Нова периодичност"
+
+msgid "Time Increment"
+msgstr "Стъпка от време"
+
+msgid "Day"
+msgstr "Ден"
+
+msgid "Week"
+msgstr "Седмица"
+
+msgid "Month"
+msgstr "Месец"
+
+msgid "Year"
+msgstr "Година"
+
+msgid "Time Unit"
+msgstr "Мерна единица за време"
+
+msgid "You are going to edit Frequency data"
+msgstr "Ще редактирате данните"
+
+msgid "Vocabolary Control"
+msgstr "Контрол на речника"
+
+msgid "GMD Code And Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "GMD Data Successfully Updated"
+msgstr "Видът материал е обновен успешно"
+
+msgid "GMD Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New GMD Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "GMD Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "GMD (General Material Designation)"
+msgstr "Вид материал (GMD)"
+
+msgid "GMD List"
+msgstr "Списък на видовете материали"
+
+msgid "Add New GMD"
+msgstr "Нов вид материал"
+
+msgid "GMD Code"
+msgstr "Код на вида материал"
+
+msgid "GMD Name"
+msgstr "Име на вида материал"
+
+msgid "You are going to edit gmd data"
+msgstr "Ще редактирате данните"
+
+msgid "No Loan Transaction"
+msgstr "Без заемане"
+
+msgid "Skipped By Stock Take"
+msgstr "Пропуска се при инвентаризация"
+
+msgid "Item Status ID and Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Item Status Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Item Status Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Item Status Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Item Status Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Add New Item Status"
+msgstr "Нов статус на екземпляр"
+
+msgid "Item Status Code"
+msgstr "Код на статуса"
+
+msgid "Item Status Name"
+msgstr "Име на статуса"
+
+msgid "Rules"
+msgstr "Правила"
+
+msgid "You are going to edit Item Status data"
+msgstr "Ще редактирате данните"
+
+msgid "Label Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Label Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Label Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Label Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Label"
+msgstr "Етикет"
+
+msgid "Label List"
+msgstr "Списък на етикетите"
+
+msgid "Add New Label"
+msgstr "Нов етикет"
+
+msgid "Label Name"
+msgstr "Име на етикета"
+
+msgid "Label Description"
+msgstr "Описание на етикета"
+
+msgid "You are going to edit Label data"
+msgstr "Ще редактирате данните"
+
+msgid "Location ID and Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Location Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Location Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Location Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Location Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Location List"
+msgstr "Списък на локациите"
+
+msgid "Add New Location"
+msgstr "Нова локация"
+
+msgid "Location Code"
+msgstr "Код на локацията"
+
+msgid "Location Name"
+msgstr "Име на локацията"
+
+msgid "You are going to edit location data"
+msgstr "Ще редактирате данните"
+
+msgid "Server Name And URI can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Server Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Server Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Server Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Server Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "P2P Servers"
+msgstr "P2P сървъри"
+
+msgid "Server List"
+msgstr "Списък на сървърите"
+
+msgid "Add New Server"
+msgstr "Нов сървър"
+
+msgid "Server Name"
+msgstr "Име на сървъра"
+
+msgid "URI"
+msgstr "URI"
+
+msgid "You are going to edit server data"
+msgstr "Ще редактирате данните"
+
+msgid "Place Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Place Data Successfully Updated"
+msgstr "Мястото е обновено успешно"
+
+msgid "Place Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Place Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Place Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Place"
+msgstr "Място"
+
+msgid "Place List"
+msgstr "Списък на местата"
+
+msgid "Add New Place"
+msgstr "Ново място"
+
+msgid "Place Name"
+msgstr "Име на мястото"
+
+msgid "You are going to edit place data"
+msgstr "Ще редактирате данните"
+
+msgid "Data saved!"
+msgstr "Данните са запазени!"
+
+msgid "Vocabulary added!"
+msgstr "Добавено!"
+
+msgid "Vocabulary update!"
+msgstr "Речникът е обновен!"
+
+msgid "Subject ALREADY Added in Relation!"
+msgstr "Предметната рубрика вече е добавена!"
+
+msgid "Edit Mode"
+msgstr "Режим на редакция"
+
+msgid "Related Term"
+msgstr "Свързан термин"
+
+msgid "Vocabulary"
+msgstr "Речник"
+
+msgid "Cancel"
+msgstr "Отказ"
+
+msgid "Add Vocabulary Control"
+msgstr "Добави контрол на речника"
+
+msgid "Enter Vocabulary"
+msgstr "Въведете речников термин"
+
+msgid "Add Vocabulary"
+msgstr "Добави речников термин"
+
+msgid "Publisher Name can't be empty"
+msgstr "Името на издателя е задължително"
+
+msgid "Publisher Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "PUBLISHER Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Publisher Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Publisher Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Publisher List"
+msgstr "Списък на издателите"
+
+msgid "Add New Publisher"
+msgstr "Нов издател"
+
+msgid "Publisher Name"
+msgstr "Име на издател"
+
+msgid "You are going to edit publisher data"
+msgstr "Ще редактирате данните"
+
+msgid "Name can't be empty"
+msgstr "Името е задължително"
+
+msgid "Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid " Type List"
+msgstr " – списък на типовете"
+
+msgid "Add New "
+msgstr "Добави нов"
+
+msgid "Code"
+msgstr "Код"
+
+msgid "Name"
+msgstr "Име"
+
+msgid "MARC Leader Code"
+msgstr "MARC код на лидера"
+
+msgid "You are going to edit "
+msgstr "Ще редактирате "
+
+msgid "General Material Designation"
+msgstr "Общо означение на материала"
+
+msgid "Content Type"
+msgstr "Тип съдържание"
+
+msgid "RDA Content Type"
+msgstr "RDA тип съдържание"
+
+msgid "Media Type"
+msgstr "Тип носител"
+
+msgid "RDA Media Type"
+msgstr "RDA тип носител"
+
+msgid "Carrier Type"
+msgstr "Тип на носителя"
+
+msgid "RDA Carrier Type"
+msgstr "RDA тип на носителя"
+
+msgid "Document Publisher"
+msgstr "Издател на документа"
+
+msgid "Item Supplier"
+msgstr "Доставчик на екземпляра"
+
+msgid "Document Authors"
+msgstr "Автори на документа"
+
+msgid "Subject"
+msgstr "Предметна рубрика"
+
+msgid "Item Location"
+msgstr "Локация на екземпляра"
+
+msgid "Lookup Files"
+msgstr "Справочни файлове"
+
+msgid "Document Content Language"
+msgstr "Език на съдържанието"
+
+msgid "Special Labels for Titles to Show Up On Homepage"
+msgstr "Специални етикети за заглавия на началната страница"
+
+msgid "Orphaned Author"
+msgstr "Автор без записи"
+
+msgid "Orphaned Authors"
+msgstr "Автори без записи"
+
+msgid "Orphaned Subject"
+msgstr "Предметна рубрика без записи"
+
+msgid "Orphaned Publisher"
+msgstr "Издател без записи"
+
+msgid "Orphaned Place"
+msgstr "Място без записи"
+
+msgid "Supplier Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Supplier Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Supplier Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Supplier Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Supplier Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Supplier List"
+msgstr "Списък на доставчиците"
+
+msgid "Add New Supplier"
+msgstr "Нов доставчик"
+
+msgid "Supplier Name"
+msgstr "Име на доставчика"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Contact"
+msgstr "Контакт"
+
+msgid "Phone Number"
+msgstr "Телефон"
+
+msgid "Fax Number"
+msgstr "Факс"
+
+msgid "Account Number"
+msgstr "Номер на сметка"
+
+msgid "You are going to edit Supplier data"
+msgstr "Ще редактирате данните"
+
+msgid "Subject can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Subject Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Subject Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Subject Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Subject Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Add New Subject"
+msgstr "Нова предметна рубрика"
+
+msgid "Classification Code"
+msgstr "Код на класификацията"
+
+msgid "Subject Type"
+msgstr "Тип на предметната рубрика"
+
+msgid "Vocabulary Control"
+msgstr "Контрол на речника"
+
+msgid "Add New Vocabulary"
+msgstr "Добави речников термин"
+
+msgid "Scope Note Vocabulary"
+msgstr "Речник с обяснителни бележки"
+
+msgid "Scope Note"
+msgstr "Обяснителна бележка"
+
+msgid "Class. Code"
+msgstr "Код (класиф.)"
+
+msgid "There is no record in membership database yet, Export FAILED!"
+msgstr "Няма читатели в базата — експортът е неуспешен!"
+
+msgid "Export Data"
+msgstr "Експорт на данни"
+
+msgid "Export member(s) data to CSV file"
+msgstr "Експорт на читатели в CSV файл"
+
+msgid "records inserted successfully to members database, from record"
+msgstr "записа са добавени успешно към базата на читателите, започвайки от запис"
+
+msgid "Import Data"
+msgstr "Импорт на данни"
+
+msgid "Import for members data from CSV file"
+msgstr "Импорт на читатели от CSV файл"
+
+msgid "Member ID and Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Password confirmation does not match. See if your Caps Lock key is on!"
+msgstr "Паролите не съвпадат. Проверете дали Caps Lock е включен!"
+
+msgid "Member Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Image FAILED to upload"
+msgstr "Неуспешно качване на изображение"
+
+msgid "Member Data FAILED to Save/Update. Please Contact System Administrator"
+msgstr "Неуспешно запазване/обновяване. Свържете се със системния администратор."
+
+msgid "New Member Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Below member data can't be deleted because still have unreturned item(s)"
+msgstr "Долните читатели не могат да се изтрият, защото имат невърнати екземпляри"
+
+msgid "Membership"
+msgstr "Читатели"
+
+msgid "Member List"
+msgstr "Списък на читателите"
+
+msgid "View Expired Member"
+msgstr "Виж читателите с изтекло членство"
+
+msgid "Add New Member"
+msgstr "Нов читател"
+
+msgid "Member Search"
+msgstr "Търсене на читател"
+
+msgid "Extend Membership"
+msgstr "Продължи членството"
+
+msgid "Birth Date"
+msgstr "Дата на раждане"
+
+msgid "Member Since"
+msgstr "Читател от"
+
+msgid "Auto Set"
+msgstr "Автоматично"
+
+msgid "Institution"
+msgstr "Институция"
+
+msgid "Membership Type"
+msgstr "Тип членство"
+
+msgid "Male"
+msgstr "Мъж"
+
+msgid "Female"
+msgstr "Жена"
+
+msgid "Sex"
+msgstr "Пол"
+
+msgid "Postal Code"
+msgstr "Пощенски код"
+
+msgid "Mail Address"
+msgstr "Пощенски адрес"
+
+msgid "Personal ID Number"
+msgstr "ЕГН/лична карта"
+
+msgid "Notes"
+msgstr "Бележки"
+
+msgid "Pending Membership"
+msgstr "Чакащи членства"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "or take a photo"
+msgstr "или направете снимка"
+
+msgid "Load Camera"
+msgstr "Зареди камерата"
+
+msgid "Ratio:"
+msgstr "Съотношение:"
+
+msgid "Photo"
+msgstr "Снимка"
+
+msgid "E-mail"
+msgstr "Имейл"
+
+msgid "New Password"
+msgstr "Нова парола"
+
+msgid "Confirm New Password"
+msgstr "Потвърди новата парола"
+
+msgid "You are going to edit member data"
+msgstr "Ще редактирате данните"
+
+msgid "Leave Password field blank if you don't want to change the password"
+msgstr "Оставете полето за парола празно, ако не искате да я сменяте"
+
+msgid "Expired Member List"
+msgstr "Списък на читателите с изтекло членство"
+
+msgid "Extend Selected Member(s)"
+msgstr "Продължи членството на избраните"
+
+msgid "Are you sure to EXTEND membership for selected members?"
+msgstr "Сигурни ли сте, че искате да продължите членството на избраните?"
+
+msgid "members extended!"
+msgstr "читатели с продължено членство!"
+
+msgid "Found"
+msgstr "Намерени"
+
+msgid "from your search with keyword"
+msgstr "от търсенето с ключова дума"
+
+msgid "Member Card Printing"
+msgstr "Печат на читателски карти"
+
+msgid "Print Member Cards for Selected Data"
+msgstr "Печат на читателски карти за избраните"
+
+msgid "Member card print settings"
+msgstr "Настройки за печат на читателски карти"
+
+msgid "Member Type Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Member Type Successfully Updated"
+msgstr "Типът читател е обновен успешно"
+
+msgid "Member Type Data FAILED to Save/Update. Please Contact System Administrator"
+msgstr "Неуспешно запазване/обновяване. Свържете се със системния администратор."
+
+msgid "New Member Type Successfully Saved"
+msgstr "Новият тип читател е запазен успешно"
+
+msgid "Member Type List"
+msgstr "Списък на типовете читатели"
+
+msgid "Add New Member Type"
+msgstr "Нов тип читател"
+
+msgid "Member Type Name"
+msgstr "Име на типа читател"
+
+msgid "Loan Periode (In Days)"
+msgstr "Срок на заемане (в дни)"
+
+msgid "Enable"
+msgstr "Включи"
+
+msgid "Disable"
+msgstr "Изключи"
+
+msgid "Reserve Limit"
+msgstr "Лимит на резервации"
+
+msgid "Membership Periode (In Days)"
+msgstr "Срок на членство (в дни)"
+
+msgid "Fine Each Day"
+msgstr "Глоба на ден"
+
+msgid "View Member List"
+msgstr "Виж списъка на читателите"
+
+msgid "View Library Member List"
+msgstr "Виж списъка на читателите"
+
+msgid "Add New Library Member Data"
+msgstr "Добави нов читател"
+
+msgid "View and modify member type"
+msgstr "Преглед и промяна на типовете читатели"
+
+msgid "Print Member Card"
+msgstr "Печат на читателска карта"
+
+msgid "Export Members Data To CSV File"
+msgstr "Експорт на читатели в CSV файл"
+
+msgid "Import Members Data From CSV File"
+msgstr "Импорт на читатели от CSV файл"
+
+msgid "Total Titles By Medium/GMD"
+msgstr "Общо заглавия по вид материал"
+
+msgid "Total Items By Collection Type"
+msgstr "Общо екземпляри по тип колекция"
+
+msgid "Total Members By Membership Type"
+msgstr "Общо читатели по тип членство"
+
+msgid "Total Loan By GMD/Medium"
+msgstr "Общо заемания по вид материал"
+
+msgid "Total Loan By Collection Type"
+msgstr "Общо заемания по тип колекция"
+
+msgid "Custom Recapitulations"
+msgstr "Персонализирани обобщения"
+
+msgid "Report Filter"
+msgstr "Филтър на справката"
+
+msgid "Recap By"
+msgstr "Обобщи по"
+
+msgid "Apply Filter"
+msgstr "Приложи филтъра"
+
+msgid "Show More Filter Options"
+msgstr "Още опции за филтриране"
+
+msgid "Hide Filter Options"
+msgstr "Скрий опциите за филтриране"
+
+msgid "Title and Collection Recap by"
+msgstr "Обобщение на заглавия и фонд по"
+
+msgid "Print Current Page"
+msgstr "Печат на текущата страница"
+
+msgid "Export to spreadsheet format"
+msgstr "Експорт в електронна таблица"
+
+msgid "Title and Collection recapitulation based on classification and others"
+msgstr "Обобщение на заглавия и фонд по класификация и др."
+
+msgid "Title List"
+msgstr "Списък на заглавията"
+
+msgid "List of bibliographic titles"
+msgstr "Списък на библиографските заглавия"
+
+msgid "Items Title List"
+msgstr "Списък на екземплярите по заглавие"
+
+msgid "List of collection/items"
+msgstr "Списък на фонда/екземплярите"
+
+msgid "Items Usage Statistics"
+msgstr "Статистика за използване на екземплярите"
+
+msgid "List of Collection/items usage statistic"
+msgstr "Статистика за използване на фонда/екземплярите"
+
+msgid "Loans by Classification"
+msgstr "Заемания по класификация"
+
+msgid "Loan statistic by classification"
+msgstr "Статистика на заеманията по класификация"
+
+msgid "List of library member/patron"
+msgstr "Списък на читателите"
+
+msgid "Loan List by Member"
+msgstr "Заемания по читател"
+
+msgid "List of loan by each member"
+msgstr "Списък на заеманията по читател"
+
+msgid "Due Date Warning"
+msgstr "Предупреждение за срок"
+
+msgid "Loan Due Date Warnings"
+msgstr "Предупреждения за срок на връщане"
+
+msgid "Staff Activity"
+msgstr "Активност на персонала"
+
+msgid "Staff activity log recapitulation"
+msgstr "Обобщение на дневника за активност на персонала"
+
+msgid "Visitor Statistic"
+msgstr "Статистика за посетителите"
+
+msgid "Visitor Statistic (by Day)"
+msgstr "Статистика за посетителите (по ден)"
+
+msgid "Visitor List"
+msgstr "Списък на посетителите"
+
+msgid "Fines Report"
+msgstr "Справка за глобите"
+
+msgid "This report loan items which will due in 3 to 0 days"
+msgstr "Справка за екземпляри със срок за връщане до 3 дни"
+
+msgid "Record each page"
+msgstr "Записи на страница"
+
+msgid "Set between 20 and 200"
+msgstr "Между 20 и 200"
+
+msgid "Jan"
+msgstr "яну"
+
+msgid "Feb"
+msgstr "фев"
+
+msgid "Mar"
+msgstr "мар"
+
+msgid "Apr"
+msgstr "апр"
+
+msgid "May"
+msgstr "май"
+
+msgid "Jun"
+msgstr "юни"
+
+msgid "Jul"
+msgstr "юли"
+
+msgid "Aug"
+msgstr "авг"
+
+msgid "Sep"
+msgstr "сеп"
+
+msgid "Oct"
+msgstr "окт"
+
+msgid "Nov"
+msgstr "ное"
+
+msgid "Dec"
+msgstr "дек"
+
+msgid "Title/ISBN"
+msgstr "Заглавие/ISBN"
+
+msgid "Press Ctrl and click to select multiple entries"
+msgstr "Задръжте Ctrl и щракнете за избор на няколко"
+
+msgid "Publish year"
+msgstr "Година на издаване"
+
+msgid "0 Classes"
+msgstr "Клас 0 (Общ отдел)"
+
+msgid "1 Classes"
+msgstr "Клас 1 (Философия)"
+
+msgid "2 Classes"
+msgstr "Клас 2 (Религия)"
+
+msgid "2X Classes (Islamic Related)"
+msgstr "Клас 2X (ислям)"
+
+msgid "3 Classes"
+msgstr "Клас 3 (Обществени науки)"
+
+msgid "4 Classes"
+msgstr "Клас 4 (Език)"
+
+msgid "5 Classes"
+msgstr "Клас 5 (Точни науки)"
+
+msgid "6 Classes"
+msgstr "Клас 6 (Приложни науки)"
+
+msgid "7 Classes"
+msgstr "Клас 7 (Изкуство)"
+
+msgid "8 Classes"
+msgstr "Клас 8 (Литература)"
+
+msgid "9 Classes"
+msgstr "Клас 9 (История и география)"
+
+msgid "NON Decimal Classes"
+msgstr "Некласифицирани"
+
+msgid "Loan Date From"
+msgstr "Дата на заемане от"
+
+msgid "Loan Date Until"
+msgstr "Дата на заемане до"
+
+msgid "Loan Status"
+msgstr "Статус на заемане"
+
+msgid "On Loan"
+msgstr "Заета"
+
+msgid "Returned"
+msgstr "Върната"
+
+msgid "Gender"
+msgstr "Пол"
+
+msgid "Register Date From"
+msgstr "Дата на регистрация от"
+
+msgid "Register Date Until"
+msgstr "Дата на регистрация до"
+
+msgid "Overdue"
+msgstr "Просрочен"
+
+msgid "day(s)"
+msgstr "ден(дни)"
+
+msgid "Reserve Date From"
+msgstr "Дата на резервация от"
+
+msgid "Reserve Date Until"
+msgstr "Дата на резервация до"
+
+msgid "Activity Date From"
+msgstr "Дата на активност от"
+
+msgid "Activity Date Until"
+msgstr "Дата на активност до"
+
+msgid "Real Name"
+msgstr "Име"
+
+msgid "Login Username"
+msgstr "Потребителско име"
+
+msgid "Bibliography Data Entry"
+msgstr "Въвеждане на библиографски данни"
+
+msgid "Item Data Entry"
+msgstr "Въвеждане на екземпляри"
+
+msgid "Member Data Entry"
+msgstr "Въвеждане на читатели"
+
+msgid "Returns"
+msgstr "Връщания"
+
+msgid "Extends"
+msgstr "Продължавания"
+
+msgid "NON-Member visitor"
+msgstr "Посетител нечлен"
+
+msgid "Visitor ID"
+msgstr "Номер на посетител"
+
+msgid "Visitor Name"
+msgstr "Име на посетител"
+
+msgid "Visit Date From"
+msgstr "Дата на посещение от"
+
+msgid "Visit Date Until"
+msgstr "Дата на посещение до"
+
+msgid "Visit Date"
+msgstr "Дата на посещение"
+
+msgid "Library Visitor Report"
+msgstr "Справка за посетителите"
+
+msgid "NON-Member Visitor"
+msgstr "Посетител нечлен"
+
+msgid "Total visit/month"
+msgstr "Общо посещения/месец"
+
+msgid "Visitor Report"
+msgstr "Справка за посетителите"
+
+msgid "Total Titles"
+msgstr "Общо заглавия"
+
+msgid "Total Titles with items"
+msgstr "Общо заглавия с екземпляри"
+
+msgid "Total Items/Copies"
+msgstr "Общо екземпляри/копия"
+
+msgid "Total Checkout Items"
+msgstr "Общо заети екземпляри"
+
+msgid "Total Items In Library"
+msgstr "Общо екземпляри в библиотеката"
+
+msgid "Show in chart/plot"
+msgstr "Покажи като графика"
+
+msgid "10 Most Popular Titles"
+msgstr "10-те най-търсени заглавия"
+
+msgid "Collection Statistic Summary"
+msgstr "Обобщена статистика на фонда"
+
+msgid "Collection Statistic Report"
+msgstr "Справка за статистиката на фонда"
+
+msgid "Collection Statistic"
+msgstr "Статистика на колекцията"
+
+msgid "Download Report"
+msgstr "Изтегли справката"
+
+msgid "Total Loan"
+msgstr "Общо заемания"
+
+msgid "Total Loan Transactions"
+msgstr "Общо операции по заемане"
+
+msgid "Transaction Average (Per Day)"
+msgstr "Средно операции (на ден)"
+
+msgid "Total Peak Transaction"
+msgstr "Пик на операциите"
+
+msgid "Members Already Had Loans"
+msgstr "Читатели със заемания"
+
+msgid "Members Never Have Loans Yet"
+msgstr "Читатели без заемания"
+
+msgid "Total Overdued Loans"
+msgstr "Общо просрочени заемания"
+
+msgid "Loan Data Summary"
+msgstr "Обобщение на заеманията"
+
+msgid "Loan Report"
+msgstr "Справка за заемания"
+
+msgid "Total Registered Members"
+msgstr "Общо регистрирани читатели"
+
+msgid "Total Active Member"
+msgstr "Общо активни читатели"
+
+msgid "Total Expired Member"
+msgstr "Общо читатели с изтекло членство"
+
+msgid "10 most active members"
+msgstr "10-те най-активни читатели"
+
+msgid "Membership Data Summary"
+msgstr "Обобщение на читателите"
+
+msgid "Membership Report"
+msgstr "Справка за читателите"
+
+msgid "record(s) found. Currently displaying page"
+msgstr "намерени записа. Показва се страница"
+
+msgid "record each page"
+msgstr "записи на страница"
+
+msgid "Reporting"
+msgstr "Справки"
+
+msgid "View Library Collection Statistic"
+msgstr "Виж статистиката на фонда"
+
+msgid "View Library Loan Report"
+msgstr "Виж справката за заемания"
+
+msgid "View Membership Report"
+msgstr "Виж справката за читателите"
+
+msgid "Other Reports"
+msgstr "Други справки"
+
+msgid "Serial Control"
+msgstr "Периодика"
+
+msgid "Edit Bibliographic data"
+msgstr "Редакция на библиографски запис"
+
+msgid "Add New Subscription"
+msgstr "Нов абонамент"
+
+msgid "View Subscriptions"
+msgstr "Виж абонаментите"
+
+msgid "CLOSE"
+msgstr "Затвори"
+
+msgid "Serial Title"
+msgstr "Заглавие на периодично издание"
+
+msgid "Kardex data updated!"
+msgstr "Обновено!"
+
+msgid "Kardex data deleted!"
+msgstr "Данните от кардекса са изтрити!"
+
+msgid "Are you sure to remove selected Kardex data?"
+msgstr "Сигурни ли сте, че искате да премахнете избраното?"
+
+msgid "Date Expected"
+msgstr "Очаквана дата"
+
+msgid "Date Received"
+msgstr "Дата на получаване"
+
+msgid "Seq. Number"
+msgstr "Пореден номер"
+
+msgid "Note"
+msgstr "Бележка"
+
+msgid "Add New Kardex"
+msgstr "Нов кардекс"
+
+msgid "Kardex Detail for subscription"
+msgstr "Детайли на кардекса за абонамента"
+
+msgid "Subscription"
+msgstr "Абонамент"
+
+msgid "Manage Subscription"
+msgstr "Управление на абонамента"
+
+msgid "Error inserting subscription data, Subscription Date must be filled!"
+msgstr "Грешка при запис на абонамента — датата на абонамента е задължителна!"
+
+msgid "Subscription Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Subscription Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Subscription Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Subscription Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Subscription data successfully deleted"
+msgstr "Абонаментът е изтрит успешно"
+
+msgid "Subscription data FAILED to deleted!"
+msgstr "Неуспешно изтриване на абонамента!"
+
+msgid "Subscription Start"
+msgstr "Начало на абонамента"
+
+msgid "Total Exemplar Expected"
+msgstr "Общо очаквани броеве"
+
+msgid "Period Name"
+msgstr "Име на периода"
+
+msgid "Subscription Notes"
+msgstr "Бележки за абонамента"
+
+msgid "You are going to edit Subscription data"
+msgstr "Ще редактирате данните"
+
+msgid "View/Edit Kardex Detail"
+msgstr "Виж/редактирай кардекса"
+
+msgid "NO stock taking proccess initialized yet!"
+msgstr "Все още няма стартирана инвентаризация!"
+
+msgid "Stock Take Proccess"
+msgstr "Процес на инвентаризация"
+
+msgid "Current Missing/Lost Items"
+msgstr "Текущи липсващи екземпляри"
+
+msgid "Change Status"
+msgstr "Промени статуса"
+
+msgid "List stocktakes by"
+msgstr "Покажи инвентаризациите по"
+
+msgid "Current User Only"
+msgstr "Само текущия потребител"
+
+msgid "All User"
+msgstr "Всички потребители"
+
+msgid "Exists"
+msgstr "Наличен"
+
+msgid "Missing"
+msgstr "Липсващ"
+
+msgid "NO stock taking proccess running!"
+msgstr "Няма текуща инвентаризация!"
+
+msgid "Stock Take Proccess Finished!"
+msgstr "Инвентаризацията е приключена!"
+
+msgid "Finish Stock Take"
+msgstr "Приключи инвентаризацията"
+
+msgid "Are you sure to end current stock take proccess? Once it finished there is no way you can rollback this stock take"
+msgstr "Сигурни ли сте, че искате да приключите инвентаризацията? След приключване не може да се върне назад."
+
+msgid "Purge Lost Item"
+msgstr "Изчисти липсващите екземпляри"
+
+msgid "Stock Take"
+msgstr "Инвентаризация"
+
+msgid "Stock Take Name"
+msgstr "Име на инвентаризацията"
+
+msgid "Start Date"
+msgstr "Начална дата"
+
+msgid "End Date"
+msgstr "Крайна дата"
+
+msgid "Initializer"
+msgstr "Стартирал"
+
+msgid "Total Item Stock Taked"
+msgstr "Общо инвентаризирани екземпляри"
+
+msgid "Total Item Lost"
+msgstr "Общо липсващи екземпляри"
+
+msgid "Total Item Exists"
+msgstr "Общо налични екземпляри"
+
+msgid "Total Item On Loan"
+msgstr "Общо заети екземпляри"
+
+msgid "Stock Take Participants"
+msgstr "Участници в инвентаризацията"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Report"
+msgstr "Справка"
+
+msgid "Currently Active"
+msgstr "Активна в момента"
+
+msgid "There is already stock taking proccess running!"
+msgstr "Вече има текуща инвентаризация!"
+
+msgid "Stock Take Name must be filled!"
+msgstr "Името на инвентаризацията е задължително!"
+
+msgid "Stock Taking Initialized"
+msgstr "Инвентаризацията е стартирана"
+
+msgid "Stock Taking FAILED to Initialized.\\nNo item to stock take!"
+msgstr ""
+
+msgid "Initialize Stock Take"
+msgstr "Стартирай инвентаризация"
+
+msgid "Separate each class comma sign. Use * for wildcard"
+msgstr "Разделяйте класовете със запетая. Използвайте * за заместващ знак"
+
+msgid "Initialize Stock Take Process"
+msgstr "Стартирай процеса на инвентаризация"
+
+msgid "Current Lost Item"
+msgstr "Текущи липсващи екземпляри"
+
+msgid "Re-synchronize will only update current stock take's item data. It won't update any new bibliographic or item data that were inserted in the middle of stock take proccess"
+msgstr "Ресинхронизацията ще обнови само данните на текущата инвентаризация. Няма да добави нови записи или екземпляри, въведени по време на инвентаризацията."
+
+msgid "Resynchronize Now"
+msgstr "Ресинхронизирай сега"
+
+msgid "Stock Take Log"
+msgstr "Дневник на инвентаризацията"
+
+msgid "Current Stock Take Report"
+msgstr "Справка за текущата инвентаризация"
+
+msgid "Total Checked/Scanned Items"
+msgstr "Общо проверени/сканирани екземпляри"
+
+msgid "items already checked"
+msgstr "проверени екземпляра"
+
+msgid "Lost Items"
+msgstr "Липсващи екземпляри"
+
+msgid "Existing Items"
+msgstr "Налични екземпляри"
+
+msgid "On Loan Items"
+msgstr "Заети екземпляри"
+
+msgid " classes"
+msgstr " класа"
+
+msgid "Succesfully upload stock take file"
+msgstr "Файлът за инвентаризация е качен успешно"
+
+msgid " item codes scanned!"
+msgstr " кода на екземпляри са сканирани!"
+
+msgid "Stock Take Upload"
+msgstr "Качване за инвентаризация"
+
+msgid "Upload a plain text file (.txt) containing list of Item Code to stock take. Each Item Code separated by line."
+msgstr "Качете текстов файл (.txt) със списък на кодовете на екземпляри, по един на ред."
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Upload File"
+msgstr "Качи файл"
+
+msgid "Stock Take History"
+msgstr "История на инвентаризациите"
+
+msgid "View Stock Take History"
+msgstr "Виж историята на инвентаризациите"
+
+msgid "Current Stock Take"
+msgstr "Текуща инвентаризация"
+
+msgid "View Current Stock Take Process"
+msgstr "Виж текущата инвентаризация"
+
+msgid "Stock Take Report"
+msgstr "Справка за инвентаризацията"
+
+msgid "View Current Stock Take Report"
+msgstr "Виж справката за текущата инвентаризация"
+
+msgid "Finish Current Stock Take Proccess"
+msgstr "Приключи текущата инвентаризация"
+
+msgid "View Lost Item in Current Stock Take Proccess"
+msgstr "Виж липсващите екземпляри в текущата инвентаризация"
+
+msgid "View Log of Current Stock Take Proccess"
+msgstr "Виж дневника на текущата инвентаризация"
+
+msgid "Resynchronize"
+msgstr "Ресинхронизирай"
+
+msgid "Resynchronize bibliographic data with current stock take"
+msgstr "Ресинхронизирай библиографските данни с текущата инвентаризация"
+
+msgid "Upload List"
+msgstr "Качи списък"
+
+msgid "Upload List in text file"
+msgstr "Качи списък в текстов файл"
+
+msgid "Initialize"
+msgstr "Стартирай"
+
+msgid "Initialize New Stock Take Proccess"
+msgstr "Стартирай нова инвентаризация"
+
+msgid "User Name or Real Name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Login username or Real Name is probihited!"
+msgstr "Потребителското име или името са забранени!"
+
+msgid "User Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "User Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New User Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "User Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Librarian & System Users"
+msgstr "Библиотекари и потребители"
+
+msgid "User List"
+msgstr "Списък на потребителите"
+
+msgid "Add New User"
+msgstr "Нов потребител"
+
+msgid "User Type"
+msgstr "Тип потребител"
+
+msgid "E-Mail"
+msgstr "Имейл"
+
+msgid "Social Media"
+msgstr "Социални мрежи"
+
+msgid "User Photo"
+msgstr "Снимка на потребителя"
+
+msgid "Group(s)"
+msgstr "Група(и)"
+
+msgid "You are going to edit user profile"
+msgstr "Ще редактирате потребителския профил"
+
+msgid "Last Login"
+msgstr "Последен вход"
+
+msgid "Database Backup"
+msgstr "Резервно копие на базата"
+
+msgid "Start New Backup"
+msgstr "Направи ново резервно копие"
+
+msgid "Barcode Generator"
+msgstr "Генератор на баркодове"
+
+msgid "Error creating barcode!"
+msgstr "Грешка при създаване на баркод!"
+
+msgid "Barcode generation finished"
+msgstr "Генерирането на баркодове приключи"
+
+msgid "Enter your barcodes code on one or more textboxes below to create barcode"
+msgstr "Въведете кодовете в едно или повече полета по-долу, за да създадете баркод"
+
+msgid "Barcode Size"
+msgstr "Размер на баркода"
+
+msgid "Small"
+msgstr "Малък"
+
+msgid "Medium"
+msgstr "Среден"
+
+msgid "Big"
+msgstr "Голям"
+
+msgid "Generate Barcodes"
+msgstr "Генерирай баркодове"
+
+msgid "Index table truncated!"
+msgstr "Индексната таблица е изчистена!"
+
+msgid "Index table FAILED to truncated, probably because of database query error!"
+msgstr "Неуспешно изчистване на индексната таблица — вероятно поради грешка в базата!"
+
+msgid "<strong>%d</strong> records (from total of <strong>%d</strong>) re-indexed. Finished in %d minutes %d second(s)"
+msgstr ""
+
+msgid "<strong>%d</strong> index records failed to indexed. The IDs are: %s"
+msgstr ""
+
+msgid "Please empty the Index first before re-creating the Index"
+msgstr "Първо изчистете индекса, преди да го създадете наново"
+
+msgid "<strong>%d</strong> records (from total of <strong>%d</strong>) re-indexed. Finished in %d second(s)"
+msgstr ""
+
+msgid "Bibliographic Index"
+msgstr "Библиографски индекс"
+
+msgid "Emptying Index"
+msgstr "Изчистване на индекса"
+
+msgid "Re-create Index"
+msgstr "Създай индекса наново"
+
+msgid "Update Index"
+msgstr "Обнови индекса"
+
+msgid "Title or Path can't be empty!"
+msgstr "Полето не може да е празно"
+
+msgid "Content data updated"
+msgstr "Съдържанието е обновено"
+
+msgid "Content data FAILED to update!"
+msgstr "Неуспешно обновяване на съдържанието!"
+
+msgid "Content data saved"
+msgstr "Съдържанието е запазено"
+
+msgid "Content data FAILED to save!"
+msgstr "Неуспешно запазване на съдържанието!"
+
+msgid "Content"
+msgstr "Съдържание"
+
+msgid "Content List"
+msgstr "Списък на съдържанието"
+
+msgid "Add New Content"
+msgstr "Ново съдържание"
+
+msgid "Content Title"
+msgstr "Заглавие на съдържанието"
+
+msgid "No"
+msgstr "Не"
+
+msgid "This is News"
+msgstr "Това е новина"
+
+msgid "Path (Must be unique)"
+msgstr "Път (трябва да е уникален)"
+
+msgid "Content Description"
+msgstr "Описание на съдържанието"
+
+msgid "You are going to update Content data"
+msgstr "Ще редактирате съдържанието"
+
+msgid "System Environment"
+msgstr "Системна среда"
+
+msgid "Information on SLiMS System Environment. Use this to support troubleshotting problem."
+msgstr "Информация за системната среда на SLiMS. Използвайте я за отстраняване на проблеми."
+
+msgid "Operating System"
+msgstr "Операционна система"
+
+msgid "OS Architecture"
+msgstr "Архитектура на ОС"
+
+msgid "Web Server"
+msgstr "Уеб сървър"
+
+msgid "PHP version"
+msgstr "Версия на PHP"
+
+msgid "MySQL Database version"
+msgstr "Версия на MySQL базата"
+
+msgid "MySQL Client version"
+msgstr "Версия на MySQL клиента"
+
+msgid "Browser/User Agent"
+msgstr "Браузър/User Agent"
+
+msgid "Hostname"
+msgstr "Име на хоста"
+
+msgid "jQuery version"
+msgstr "Версия на jQuery"
+
+msgid "HTML5 Support?"
+msgstr "Поддръжка на HTML5?"
+
+msgid "Holiday Data Successfully updated"
+msgstr "Почивните дни са обновени успешно"
+
+msgid "Holiday FAILED to update. Please Contact System Administrator"
+msgstr "Неуспешно обновяване на почивните дни. Свържете се със системния администратор."
+
+msgid "New Holiday Successfully Saved"
+msgstr "Новият почивен ден е запазен успешно"
+
+msgid "Holiday FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване на почивния ден. Свържете се със системния администратор."
+
+msgid "Holiday Settings"
+msgstr "Настройки на почивните дни"
+
+msgid "Holiday Setting"
+msgstr "Настройка на почивните дни"
+
+msgid "Special holiday"
+msgstr "Специален почивен ден"
+
+msgid "Add Special holiday"
+msgstr "Добави специален почивен ден"
+
+msgid "Holiday Date Start"
+msgstr "Начална дата на почивните дни"
+
+msgid "Holiday Date End"
+msgstr "Крайна дата на почивните дни"
+
+msgid "Holiday Description"
+msgstr "Описание на почивния ден"
+
+msgid "You are going to edit holiday data"
+msgstr "Ще редактирате данните"
+
+msgid "Day name"
+msgstr "Име на деня"
+
+msgid "Maximum 6 day can be set as holiday!"
+msgstr "Могат да се зададат най-много 6 почивни дни!"
+
+msgid "Holiday settings saved"
+msgstr "Настройките за почивни дни са запазени"
+
+msgid "Monday"
+msgstr "Понеделник"
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Wednesday"
+msgstr "Сряда"
+
+msgid "Thursday"
+msgstr "Четвъртък"
+
+msgid "Friday"
+msgstr "Петък"
+
+msgid "Saturday"
+msgstr "Събота"
+
+msgid "Sunday"
+msgstr "Неделя"
+
+msgid "System Configuration"
+msgstr "Системна конфигурация"
+
+msgid "Modify global application preferences"
+msgstr "Промяна на общите настройки на приложението"
+
+msgid "Settings saved. Refreshing page"
+msgstr "Настройките са запазени. Презареждане..."
+
+msgid "Library Name"
+msgstr "Име на библиотеката"
+
+msgid "Library Subname"
+msgstr "Подзаглавие на библиотеката"
+
+msgid "Public Template"
+msgstr "Тема на публичната част"
+
+msgid "Admin Template"
+msgstr "Тема на служебната част"
+
+msgid "Default App. Language"
+msgstr "Език на приложението по подразбиране"
+
+msgid "Number Of Collections To Show In OPAC Result List"
+msgstr "Брой записи на страница в резултатите на каталога"
+
+msgid "Show Promoted Titles at Homepage"
+msgstr "Показвай изведените заглавия на началната страница"
+
+msgid "Don't Print"
+msgstr "Не печатай"
+
+msgid "Print"
+msgstr "Печат"
+
+msgid "Print Circulation Receipt"
+msgstr "Печат на разписка при заемане"
+
+msgid "Loan and Due Date Manual Change"
+msgstr "Ръчна промяна на датите на заемане и връщане"
+
+msgid "Loan Limit Override"
+msgstr "Заобикаляне на лимита за заемане"
+
+msgid "Ignore Holidays Fine Calculation"
+msgstr "Пренебрегвай почивните дни при глобите"
+
+msgid "OPAC XML Detail"
+msgstr "OPAC XML детайл"
+
+msgid "OPAC XML Result"
+msgstr "OPAC XML резултат"
+
+msgid "Enable Search Spellchecker"
+msgstr "Правописна проверка при търсене"
+
+msgid "Forbid"
+msgstr "Забрани"
+
+msgid "Allow"
+msgstr "Разреши"
+
+msgid "Allow OPAC File Download"
+msgstr "Разреши изтегляне на файлове от каталога"
+
+msgid "Session Login Timeout"
+msgstr "Времетраене на сесията"
+
+msgid "Barcode Encoding"
+msgstr "Кодиране на баркодовете"
+
+msgid "Visitor Limitation"
+msgstr "Ограничение на посетителите"
+
+msgid "Time visitor limitation (in minute)"
+msgstr "Ограничение на времето за посетители (в минути)"
+
+msgid "Module name and path can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Module Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Module Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Module Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Module Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Modules"
+msgstr "Модули"
+
+msgid "Modules List"
+msgstr "Списък на модулите"
+
+msgid "Add New Modules"
+msgstr "Нов модул"
+
+msgid "Module Name"
+msgstr "Име на модула"
+
+msgid "Module Path"
+msgstr "Път на модула"
+
+msgid "Module Description"
+msgstr "Описание на модула"
+
+msgid "You are going to edit data"
+msgstr "Ще редактирате данните"
+
+msgid "Read"
+msgstr "Четене"
+
+msgid "Write"
+msgstr "Запис"
+
+msgid "Shortcut Settings"
+msgstr "Настройки на бързия достъп"
+
+msgid "Add or remove application shortcuts"
+msgstr "Добавяне или премахване на преки пътища"
+
+msgid "Shortcut setting saved"
+msgstr "Настройката на бързия достъп е запазена"
+
+msgid "Select"
+msgstr "Избери"
+
+msgid "Move back"
+msgstr "Назад"
+
+msgid "System"
+msgstr "Система"
+
+msgid "Configure Global System Preferences"
+msgstr "Настрой общите системни предпочитания"
+
+msgid "Information about System Environment"
+msgstr "Информация за системната среда"
+
+msgid "UCS Setting"
+msgstr "Настройка на Съюзния каталог"
+
+msgid "Configure UCS Preferences"
+msgstr "Настрой предпочитанията за Съюзния каталог"
+
+msgid "Biblio Indexes"
+msgstr "Библиографски индекси"
+
+msgid "Bibliographic Indexes management"
+msgstr "Управление на библиографските индекси"
+
+msgid "Configure Application Modules"
+msgstr "Настрой модулите на приложението"
+
+msgid "Manage Application User or Library Staff"
+msgstr "Управление на потребители и персонал"
+
+msgid "User Group"
+msgstr "Потребителска група"
+
+msgid "Manage Group of Application User"
+msgstr "Управление на потребителските групи"
+
+msgid "Shortcut Setting"
+msgstr "Настройка на бързия достъп"
+
+msgid "Configure Holiday Setting"
+msgstr "Настрой почивните дни"
+
+msgid "System Log"
+msgstr "Системен дневник"
+
+msgid "View Application System Log"
+msgstr "Виж системния дневник"
+
+msgid "Backup Application Database"
+msgstr "Резервно копие на базата данни"
+
+msgid "System Log data completely cleared!"
+msgstr "Системният дневник е напълно изчистен!"
+
+msgid "Are you SURE to completely clear system log data? This action cannot be undo!"
+msgstr "Сигурни ли сте, че искате напълно да изчистите системния дневник? Действието е необратимо!"
+
+msgid "CLEAR LOGS"
+msgstr "ИЗЧИСТИ ДНЕВНИКА"
+
+msgid "Save Logs record to file?"
+msgstr "Да се запишат ли записите във файл?"
+
+msgid "Save Logs To File"
+msgstr "Запиши дневника във файл"
+
+msgid "Time"
+msgstr "Час"
+
+msgid "Message"
+msgstr "Съобщение"
+
+msgid "Settings updated."
+msgstr "Настройките са обновени."
+
+msgid "Failed save settings!"
+msgstr "Неуспешно запазване на настройките!"
+
+msgid "Settings inserted."
+msgstr "Настройките са добавени."
+
+msgid "UCS Configuration"
+msgstr "Конфигурация на Съюзния каталог"
+
+msgid "Modify UCS preferences"
+msgstr "Промени настройките за Съюзния каталог"
+
+msgid "Enable UCS"
+msgstr "Активирай Съюзния каталог"
+
+msgid "Auto delete record"
+msgstr "Автоматично изтриване на записи"
+
+msgid "Auto insert record"
+msgstr "Автоматично добавяне на записи"
+
+msgid "Server address"
+msgstr "Адрес на сървъра"
+
+msgid "Server ID"
+msgstr "Идентификатор на сървъра"
+
+msgid "Server Password"
+msgstr "Парола на сървъра"
+
+msgid "Group name can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Group Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "Group Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Group Data Successfully Saved"
+msgstr "Новите данни са запазени успешно"
+
+msgid "Group Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Group List"
+msgstr "Списък на групите"
+
+msgid "Add New Group"
+msgstr "Нова група"
+
+msgid "Group Name"
+msgstr "Име на групата"
+
+msgid "Privileges"
+msgstr "Права"
+
+msgid "You are going to edit Group data"
+msgstr "Ще редактирате данните"
+
+msgid "There isn't anyone else in the room."
+msgstr "В стаята няма никой друг."
+
+msgid "Someone has connected."
+msgstr "Някой се свърза."
+
+msgid "Someone has joined the room."
+msgstr "Някой влезе в стаята."
+
+msgid "Someone has disconnected."
+msgstr "Някой се разкачи."
+
+msgid "Someone has left the room."
+msgstr "Някой напусна стаята."
+
+msgid "Web Online Public Access Catalog - Use the search options to find documents quickly"
+msgstr "Онлайн каталог – използвайте търсенето, за да намерите документи бързо"
+
+msgid "You are currently Logged on as member"
+msgstr "Влезли сте като читател"
+
+msgid "LOGOUT"
+msgstr "Изход"
+
+msgid "Put marked selection into basket"
+msgstr "Добави избраното в кошницата"
+
+msgid " comments available"
+msgstr ""
+
+msgid " at "
+msgstr ""
+
+msgid " write"
+msgstr "Запис"
+
+msgid "Chat As "
+msgstr "Чат като "
+
+msgid "Chat With Librarian"
+msgstr "Чат с библиотекар"
+
+msgid "End Chat"
+msgstr "Приключи чата"
+
+msgid "Please type your name before starting in conversations."
+msgstr "Въведете името си, преди да започнете разговор."
+
+msgid "Your Name:"
+msgstr "Вашето име:"
+
+msgid "You may also hit Enter button to starting in conversation. "
+msgstr "Можете да натиснете и Enter, за да започнете разговора. "
+
+msgid "More result"
+msgstr "Още резултати"
+
+msgid "All Locations"
+msgstr "Всички локации"
+
+msgid "All Collections"
+msgstr "Всички колекции"
+
+msgid "All GMD/Media"
+msgstr "Всички видове материали"
+
+msgid "Found <strong>{biblio_list->num_rows}</strong> from your keywords"
+msgstr "Намерени <strong>{biblio_list->num_rows}</strong> по вашите ключови думи"
+
+msgid "You currently on page <strong>{page}</strong> of <strong>{total_pages}</strong> page(s)"
+msgstr ""
+
+msgid "Did you mean:"
+msgstr "Може би имахте предвид:"
+
+msgid "Current Loan item(s)"
+msgstr "Текущо заети екземпляри"
+
+msgid "Your Current Loan"
+msgstr "Вашите текущи заемания"
+
+msgid "Return Date"
+msgstr "Дата на връщане"
+
+msgid "item(s) loan history"
+msgstr ""
+
+msgid "Your Loan History"
+msgstr "Вашата история на заемания"
+
+msgid "Profile of our Librarian"
+msgstr "Профил на нашия библиотекар"
+
+msgid "Position"
+msgstr "Длъжност"
+
+msgid "Social"
+msgstr "Социални мрежи"
+
+msgid "Please supply valid username and password"
+msgstr "Въведете валидно потребителско име и парола"
+
+msgid "Welcome to Library Automation, "
+msgstr "Добре дошли в библиотечната система, "
+
+msgid "Wrong Username or Password. ACCESS DENIED"
+msgstr "Грешно потребителско име или парола. ДОСТЪПЪТ Е ОТКАЗАН"
+
+msgid "Current password can not be empty!"
+msgstr "Полето не може да е празно"
+
+msgid "Your browser does not support Javascript or Javascript is disabled. Application won't run without Javascript!"
+msgstr "Браузърът ви не поддържа JavaScript или той е изключен. Приложението няма да работи без JavaScript!"
+
+msgid "Current password"
+msgstr "Текуща парола"
+
+msgid "Username"
+msgstr "Потребителско име"
+
+msgid "Password"
+msgstr "Парола"
+
+msgid "Login"
+msgstr "Вход"
+
+msgid "Library Automation Login"
+msgstr "Вход в библиотечната система"
+
+msgid "Welcome to Member's Area where you can view your current loan information and view your membership status."
+msgstr "Добре дошли в читателската зона, където можете да видите текущите си заемания и статуса на членството си."
+
+msgid "Please fill your Username and Password to Login!"
+msgstr "Въведете потребителско име и парола, за да влезете!"
+
+msgid "Please update your password!"
+msgstr "Моля, обновете паролата си!"
+
+msgid "Login FAILED! Wrong username or password!"
+msgstr "Входът е неуспешен! Грешно потребителско име или парола!"
+
+msgid "Your password have been changed successfully."
+msgstr "Паролата ви е сменена успешно."
+
+msgid "Current password entered WRONG! Please insert the right password!"
+msgstr "Въведената текуща парола е грешна! Въведете правилната парола!"
+
+msgid "Password confirmation FAILED! Make sure to check undercase or uppercase letters!"
+msgstr "Потвърждението на паролата е неуспешно! Проверете малките и главните букви!"
+
+msgid "Password update FAILED! ERROR ON DATABASE!"
+msgstr "Смяната на паролата е неуспешна! Грешка в базата данни!"
+
+msgid "Library Member Login"
+msgstr "Вход за читатели"
+
+msgid "Wrong Captcha Code entered, Please write the right code!"
+msgstr "Грешен код от картинката! Въведете правилния код!"
+
+msgid "Please insert your member ID and password given by library system administrator. If you are library's member and don't have a password yet, please contact library staff."
+msgstr "Въведете читателския си номер и паролата, дадени от администратора на библиотеката. Ако сте член, но нямате парола, обърнете се към персонала."
+
+msgid "Current Password"
+msgstr "Текуща парола"
+
+msgid "Confirm Password"
+msgstr "Потвърди паролата"
+
+msgid "Change Password"
+msgstr "Смяна на паролата"
+
+msgid "Reserve title(s) on Basket"
+msgstr "Резервирай заглавията от кошницата"
+
+msgid "Clear Basket"
+msgstr "Изпразни кошницата"
+
+msgid "Remove selected title(s) from Basket"
+msgstr "Премахни избраните заглавия от кошницата"
+
+msgid "title(s) on basket"
+msgstr ""
+
+msgid "Your Membership Already EXPIRED! Please extend your membership."
+msgstr "Членството ви е изтекло! Моля, продължете го."
+
+msgid "Membership currently in pending state, no loan transaction can be made yet."
+msgstr "Членството е в изчакване; все още не могат да се правят заемания."
+
+msgid "OVERDUED"
+msgstr "Просрочен"
+
+msgid "item(s) currently on loan"
+msgstr ""
+
+msgid "Reservation e-mail sent successfully!"
+msgstr "Имейлът за резервация е изпратен успешно!"
+
+msgid "Member Detail"
+msgstr "Данни за читателя"
+
+msgid "Your Title Basket"
+msgstr "Вашата кошница"
+
+msgid "Library News"
+msgstr "Новини от библиотеката"
+
+msgid "Sorry, we don't have any news for you yet."
+msgstr "Все още няма новини."
+
+msgid "Library Location"
+msgstr "Местоположение на библиотеката"
+
+msgid "Thank you for your comment."
+msgstr "Благодарим за коментара."
+
+msgid "FAILED to strore you comment. Please Contact System Administrator"
+msgstr "Неуспешно записване на коментара. Свържете се със системния администратор."
+
+msgid "Record Detail"
+msgstr "Детайли на записа"
+
+msgid "Back To Previous"
+msgstr "Назад"
+
+msgid "Show detail in XML format"
+msgstr "Покажи детайлите в XML формат"
+
+msgid "XML Detail"
+msgstr "XML детайл"
+
+msgid "Citation for: {title}"
+msgstr "Цитиране на: {title}"
+
+msgid "Cite this"
+msgstr "Цитирай това"
+
+msgid ", thank you for inserting your data to our visitor log"
+msgstr ""
+
+msgid "Your membership already EXPIRED, please renew/extend your membership immediately"
+msgstr "Членството ви е изтекло; моля, подновете/продължете го незабавно"
+
+msgid "Welcome back"
+msgstr "Добре дошли отново"
+
+msgid "Sorry, Please fill institution field if you are not library member"
+msgstr "Ако не сте член на библиотеката, попълнете полето „институция“"
+
+msgid "Error inserting counter data to database!"
+msgstr "Грешка при запис на данните за брояча!"
+
+msgid "Currently On Loan (Due on"
+msgstr "В момента заета (връщане на"
+
+msgid "Available but not for loan"
+msgstr "Налична, но не за заемане"
+
+msgid "Click to view others documents with this author"
+msgstr "Щракнете, за да видите други документи от този автор"
+
+msgid "Click to view others documents with this subject"
+msgstr "Щракнете, за да видите други документи по тази тема"
+
+msgid "Share to"
+msgstr "Сподели в"
+
+msgid "Arabic"
+msgstr "Арабски"
+
+msgid "Bengali"
+msgstr "Бенгалски"
+
+msgid "Brazilian Portuguese"
+msgstr "Бразилски португалски"
+
+msgid "English"
+msgstr "Английски"
+
+msgid "Espanol"
+msgstr "Испански"
+
+msgid "German"
+msgstr "Немски"
+
+msgid "Indonesian"
+msgstr "Индонезийски"
+
+msgid "Japanese"
+msgstr "Японски"
+
+msgid "Thai"
+msgstr "Тайландски"
+
+msgid "Malay"
+msgstr "Малайски"
+
+msgid "Persian"
+msgstr "Персийски"
+
+msgid "Home"
+msgstr "Начало"
+
+msgid "View OPAC in New Window"
+msgstr "Отвори каталога в нов прозорец"
+
+msgid "DELETE"
+msgstr "Изтрий"
+
+msgid "EDIT"
+msgstr "Редактирай"
+
+msgid "Are You Sure Want to DELETE Selected Data?"
+msgstr "Сигурни ли сте, че искате да изтриете избраното?"
+
+msgid "ascendingly"
+msgstr "възходящо"
+
+msgid "descendingly"
+msgstr "низходящо"
+
+msgid "Order list by"
+msgstr "Подреди списъка по"
+
+msgid "Check All"
+msgstr "Избери всички"
+
+msgid "Uncheck All"
+msgstr "Изчисти избора"
+
+msgid "Delete Selected Data"
+msgstr "Изтрий избраните"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Delete Record"
+msgstr "Изтрий записа"
+
+msgid "Are you sure to delete {recordTitle}?"
+msgstr "Сигурни ли сте, че искате да изтриете това?"
+
+msgid "First Page"
+msgstr "Първа страница"
+
+msgid "Previous"
+msgstr "Предишен"
+
+msgid "Next"
+msgstr "Напред"
+
+msgid "Last Page"
+msgstr "Последна страница"
+
+msgid "No Data"
+msgstr "Няма данни"
+
+msgid "Personal Name"
+msgstr "Лично име"
+
+msgid "Organizational Body"
+msgstr "Организация"
+
+msgid "Conference"
+msgstr "Конференция"
+
+msgid "Topic"
+msgstr "Тема"
+
+msgid "Geographic"
+msgstr "Географско"
+
+msgid "Temporal"
+msgstr "Времево"
+
+msgid "Genre"
+msgstr "Жанр"
+
+msgid "Occupation"
+msgstr "Занятие"
+
+msgid "Primary Author"
+msgstr "Основен автор"
+
+msgid "Additional Author"
+msgstr "Допълнителен автор"
+
+msgid "Editor"
+msgstr "Редактор"
+
+msgid "Translator"
+msgstr "Преводач"
+
+msgid "Director"
+msgstr "Режисьор"
+
+msgid "Producer"
+msgstr "Продуцент"
+
+msgid "Composer"
+msgstr "Композитор"
+
+msgid "Illustrator"
+msgstr "Илюстратор"
+
+msgid "Creator"
+msgstr "Създател"
+
+msgid "Contributor"
+msgstr "Сътрудник"
+
+msgid "Senior Librarian"
+msgstr "Старши библиотекар"
+
+msgid "Library Staff"
+msgstr "Библиотечен персонал"
+
+msgid "View record detail description for this title"
+msgstr "Виж подробното описание на това заглавие"
+
+msgid "View record detail description in XML Format"
+msgstr "Виж описанието на записа в XML формат"
+
+msgid "none copy available"
+msgstr "няма налично копие"
+
+msgid "{numberAvailable} copies available for loan"
+msgstr ""
+
+msgid "Share this title to Facebook"
+msgstr "Сподели това заглавие във Facebook"
+
+msgid "Share this title to Twitter"
+msgstr "Сподели това заглавие в Twitter"
+
+msgid "Share this title to Google Plus"
+msgstr "Сподели това заглавие в Google Plus"
+
+msgid "Share this title to Digg It"
+msgstr "Сподели това заглавие в Digg"
+
+msgid "Share this title to Reddit"
+msgstr "Сподели това заглавие в Reddit"
+
+msgid "Share this title to LinkedIn"
+msgstr "Сподели това заглавие в LinkedIn"
+
+msgid "Share this title to StumbleUpon"
+msgstr "Сподели това заглавие в StumbleUpon"
+
+msgid "mark this"
+msgstr "отбележи"
+
+msgid "APA Style"
+msgstr "APA стил"
+
+msgid "Chicago Style"
+msgstr "Chicago стил"
+
+msgid "MLA Style"
+msgstr "MLA стил"
+
+msgid "Turabian Style"
+msgstr "Turabian стил"
+
+msgid "Availability"
+msgstr "Наличност"
+
+msgid "Description Not Available"
+msgstr "Няма описание"
+
+msgid "No copy data"
+msgstr "Няма данни за копия"
+
+msgid "Detail Information"
+msgstr "Подробна информация"
+
+msgid "Other version/related"
+msgstr "Друга версия/свързани"
+
+msgid "No other version available"
+msgstr "Няма друга версия"
+
+msgid "Comments"
+msgstr "Коментари"
+
+msgid "Librarian LOGIN"
+msgstr "Вход за библиотекар"
+
+msgid "Read More"
+msgstr "Прочети повече"
+
+msgid "Advanced Search"
+msgstr "Разширено търсене"
+
+msgid "Select Language"
+msgstr "Изберете език"
+
+msgid "License"
+msgstr "Лиценз"
+
+msgid "Library Information"
+msgstr "Информация за библиотеката"
+
+msgid "Member Area"
+msgstr "Читателска зона"
+
+msgid "Help on Search"
+msgstr "Помощ при търсене"
+
+msgid "More"
+msgstr "Още"
+
+msgid "News"
+msgstr "Новини"
+
+msgid "New Books"
+msgstr "Нови книги"
+
+msgid "Promoted Books"
+msgstr "Препоръчани книги"
+
+msgid "SEARCH"
+msgstr "Търсене"
+
+msgid "start it by typing one or more keywords for title, author or subject"
+msgstr "започнете, като въведете ключови думи за заглавие, автор или предметна рубрика"
+
+msgid "use logical search \"title=library AND author=robert\""
+msgstr ""
+
+msgid "just click on the Search button to see all collections"
+msgstr "просто натиснете „Търсене“, за да видите целия фонд"
+
+msgid "Search Cluster"
+msgstr "Групиране на резултатите"
+
+msgid "Generating search cluster..."
+msgstr "Групиране на резултатите..."
+
+msgid "Visitor Counter"
+msgstr "Брояч на посетители"
+
+msgid "Please insert your library member ID otherwise your full name instead"
+msgstr "Въведете читателския си номер или пълното си име"
+
+msgid "Member ID / Visitor Name"
+msgstr "Читателски № / име на посетител"
+
+msgid "Cite"
+msgstr "Цитирай"
+
+msgid "Collections"
+msgstr "Фонд"
+
+msgid "No Result"
+msgstr "Няма резултати"
+
+msgid "Please try again"
+msgstr "Моля, опитайте отново"
+
+msgid "Search Result"
+msgstr "Резултат от търсенето"
+
+msgid "Information"
+msgstr "Информация"
+
+msgid "Back To Home"
+msgstr "Към началото"
+
+msgid "About SLiMS"
+msgstr "Относно SLiMS"
+
+msgid "Put some keyword(s)..."
+msgstr "Въведете ключови думи..."
+
+msgid "No ID Supplied!"
+msgstr "Не е подаден идентификатор!"
+
+msgid "Bibliography"
+msgstr "Библиография"
+
+msgid "Master File"
+msgstr "Номенклатури"
+
+msgid "Barcode Reader"
+msgstr "Баркод четец"
+
+msgid "Close"
+msgstr "Затвори"
+
+msgid "entries"
+msgstr "записи"
+
+msgid "values"
+msgstr "стойности"
+
+msgid "keys"
+msgstr "ключове"
+
+msgid "Color Theme.<br><small>( Default : #004db6 )</small>"
+msgstr ""
+
+msgid "Always Show Tracks"
+msgstr "Винаги показвай лентите"
+
+msgid "To <strong><!--MEMBER_NAME--> (<!--MEMBER_ID-->)</strong>\nThis is notification e-mail to inform you that you have <strong>OVERDUED</strong> library loan,\nthe overdued collection(s) are:"
+msgstr ""
+
+msgid "Please return all overdued collections immediately to library. If you have\nany complaint regarding to this overdue notification,\nplease contact our circulation desk."
+msgstr ""
+
+msgid "<p>Thank You.</p>\n\n<strong><!--DATE--></strong>\n<br />Library Management"
+msgstr ""
+
+msgid "There are currently <strong>{num_overdue}</strong> library members having overdue. Please check at <b>Circulation</b> module at <b>Overdues</b> section for more detail"
+msgstr ""
+
+msgid "Table"
+msgstr "Таблица"
+
+msgid "might need to be repaired."
+msgstr "може да се нуждае от поправка."
+
+msgid "Total of Collections"
+msgstr "Общо заглавия"
+
+msgid "Total of Items"
+msgstr "Общо екземпляри"
+
+msgid "Lent"
+msgstr "Заети"
+
+msgid "Latest Transactions"
+msgstr "Последни операции"
+
+msgid "Summary"
+msgstr "Обобщение"
+
+msgid "Total"
+msgstr "Общо"
+
+msgid "New"
+msgstr "Ново"
+
+msgid "Your Login session has timed out."
+msgstr "Сесията ви изтече."
+
+msgid "Click here to Login again"
+msgstr "Щракнете тук, за да влезете отново"
+
+msgid "SHORTCUT"
+msgstr "Бърз достъп"
+
+msgid "Theme"
+msgstr "Тема"
+
+msgid "Configure theme Preferences"
+msgstr "Настрой темата"
+
+msgid "Sorry, help content is not available yet."
+msgstr "Няма налично помощно съдържание."
+
+msgid "Senayan Library Management System"
+msgstr "Библиотечна система Senayan (SLiMS)"
+
+msgid "Print Again"
+msgstr "Отпечатай отново"
+
+msgid "ERROR! Label failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "Change print label settings"
+msgstr "Промени настройките за печат на етикети"
+
+msgid "Put columns names in the first row"
+msgstr "Постави имената на колоните в първия ред"
+
+msgid "<strong>{numberOfInsertedRecords}</strong> records inserted successfully to bibliographic database, from record <strong>{recordOffset} in {timeInSeconds} second(s)</strong>"
+msgstr ""
+
+msgid "Number of Records To Import (0 for all records)"
+msgstr "Брой записи за импорт (0 за всички)"
+
+msgid "The first row is the columns names"
+msgstr "Първият ред са имената на колоните"
+
+msgid "{imageFilename} successfully removed!"
+msgstr "Успешно премахнато!"
+
+msgid "Invalid form submission token!"
+msgstr "Невалиден токен на формуляра!"
+
+msgid "Field %s only number for allowed"
+msgstr ""
+
+msgid "Field %s is date format, empty not allowed"
+msgstr ""
+
+msgid "Item Data FAILED to Save. Insert batch item maximum %s copies"
+msgstr ""
+
+msgid "Advanced Filter"
+msgstr "Разширен филтър"
+
+msgid "User Name"
+msgstr "Потребителско име"
+
+msgid "Additional Information"
+msgstr "Допълнителна информация"
+
+msgid "Biblio Log"
+msgstr "Дневник на записите"
+
+msgid "Log"
+msgstr "Дневник"
+
+msgid "Choose pattern"
+msgstr "Изберете шаблон"
+
+msgid "Options"
+msgstr "Опции"
+
+msgid "Add New Pattern"
+msgstr "Нов шаблон"
+
+msgid "Click to enlarge preview"
+msgstr "Щракнете за уголемяване"
+
+msgid "Remove Image"
+msgstr "ПРЕМАХНИ ИЗОБРАЖЕНИЕТО"
+
+msgid "Choose file"
+msgstr "Изберете файл"
+
+msgid "Or download from url"
+msgstr "Или изтеглете от URL"
+
+msgid "Download"
+msgstr "Изтегли"
+
+msgid "Trying search in DuckduckGo"
+msgstr "Търсене в DuckDuckGo..."
+
+msgid "Current url is not valid or your internet is down."
+msgstr "URL адресът е невалиден или няма интернет."
+
+msgid "ERROR! Item barcodes failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "File type not allowed or the size is more than"
+msgstr "Непозволен тип или размерът надвишава"
+
+msgid "%s insert bibliographic data from MARC SRU service (server: %s) with title (%s) and biblio_id (%s)"
+msgstr ""
+
+msgid "Found {hits} records from Marc SRU Server."
+msgstr ""
+
+msgid "Save Marc Records to Database"
+msgstr "Запази MARC записите в базата"
+
+msgid "MARC Search/Retrieve via URL (SRU)"
+msgstr "MARC търсене/извличане чрез URL (SRU)"
+
+msgid "SRU Server: "
+msgstr "SRU сървър"
+
+msgid "%s download file ( %s ) from  ( %s )"
+msgstr ""
+
+msgid "%s insert bibliographic data from P2P service (server : %s) with title (%s) and biblio_id (%s)"
+msgstr ""
+
+msgid "Fields"
+msgstr "Полета"
+
+msgid "ISBN"
+msgstr "ISBN"
+
+msgid "Found %s records from <strong>%s</strong> Server"
+msgstr ""
+
+msgid "Save P2P Records to Database"
+msgstr "Запази P2P записите в базата"
+
+msgid "Digital Files"
+msgstr "Цифрови файлове"
+
+msgid "Detail"
+msgstr "Детайли"
+
+msgid "No data selected!"
+msgstr "Няма избрани данни!"
+
+msgid "Work for embedded link or video attachment"
+msgstr "Работи за вграден линк или видео"
+
+msgid "Link"
+msgstr "Връзка"
+
+msgid "Popup"
+msgstr "Изскачащ прозорец"
+
+msgid "Embed"
+msgstr "Вграждане"
+
+msgid "Placement"
+msgstr "Разположение"
+
+msgid "Please, fill length serial number more than 2"
+msgstr "Дължината на серийния номер трябва да е повече от 2"
+
+msgid "(0 if you prefer without title)"
+msgstr ""
+
+msgid "Change print %s settings"
+msgstr ""
+
+msgid "ERROR! Catalog card failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "Change print catalog settings"
+msgstr "Промени настройките за печат на каталог"
+
+msgid "Change Print Catalog settings"
+msgstr "Промени настройките за печат на каталог"
+
+msgid "URL not valid!"
+msgstr "Невалиден URL!"
+
+msgid "BIBLIOGRAPHIC"
+msgstr "Библиография"
+
+msgid "ITEMS"
+msgstr "Екземпляри"
+
+msgid "COPY CATALOGUING"
+msgstr "Копиращо каталогизиране"
+
+msgid "MARC SRU"
+msgstr ""
+
+msgid "Grab Bibliographic Data from Other MARC Services"
+msgstr "Изтегли записи от други MARC услуги"
+
+msgid "TOOLS"
+msgstr "Инструменти"
+
+msgid "Biblio Data Export"
+msgstr "Експорт на библиографски данни"
+
+msgid "Biblio Data Import"
+msgstr "Импорт на библиографски данни"
+
+msgid "Biblio Item Export"
+msgstr "Експорт на екземпляри"
+
+msgid "Biblio Item Import"
+msgstr "Импорт на екземпляри"
+
+msgid "%s insert bibliographic data from Z3950 service (server : %s) with title (%s) and biblio_id (%s)"
+msgstr ""
+
+msgid "Item {itemCode} successfully returned on&nbsp;{returnDate}"
+msgstr ""
+
+msgid "Overdue fines for item {item_code}"
+msgstr ""
+
+msgid "Fines data succesfully deleted!"
+msgstr "Успешно изтрито!"
+
+msgid "Fines data FAILED to delete!"
+msgstr "Неуспешно изтриване!"
+
+msgid "Total of unpaid fines"
+msgstr "Общо неплатени глоби"
+
+msgid "Open Barcode Reader - Experimental (F8)"
+msgstr "Отвори баркод четеца – експериментално (F8)"
+
+msgid "Remove this item"
+msgstr "Премахни този екземпляр"
+
+msgid "Total of temporary fines"
+msgstr "Общо временни глоби"
+
+msgid "Sorry. There is active loan transaction(s) using this loan rules."
+msgstr "Има активни заемания, използващи тези правила."
+
+msgid "Remove Reservation"
+msgstr "Премахни резервацията"
+
+msgid "CIRCULATION"
+msgstr "Заемна дейност"
+
+msgid "Scope note"
+msgstr "Обяснителна бележка"
+
+msgid "Item Code Pattern"
+msgstr "Шаблон за код на екземпляр"
+
+msgid "Pattern List"
+msgstr "Списък на шаблоните"
+
+msgid "Label Name OR Label Description must be filled!"
+msgstr "Трябва да се попълни име или описание на етикета!"
+
+msgid "Label image file successfully uploaded"
+msgstr "Изображението на етикета е качено успешно"
+
+msgid "FAILED to upload label image! Please see System Log for more detailed information"
+msgstr "Неуспешно качване на изображението на етикета! Вижте системния дневник за подробности"
+
+msgid "Copy Cataloging Server Configuration"
+msgstr "Конфигурация на сървъри за копиращо каталогизиране"
+
+msgid "Server Type"
+msgstr "Тип сървър"
+
+msgid "SERVER"
+msgstr "Сървър"
+
+msgid "Failed to save data!"
+msgstr "Неуспешно запазване на данните!"
+
+msgid "Scope"
+msgstr "Обхват"
+
+msgid "Delete this scope"
+msgstr "Изтрий този обхват"
+
+msgid "AUTHORITY FILES"
+msgstr "Нормализирани записи"
+
+msgid "LOOKUP FILES"
+msgstr "Справочни файлове"
+
+msgid "Cataloging Servers"
+msgstr "Сървъри за каталогизиране"
+
+msgid "List of available Copy Cataloging Servers"
+msgstr "Списък на наличните сървъри за копиращо каталогизиране"
+
+msgid "Manage item code pattern"
+msgstr "Управление на шаблоните за кодове"
+
+msgid "The first row is columns names"
+msgstr "Първият ред са имената на колоните"
+
+msgid "Member ID, Name and Birthday cannot be empty"
+msgstr "Полето не може да е празно"
+
+msgid "days"
+msgstr "Дни"
+
+msgid "Overdue Notice for Member {member_name} ({member_email})"
+msgstr ""
+
+msgid "ERROR! Cards failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "Sorry. There is active loan transaction(s) using this membership type."
+msgstr "Има активни заемания, използващи този тип членство."
+
+msgid "Membership Period (In Days)"
+msgstr "Срок на членство (в дни)"
+
+msgid "Overdue Grace Period"
+msgstr "Гратисен период за просрочие"
+
+msgid "MEMBERSHIP"
+msgstr "Читатели"
+
+msgid "Member Data Export"
+msgstr "Експорт на читатели"
+
+msgid "Member Data Import"
+msgstr "Импорт на читатели"
+
+msgid "Member Fines List"
+msgstr "Списък на глобите по читатели"
+
+msgid "Procurement Report"
+msgstr "Справка за набавянето"
+
+msgid "Download Counter"
+msgstr "Брояч на изтеглянията"
+
+msgid "Downloaded Attachment Report"
+msgstr "Справка за изтеглените притурки"
+
+msgid "Attachment Report"
+msgstr "Справка за притурките"
+
+msgid "Access Date after"
+msgstr "Дата на достъп след"
+
+msgid "Access Date before"
+msgstr "Дата на достъп преди"
+
+msgid "File title"
+msgstr "Заглавие на файла"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Attachment Report (Detail)"
+msgstr "Справка за притурките (подробна)"
+
+msgid "UnKnown"
+msgstr "Неизвестно"
+
+msgid "Fines count report for"
+msgstr "Справка за броя глоби за"
+
+msgid "Loan Recap By Class"
+msgstr "Обобщение на заеманията по клас"
+
+msgid "for year"
+msgstr "за година"
+
+msgid "Fines List by Member"
+msgstr "Списък на глобите по читатели"
+
+msgid "Send Notification e-mail"
+msgstr "Изпрати имейл за известие"
+
+msgid "Book Price"
+msgstr "Цена на книгата"
+
+msgid "Procurement List in Year : "
+msgstr ""
+
+msgid "Input Date"
+msgstr "Дата на въвеждане"
+
+msgid "Self Location"
+msgstr "Местоположение (рафт)"
+
+msgid "Displays a collection procurement report"
+msgstr "Показва справка за набавянето на фонда"
+
+msgid "t"
+msgstr ""
+
+msgid "i"
+msgstr ""
+
+msgid "Receiving Year"
+msgstr "Година на получаване"
+
+msgid "Procurement List"
+msgstr "Списък на набавянето"
+
+msgid "Procurement Bar Chart"
+msgstr "Стълбовидна диаграма на набавянето"
+
+msgid "Procurement Report Year : "
+msgstr ""
+
+msgid "Visitors Report"
+msgstr "Справка за посетителите"
+
+msgid "Visitor Count Report for year <strong>{selectedYear}</strong>"
+msgstr ""
+
+msgid "Visitor Report by Day"
+msgstr "Справка за посетителите по ден"
+
+msgid "Visitor Report for <strong>{selectedMonth}, {selectedYear}</strong>"
+msgstr ""
+
+msgid " (including titles that still don't have items yet)"
+msgstr ""
+
+msgid " (only titles that have items)"
+msgstr ""
+
+msgid "ERROR! Collection Statistic Report failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "ERROR! Loan Report failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "There are no active members in this period"
+msgstr "Няма активни читатели за този период"
+
+msgid "ERROR! Membership Report failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "REPORTING FORM"
+msgstr "ФОРМА ЗА СПРАВКИ"
+
+msgid "OTHER REPORTS"
+msgstr "Други справки"
+
+msgid "Trash"
+msgstr "Кошче"
+
+msgid "SERIAL CONTROL"
+msgstr "Периодика"
+
+msgid "You must be an admin to run the completion process!"
+msgstr "Трябва да сте администратор, за да завършите процеса!"
+
+msgid "LOST Item list"
+msgstr "Списък на липсващите екземпляри"
+
+msgid "Stock Take Error Logs"
+msgstr "Дневник на грешките при инвентаризация"
+
+msgid "ERROR! Stock take report failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "View"
+msgstr "Преглед"
+
+msgid "You must be an admin to run initialization process!"
+msgstr "Трябва да сте администратор, за да стартирате процеса!"
+
+msgid "Before stock taking, it is recommended to backup your database first."
+msgstr "Преди инвентаризация е препоръчително да направите резервно копие на базата."
+
+msgid "Looks like you have not backed up before."
+msgstr "Изглежда, че още не сте правили резервно копие."
+
+msgid "Goto System Module > Database Backup"
+msgstr "Отидете в Система > Резервно копие на базата"
+
+msgid "Backup Now"
+msgstr "Направи резервно копие сега"
+
+msgid "Skip backup at your own risk!"
+msgstr "Пропускате резервното копие на своя отговорност!"
+
+msgid "Skip"
+msgstr "Пропусни"
+
+msgid "Stock take report detail for %s"
+msgstr ""
+
+msgid "ERROR! Current Stock Take Report failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "Sorry, data not available!"
+msgstr "Няма налични данни!"
+
+msgid "Time Checked"
+msgstr "Време на проверка"
+
+msgid "Please enter a valid item code/barcode. You enter a BLANK code!"
+msgstr "Въведете валиден код/баркод. Въведохте празен код!"
+
+msgid "Item %s (%s) is currently ON LOAN"
+msgstr ""
+
+msgid "Item %s is currently ON LOAN"
+msgstr ""
+
+msgid "Item %s is already SCANNED!"
+msgstr ""
+
+msgid "Item Code (%s) have rule to skipped by stock take"
+msgstr ""
+
+msgid "Item Code %s have rule to skipped by stock take"
+msgstr ""
+
+msgid "Item Code (%s) doesnt exists in stock take data. Invalid Item Code OR Maybe out of Stock Take range"
+msgstr ""
+
+msgid "Item Code %s doesnt exists in stock take data.\\nInvalid Item Code OR Maybe out of Stock Take range"
+msgstr ""
+
+msgid "STOCK TAKE"
+msgstr "Инвентаризация"
+
+msgid "Backup Executor"
+msgstr "Изпълнил копието"
+
+msgid "Backup Time"
+msgstr "Време на копието"
+
+msgid "Backup File Location"
+msgstr "Местоположение на файла"
+
+msgid "File Size"
+msgstr "Размер на файла"
+
+msgid "File not found"
+msgstr "Файлът не е намерен"
+
+msgid "Backup SUCCESSFUL, backup files saved to %s !"
+msgstr ""
+
+msgid "File is compressed using tar gz archive format"
+msgstr "Файлът е компресиран във формат tar.gz"
+
+msgid "Backup FAILED!,\\n%s"
+msgstr ""
+
+msgid "Backup FAILED! The Backup directory is not exists or not writeable"
+msgstr "Резервното копие е неуспешно! Папката не съществува или не е записваема"
+
+msgid "Contact System Administrator for the right path of backup directory"
+msgstr "Свържете се със системния администратор за правилния път на папката"
+
+msgid "ERROR! Barcodes failed to generate, possibly because {directory} directory is not writable"
+msgstr ""
+
+msgid "PHP Mongodb extension library is not installed yet!"
+msgstr "PHP разширението за MongoDB не е инсталирано!"
+
+msgid "Bibliographic indexing will speed up on cataloging search"
+msgstr "Индексирането ускорява търсенето в каталога"
+
+msgid "Total data on biblio: "
+msgstr "Общо записи: "
+
+msgid " records."
+msgstr " записа."
+
+msgid "Total indexed data: "
+msgstr "Общо индексирани записи: "
+
+msgid "Unidexed data: "
+msgstr "Неиндексирани записи: "
+
+msgid "Biblio from "
+msgstr "Записи от "
+
+msgid "Bibliographic Index (ElasticSearch)"
+msgstr "Библиографски индекс (ElasticSearch)"
+
+msgid "Custom Field"
+msgstr "Персонализирано поле"
+
+msgid "Field or Label can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Data List can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "New Custom Field Successfully Updated"
+msgstr "Персонализираното поле е обновено успешно"
+
+msgid "Custom Field Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "New Custom Field Successfully Saved"
+msgstr "Новото персонализирано поле е запазено успешно"
+
+msgid "Custom Field Data Data FAILED to Save. Please Contact System Administrator"
+msgstr "Неуспешно запазване. Свържете се със системния администратор."
+
+msgid "Custom Field Editor"
+msgstr "Редактор на персонализирани полета"
+
+msgid "Field List"
+msgstr "Списък на полетата"
+
+msgid "Add New Field"
+msgstr "Ново поле"
+
+msgid "Primary Menu"
+msgstr "Основно меню"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Text Area"
+msgstr "Текстово поле"
+
+msgid "Numeric"
+msgstr "Число"
+
+msgid "Drop Down"
+msgstr "Падащ списък"
+
+msgid "Check List"
+msgstr "Списък с отметки"
+
+msgid "Choice"
+msgstr "Избор"
+
+msgid "Input Type"
+msgstr "Тип на полето"
+
+msgid "Is Public"
+msgstr "Публично"
+
+msgid "Custom Style"
+msgstr "Персонализиран стил"
+
+msgid "Add Item"
+msgstr "Добави екземпляр"
+
+msgid "Data List"
+msgstr "Списък с данни"
+
+msgid "You are going to edit %s custom field"
+msgstr ""
+
+msgid "<strong>Warning</strong> : Update data list or primary table will be delete this table content"
+msgstr ""
+
+msgid "SLiMS Version"
+msgstr "Версия на SLiMS"
+
+msgid "Holiday description can't be empty!"
+msgstr "Полето не може да е празно"
+
+msgid "Holiday Date Start must have the format YYYY-MM-DD!"
+msgstr "Началната дата трябва да е във формат ГГГГ-ММ-ДД!"
+
+msgid "Holiday Date End must have the format YYYY-MM-DD if it is not empty!"
+msgstr "Крайната дата трябва да е във формат ГГГГ-ММ-ДД, ако е попълнена!"
+
+msgid "Logo Image removed. Refreshing page"
+msgstr "Логото е премахнато. Презареждане..."
+
+msgid "Logo Image"
+msgstr "Лого"
+
+msgid "Visitor Counter by IP"
+msgstr "Брояч на посетители по IP"
+
+msgid "Allowed Counter IP"
+msgstr "Позволени IP за броене"
+
+msgid "Visitor Limitation by Time"
+msgstr "Ограничение на посетителите по време"
+
+msgid "Email"
+msgstr "Имейл"
+
+msgid "Database"
+msgstr "База данни"
+
+msgid "Reserve methode"
+msgstr "Метод на резервиране"
+
+msgid "Reserve for item on loan only"
+msgstr "Резервиране само на заети екземпляри"
+
+msgid "Error saving custom data!"
+msgstr "Грешка при запазване на персонализираните данни!"
+
+msgid "Custom data saved!"
+msgstr "Персонализираните данни са запазени!"
+
+msgid "This theme not customizable"
+msgstr "Тази тема не може да се персонализира"
+
+msgid "Membercard Configuration"
+msgstr "Конфигурация на читателската карта"
+
+msgid "Customize theme preferences"
+msgstr "Персонализирай темата"
+
+msgid "Activate"
+msgstr "Активирай"
+
+msgid "Customize"
+msgstr "Персонализирай"
+
+msgid "Modules path doesn't exists! Please check again in module base directory"
+msgstr "Пътят на модулите не съществува! Проверете отново в основната папка на модулите"
+
+msgid "Enable or disable submenu"
+msgstr "Включи или изключи подменю"
+
+msgid "Plugin not found"
+msgstr "Приставката не е намерена"
+
+msgid "Plugin %s enabled"
+msgstr ""
+
+msgid "Plugin %s disabled"
+msgstr ""
+
+msgid "Plugin List"
+msgstr "Списък на приставките"
+
+msgid "Enabled"
+msgstr "Включено"
+
+msgid "Disabled"
+msgstr "Изключено"
+
+msgid "Plugin has been disabled.\\nRun Migration too? This may will drop this plugin's table and the data can not be restored!"
+msgstr ""
+
+msgid "CONFIGURATION"
+msgstr "КОНФИГУРАЦИЯ"
+
+msgid "Plugins"
+msgstr "Приставки"
+
+msgid "Configure custom field"
+msgstr "Настрой персонализираните полета"
+
+msgid "Custom data saved! Reload the page to see changes."
+msgstr "Персонализираните данни са запазени! Презаредете страницата, за да видите промените."
+
+msgid "This theme not customizable. "
+msgstr ""
+
+msgid "Theme Configuration"
+msgstr "Конфигурация на темата"
+
+msgid "Admin Theme Configuration"
+msgstr "Конфигурация на служебната тема"
+
+msgid "Library Rules"
+msgstr "Правила на библиотеката"
+
+msgid "Front Header1 Text"
+msgstr "Текст на преден горен ред 1"
+
+msgid "Front Header2 Text"
+msgstr "Текст на преден горен ред 2"
+
+msgid "Back Header1 Text"
+msgstr "Текст на заден горен ред 1"
+
+msgid "Back Header2 Text"
+msgstr "Текст на заден горен ред 2"
+
+msgid "Box Width"
+msgstr "Ширина на кутията"
+
+msgid "Box Height"
+msgstr "Височина на кутията"
+
+msgid "Factor"
+msgstr "Коефициент"
+
+msgid "Barcode Scale"
+msgstr "Мащаб на баркода"
+
+msgid "Font Color"
+msgstr "Цвят на шрифта"
+
+msgid "Card Front Color"
+msgstr "Цвят на лицевата страна"
+
+msgid "Card Back Color"
+msgstr "Цвят на задната страна"
+
+msgid "City"
+msgstr "Град"
+
+msgid "Officials"
+msgstr "Длъжностни лица"
+
+msgid "Officials ID"
+msgstr "Идентификатор на длъжностното лице"
+
+msgid "Back Side Image"
+msgstr "Изображение на задната страна"
+
+msgid "Front Header1 Font Size"
+msgstr "Размер на шрифта (преден ред 1)"
+
+msgid "Front Header2 Font Size"
+msgstr "Размер на шрифта (преден ред 2)"
+
+msgid "Back Header1 Font Size"
+msgstr "Размер на шрифта (заден ред 1)"
+
+msgid "Back Header2 Font Size"
+msgstr "Размер на шрифта (заден ред 2)"
+
+msgid "Header Color"
+msgstr "Цвят на заглавието"
+
+msgid "Rules Font Size"
+msgstr "Размер на шрифта на правилата"
+
+msgid "Address Font Size"
+msgstr "Размер на шрифта на адреса"
+
+msgid "Job Title"
+msgstr "Длъжност"
+
+msgid "Front Side Image"
+msgstr "Изображение на лицевата страна"
+
+msgid "Stamp file"
+msgstr "Файл с печат"
+
+msgid "Signature_File"
+msgstr "Файл с подпис"
+
+msgid "Logo"
+msgstr "Лого"
+
+msgid "If you need help resetting your password, we can help by sending you a link to reset it."
+msgstr "Ако имате нужда от помощ за смяна на паролата, можем да ви изпратим връзка за нулиране."
+
+msgid "Captcha incorrect."
+msgstr "Грешен код от картинката."
+
+msgid "Failed to query user data from database with error: "
+msgstr "Неуспешно извличане на потребителски данни с грешка: "
+
+msgid "Cannot send the email. Please try again."
+msgstr "Имейлът не може да се изпрати. Опитайте отново."
+
+msgid "<strong>Congratulations! </strong>An instruction has been sent to your email. Please check your inbox."
+msgstr ""
+
+msgid "Current email not found. Please try again."
+msgstr "Имейлът не е намерен. Опитайте отново."
+
+msgid "Your email address"
+msgstr "Вашият имейл адрес"
+
+msgid "Reset my password"
+msgstr "Нулирай паролата ми"
+
+msgid "Forgot My Password"
+msgstr "Забравена парола"
+
+msgid "No librarian data yet"
+msgstr "Все още няма данни за библиотекар"
+
+msgid "Hi {username}, please update your password!"
+msgstr ""
+
+msgid "Not valid token!"
+msgstr "Невалиден токен!"
+
+msgid "Go Home"
+msgstr "Към началото"
+
+msgid "Remember me"
+msgstr "Запомни ме"
+
+msgid "Forgot my password"
+msgstr "Забравена парола"
+
+msgid "Login success for member %s from address %s"
+msgstr ""
+
+msgid "Login FAILED for member %s from address %s"
+msgstr ""
+
+msgid "Title has been added in the basket."
+msgstr "Заглавието е добавено в кошницата."
+
+msgid "Download All Current Loan"
+msgstr "Изтегли всички текущи заемания"
+
+msgid "Download All Loan History"
+msgstr "Изтегли цялата история на заемания"
+
+msgid "%s already reseved"
+msgstr ""
+
+msgid "Item for %s is available for loan"
+msgstr ""
+
+msgid "%s reserved successfully"
+msgstr ""
+
+msgid "Reserve %s failed. "
+msgstr ""
+
+msgid "No item available to be reserved for %s"
+msgstr ""
+
+msgid "No Titles to reserve"
+msgstr "Няма заглавия за резервиране"
+
+msgid "Reservation not allowed"
+msgstr "Резервирането не е позволено"
+
+msgid "Reserve limit reached"
+msgstr "Достигнат е лимитът на резервации"
+
+msgid "Maximum reserve limit is %d collection"
+msgstr "Максималният лимит за резервации е %d"
+
+msgid "Current Loan"
+msgstr "Текущи заемания"
+
+msgid "Title Basket"
+msgstr "Кошница"
+
+msgid "My Account"
+msgstr "Моят профил"
+
+msgid "My Current Loan"
+msgstr "Моите текущи заемания"
+
+msgid "My Title Basket"
+msgstr "Моята кошница"
+
+msgid "My Loan History"
+msgstr "Моята история на заемания"
+
+msgid "Password has been updated successfully."
+msgstr "Паролата е обновена успешно."
+
+msgid "Salt key has been expired."
+msgstr "Ключът е изтекъл."
+
+msgid "Current email not found or salt key has been expired"
+msgstr "Имейлът не е намерен или ключът е изтекъл"
+
+msgid "Create new password"
+msgstr "Създай нова парола"
+
+msgid "Welcome to our library."
+msgstr "Добре дошли в нашата библиотека."
+
+msgid "Please fill your member ID or name."
+msgstr "Моля, въведете читателския си номер или име."
+
+msgid "Error while inserting counter data to database."
+msgstr "Грешка при запис на данните за брояча."
+
+msgid "Russian"
+msgstr "Руски"
+
+msgid "Turkish"
+msgstr "Турски"
+
+msgid "Urdu"
+msgstr "Урду"
+
+msgid "Labels & Barcode Printing"
+msgstr "Печат на етикети и баркодове"
+
+msgid "Read Counter"
+msgstr "Брояч на четенията"
+
+msgid "Enter item code / barcode value into input form below!"
+msgstr "Въведете код/баркод в полето по-долу!"
+
+msgid "Barcode"
+msgstr "Баркод"
+
+msgid "Other Information"
+msgstr "Друга информация"
+
+msgid "Add to basket"
+msgstr "Добави в кошницата"
+
+msgid "View Detail"
+msgstr "Виж детайли"
+
+msgid "You must be logged in to post a comment"
+msgstr "Трябва да сте влезли, за да коментирате"
+
+msgid "Select the topic you are interested in"
+msgstr "Изберете темата, която ви интересува"
+
+msgid "Literature"
+msgstr "Литература"
+
+msgid "Social Sciences"
+msgstr "Обществени науки"
+
+msgid "Applied Sciences"
+msgstr "Приложни науки"
+
+msgid "Art & Recreation"
+msgstr "Изкуство и развлечения"
+
+msgid "see more.."
+msgstr "виж още.."
+
+msgid "Popular among our collections"
+msgstr "Популярни сред нашите колекции"
+
+msgid "Our library's line of collection that have been favoured by our users were shown here. Look for them. Borrow them. Hope you also like them"
+msgstr "Тук са заглавията, предпочитани от нашите читатели. Разгледайте ги. Заемете ги. Дано и на вас да харесат."
+
+msgid "New collections + updated"
+msgstr "Нови и обновени заглавия"
+
+msgid "These are new collections list. Hope you like them. Maybe not all of them are new. But in term of time, we make sure that these are fresh from our processing oven"
+msgstr "Това са новите заглавия. Дано ви харесат. Може не всички да са съвсем нови, но се стараем винаги да са свежи."
+
+msgid "Top reader of the year"
+msgstr "Най-активен читател за годината"
+
+msgid "Our best users, readers, so far. Continue to read if you want your name being mentioned here"
+msgstr "Нашите най-активни читатели досега. Продължавайте да четете, за да видите името си тук"
+
+msgid "Enter title"
+msgstr "Въведете заглавие"
+
+msgid "Enter author(s) name"
+msgstr "Въведете име на автор(и)"
+
+msgid "Enter subject"
+msgstr "Въведете предметна рубрика"
+
+msgid "Enter ISBN/ISSN"
+msgstr "Въведете ISBN/ISSN"
+
+msgid "Find Collection"
+msgstr "Намери в каталога"
+
+msgid "Computer Science, Information & General Works"
+msgstr "Компютърни науки, информация и общи знания"
+
+msgid "Philosophy & Psychology"
+msgstr "Философия и психология"
+
+msgid "Religion"
+msgstr "Религия"
+
+msgid "Pure Science"
+msgstr "Точни науки"
+
+msgid "History & Geography"
+msgstr "История и география"
+
+msgid "Profile"
+msgstr "Профил"
+
+msgid "Suggestion"
+msgstr "Предложение"
+
+msgid "Enter keyword to search collection..."
+msgstr "Въведете ключова дума за търсене..."
+
+msgid "Search by :"
+msgstr "Търсене по:"
+
+msgid "OR TRY"
+msgstr "ИЛИ ОПИТАЙТЕ"
+
+msgid "Last search:"
+msgstr "Последно търсене:"
+
+msgid "Services"
+msgstr "Услуги"
+
+msgid "About Us"
+msgstr "За нас"
+
+msgid "Enter keywords"
+msgstr "Въведете ключови думи"
+
+msgid "Keep SLiMS Alive"
+msgstr "Подкрепете SLiMS"
+
+msgid "Want to Contribute?"
+msgstr "Искате ли да допринесете?"
+
+msgid "Powered by "
+msgstr "Задвижвано от "
+
+msgid "Chat"
+msgstr "Чат"
+
+msgid "Enable this theme for mobile?"
+msgstr "Да се използва ли тази тема за мобилни устройства?"
+
+msgid "Yes, please!"
+msgstr "Да, моля!"
+
+msgid "No, I want use lighweight theme"
+msgstr "Не, искам олекотената тема"
+
+msgid "Library Sub Name"
+msgstr "Подзаглавие на библиотеката"
+
+msgid "Slide Transition"
+msgstr "Преход между слайдовете"
+
+msgid "Fade"
+msgstr "Избледняване"
+
+msgid "Slide Left"
+msgstr "Плъзгане наляво"
+
+msgid "Slide Right"
+msgstr "Плъзгане надясно"
+
+msgid "Slide Up"
+msgstr "Плъзгане нагоре"
+
+msgid "Slide Down"
+msgstr "Плъзгане надолу"
+
+msgid "Zoom In"
+msgstr "Увеличи"
+
+msgid "Burn"
+msgstr "Запиши на диск"
+
+msgid "Flash"
+msgstr "Проблясък"
+
+msgid "Slide Animation"
+msgstr "Анимация на слайдшоуто"
+
+msgid "Delay"
+msgstr "Забавяне"
+
+msgid "Popular Collection"
+msgstr "Популярни заглавия"
+
+msgid "Popular Items"
+msgstr "Популярни екземпляри"
+
+msgid "New Collection"
+msgstr "Нови постъпления"
+
+msgid "New Items"
+msgstr "Нови екземпляри"
+
+msgid "Top Reader"
+msgstr "Най-активен читател"
+
+msgid "Map"
+msgstr "Карта"
+
+msgid "Map URL"
+msgstr "Адрес на картата"
+
+msgid "Map Description"
+msgstr "Описание на картата"
+
+msgid "Facebook URL"
+msgstr "Facebook адрес"
+
+msgid "Twitter URL"
+msgstr "Twitter адрес"
+
+msgid "Youtube URL"
+msgstr "YouTube адрес"
+
+msgid "Instagram URL"
+msgstr "Instagram адрес"
+
+msgid "Footer About Us"
+msgstr "„За нас“ (долен колонтитул)"
+
+msgid "Visitor log voice"
+msgstr "Гласово известие за посетители"
+
+msgid "Welcome to "
+msgstr "Добре дошли в "
+
+msgid "Enter your member ID"
+msgstr "Въведете читателския си номер"
+
+msgid "Enter your institution"
+msgstr "Въведете вашата институция"
+
+msgid "Enough fill your member ID if you are member of "
+msgstr "Ако сте член, е достатъчно да въведете читателския си номер за "
+
+msgid "Check In"
+msgstr "Връщане"
+
+msgid "Item code pattern manager."
+msgstr ""
+
+msgid "{recordCount} records inserted to database."
+msgstr ""
+
+msgid "custom data saved!"
+msgstr "Персонализираните данни са запазени!"
+
+msgid "Custom Field 1"
+msgstr "Персонализирано поле 1"
+
+msgid "Custom Field 2"
+msgstr "Персонализирано поле 2"
+
+msgid "Welcome To The Library Automation System, you are currently logged in as"
+msgstr "Добре дошли в библиотечната система; влезли сте като"
+
+msgid "Panel"
+msgstr "Панел"
+
+msgid "STOCK TAKE PROCCESS - Insert Item Code/Barcode with keyboard or barcode scanner"
+msgstr "ИНВЕНТАРИЗАЦИЯ – въведете код/баркод с клавиатура или баркод четец"
+
+msgid "STOCK TAKE UPLOAD - Upload a plain text file (.txt) containing list of Item Code to stock take. Each Item Code separated by line."
+msgstr "КАЧВАНЕ ЗА ИНВЕНТАРИЗАЦИЯ – качете текстов файл (.txt) със списък на кодовете, по един на ред."
+
+msgid " File"
+msgstr "Файл"
+
+msgid "CURRENT STOCK TAKE REPORT"
+msgstr "Справка за текущата инвентаризация"
+
+msgid "Circulation Tasks"
+msgstr "Задачи по заемане"
+
+msgid "Type barcodes text to one or more text field below and click"
+msgstr "Въведете баркодове в едно или повече полета по-долу и щракнете"
+
+msgid "System Users"
+msgstr "Системни потребители"
+
+msgid "Set holiday"
+msgstr "Задай почивен ден"
+
+msgid "ITEM EXPORT TOOL"
+msgstr "Инструмент за експорт на екземпляри"
+
+msgid "ITEM IMPORT TOOL"
+msgstr "Инструмент за импорт на екземпляри"
+
+msgid "IMPORT TOOL"
+msgstr "Инструмент за импорт"
+
+msgid "EXPORT TOOL"
+msgstr "Инструмент за експорт"
+
+msgid "No Attachment"
+msgstr "Няма притурка"
+
+msgid "Found  <strong>{biblio_list->num_rows}</strong> from your keywords"
+msgstr ""
+
+msgid "There is no item/copy for this title yet"
+msgstr "Все още няма екземпляр/копие за това заглавие"
+
+msgid "NO DATA FOUND"
+msgstr "НЯМА НАМЕРЕНИ ДАННИ"
+
+msgid "Help content will show according to available menu."
+msgstr "Помощното съдържание се показва според наличното меню."
+
+msgid "Click Here To Repaire The Tables"
+msgstr "Щракнете тук, за да поправите таблиците"
+
+msgid " records inserted successfully to bibliographic database, from record <strong>{recordOffset} in {timeInSeconds} second(s)"
+msgstr ""
+
+msgid "Pattern"
+msgstr "Шаблон"
+
+msgid "From"
+msgstr "От"
+
+msgid "To"
+msgstr "До"
+
+msgid "NONE"
+msgstr "Няма"
+
+msgid "Content Type List"
+msgstr "Списък на типовете съдържание"
+
+msgid "Media Type List"
+msgstr "Списък на типовете носители"
+
+msgid "Carrier Type List"
+msgstr "Списък на типовете на носителя"
+
+msgid "Add New Content Type"
+msgstr "Нов тип съдържание"
+
+msgid "Add New Media Type"
+msgstr "Нов тип носител"
+
+msgid "Add New Carrier Type"
+msgstr "Нов тип на носителя"
+
+msgid "Peminjaman"
+msgstr "Заемане"
+
+msgid "Perpanjang"
+msgstr "Продължаване"
+
+msgid "The PATH for mysqldump program is NOT RIGHT! Please check your configuration file again for mysqldump path vars"
+msgstr "Пътят до програмата mysqldump е грешен! Проверете конфигурацията за пътя на mysqldump"
+
+msgid "Backup SUCCESSFUL, backup files saved to "
+msgstr "Резервното копие е успешно; файловете са записани в "
+
+msgid "Backup FAILED! Wrong user or password to connect to database server!"
+msgstr "Резервното копие е неуспешно! Грешен потребител или парола за връзка с базата!"
+
+msgid "Bibliographic Index will speed up catalog search"
+msgstr "Индексът ускорява търсенето в каталога"
+
+msgid "Holiday Setings"
+msgstr "Настройка на почивните дни"
+
+msgid "Spanish"
+msgstr "Испански"
+
+msgid "Compiler"
+msgstr "Съставител"
+
+msgid "Coordinator"
+msgstr "Координатор"
+
+msgid "Epilogue"
+msgstr "Епилог"
+
+msgid "Photographer"
+msgstr "Фотограф"
+
+msgid "Prologue"
+msgstr "Пролог"
+
+msgid "custom data saved"
+msgstr "Персонализираните данни са запазени"
+
+msgid "Pattern Saved!"
+msgstr "Шаблонът е запазен!"
+
+msgid "Pattern Saved Failed!"
+msgstr "Неуспешно запазване на шаблона!"
+
+msgid "Simple Search"
+msgstr "Просто търсене"
+
+msgid "Sign in to your account at"
+msgstr "Влезте в профила си на"
+
+msgid "To <strong><!--MEMBER_NAME--> (<!--MEMBER_ID-->)</strong>&nbsp;\n         This is notification e-mail to inform you that you have <strong>DUE DATE</strong> library loan,\n        the overdued collection(s) are:"
+msgstr ""
+
+msgid "Please return all collections immediately to library at or before due date. If you have\n        any complaint regarding to this due date notification,\n        please contact our circulation desk."
+msgstr ""
+
+msgid "<p>Thank You.</p>\n\n        <strong><!--DATE--></strong>\n        <br />Library Management"
+msgstr ""
+
+msgid "To <strong><!--MEMBER_NAME--> (<!--MEMBER_ID-->)</strong>\n         This is notification e-mail to inform you that you have <strong>OVERDUED</strong> library loan,\n        the overdued collection(s) are:"
+msgstr ""
+
+msgid "Please return all overdued collections immediately to library. If you have\n        any complaint regarding to this overdue notification,\n        please contact our circulation desk."
+msgstr ""
+
+msgid "Database backup process is running, please wait"
+msgstr "Процесът на резервно копие се изпълнява, моля изчакайте"
+
+msgid "It looks like today you haven't backup your database."
+msgstr "Изглежда, че днес още не сте направили резервно копие на базата данни."
+
+msgid "Please wait"
+msgstr "Моля, изчакайте"
+
+msgid "Error"
+msgstr "Грешка"
+
+msgid "Authority Level"
+msgstr "Ниво на достъп"
+
+msgid "Preview Import"
+msgstr "Преглед на импорта"
+
+msgid "Preview your data before import to SLiMS"
+msgstr "Прегледайте данните преди импорт в SLiMS"
+
+msgid "Importing data to SLiMS"
+msgstr "Импортиране на данни в SLiMS"
+
+msgid "Imported data list preview"
+msgstr "Преглед на импортираните данни"
+
+msgid "Make sure all the data that appears matches the column you enter."
+msgstr "Уверете се, че данните съответстват на въведените колони."
+
+msgid "All"
+msgstr "Всички"
+
+msgid "Uknown CSV import section!"
+msgstr "Непознат раздел за CSV импорт!"
+
+msgid "Loading all the data in the preview section may take longer. Would you like to continue the process?"
+msgstr "Зареждането на всички данни в прегледа може да отнеме време. Искате ли да продължите?"
+
+msgid "Import bibliographic records from MARC file. The file can be native MARC record format file (.mrc) or MARCXML XML file (.xml). You need to have PHP PEAR and PEAR's File_MARC package installed in your system. To convert native/legacy MARC file to MARCXML you can use <a class=\"notAJAX\" href=\"http://www.loc.gov/standards/marcxml/marcxml.zip\">MARCXML Toolkit</a>"
+msgstr ""
+
+msgid "Current Marc SRU address is not register in database!"
+msgstr "Текущият MARC SRU адрес не е регистриран в базата!"
+
+msgid "failed %s download file ( %s ) from  ( %s )"
+msgstr ""
+
+msgid "read error detail"
+msgstr "виж подробности за грешката"
+
+msgid "Invalid attacment, make sure your file is not exceeded system max upload"
+msgstr "Невалидна притурка; уверете се, че файлът не надвишава максималния размер"
+
+msgid "File Password"
+msgstr "Парола на файла"
+
+msgid "Authority Level Data FAILED to Updated. Please Contact System Administrator"
+msgstr "Неуспешно обновяване. Свържете се със системния администратор."
+
+msgid "Current z3950 SRU address is not register in database!"
+msgstr "Текущият z3950 SRU адрес не е регистриран в базата!"
+
+msgid "Total amount of fine is"
+msgstr "Общата сума на глобата е"
+
+msgid "View Members That About to Have Overdues"
+msgstr "Виж читателите, които скоро ще имат просрочия"
+
+msgid "Collection type %s still used by %s items"
+msgstr ""
+
+msgid "Success"
+msgstr "Успех"
+
+msgid "Comment Management"
+msgstr "Управление на коментарите"
+
+msgid "3rd party comment management has been activated, all comment will handled by it . This page is not use more."
+msgstr "Активирано е външно управление на коментарите; всички коментари се обработват от него. Тази страница вече не се използва."
+
+msgid "Comment List"
+msgstr "Списък на коментарите"
+
+msgid "Comment"
+msgstr "Коментар"
+
+msgid "Comment By"
+msgstr "Коментар от"
+
+msgid "Comment At"
+msgstr "Коментар на"
+
+msgid "%s still in use %d biblio"
+msgstr ""
+
+msgid "Frequency %s still in use %d biblio(s)"
+msgstr ""
+
+msgid "%s still in use %d biblio "
+msgstr ""
+
+msgid "New Item Status Data Successfully Updated"
+msgstr "Данните са обновени успешно"
+
+msgid "%s still in use %d item "
+msgstr ""
+
+msgid "Label need image uploaded"
+msgstr "Етикетът изисква качено изображение"
+
+msgid "Label %s still in use %d biblio(s)"
+msgstr ""
+
+msgid "Location %s still in use %s item(s)"
+msgstr ""
+
+msgid "URI isn't valid, start witch prefix like e.g: http://, https:// etc."
+msgstr "URI адресът е невалиден; започнете с http://, https:// и т.н."
+
+msgid "%s still in use %d biblio <br/>"
+msgstr ""
+
+msgid "Visitor Room"
+msgstr "Стая за посетители"
+
+msgid "List of members comment about biblio"
+msgstr "Списък на коментарите на читателите"
+
+msgid "Supplier %s still used by %s item(s)"
+msgstr ""
+
+msgid "%s ... still used biblio %s"
+msgstr ""
+
+msgid "Success saved data"
+msgstr "Данните са запазени успешно"
+
+msgid "Room List"
+msgstr "Списък на стаите"
+
+msgid "Add New Room"
+msgstr "Нова стая"
+
+msgid "Room Name"
+msgstr "Име на стаята"
+
+msgid "Room Code"
+msgstr "Код на стаята"
+
+msgid "Unique Code"
+msgstr "Уникален код"
+
+msgid "Created At"
+msgstr "Създадено на"
+
+msgid "Copy this room link"
+msgstr "Копирай връзката към стаята"
+
+msgid "Success copied visitor room link"
+msgstr "Връзката е копирана успешно"
+
+msgid "E-Mail configuration is not ready!"
+msgstr "Конфигурацията на имейла не е готова!"
+
+msgid "Overdue notification E-Mail have been sent to "
+msgstr "Имейл за просрочие е изпратен до "
+
+msgid "Message could not be sent. Mailer Error: "
+msgstr "Съобщението не може да се изпрати. Грешка: "
+
+msgid "Member Type %s still in use %d member(s)"
+msgstr ""
+
+msgid "to"
+msgstr "до"
+
+msgid "Debet"
+msgstr "Дебит"
+
+msgid "Room"
+msgstr "Стая"
+
+msgid "Total Titles without items"
+msgstr "Общо заглавия без екземпляри"
+
+msgid " (only titles that haven't items)"
+msgstr ""
+
+msgid "Stock take report : <title>"
+msgstr ""
+
+msgid "Code verified!"
+msgstr "Кодът е потвърден!"
+
+msgid "Invalid verification code!"
+msgstr "Невалиден код за потвърждение!"
+
+msgid "Two-factor authentication has been disabled."
+msgstr "Двуфакторното удостоверяване е изключено."
+
+msgid "Upss... something wrong!"
+msgstr "Опа... нещо се обърка!"
+
+msgid "Two Factor Authentication enabled."
+msgstr "Двуфакторното удостоверяване е включено."
+
+msgid "Disable It"
+msgstr "Изключи го"
+
+msgid "Scan this QRcode with your authenticator (e.g. Google Authenticator or {link}) <br> and enter verification code below to enable Two Factor Authentication."
+msgstr ""
+
+msgid "Verification code"
+msgstr "Код за потвърждение"
+
+msgid "Verify"
+msgstr "Потвърди"
+
+msgid "Database Backup Configuration"
+msgstr "Конфигурация на резервните копия"
+
+msgid "Backup Configuration"
+msgstr "Конфигурация на резервните копия"
+
+msgid "Verbose process"
+msgstr "Подробен процес"
+
+msgid "Processing"
+msgstr "Обработка"
+
+msgid "Data has been saved"
+msgstr "Данните са запазени"
+
+msgid "Failed to save data"
+msgstr "Неуспешно запазване на данните"
+
+msgid "Are you sure you want to make it automatically on first login?. It will take longer to complete if your SLiMS has a large collection."
+msgstr "Сигурни ли сте, че искате това да става автоматично при първи вход? Може да отнеме повече време при голям фонд."
+
+msgid "Starting..."
+msgstr "Стартиране..."
+
+msgid "Compressing..."
+msgstr "Компресиране..."
+
+msgid "Compressing Success"
+msgstr "Компресирането е успешно"
+
+msgid "Backup"
+msgstr "Резервно копие"
+
+msgid "Captcha Configuration"
+msgstr "Конфигурация на кода от картинката"
+
+msgid "Default captcha provider"
+msgstr "Доставчик на кода по подразбиране"
+
+msgid "Enable for section"
+msgstr "Активирай за раздел"
+
+msgid "Content Settings"
+msgstr "Настройки на съдържанието"
+
+msgid "Publish at"
+msgstr "Публикувай на"
+
+msgid "Max 20 character"
+msgstr "Най-много 20 знака"
+
+msgid "Draft?"
+msgstr "Чернова?"
+
+msgid "Successfully save currency configuration"
+msgstr "Конфигурацията на валутата е запазена успешно"
+
+msgid "Currency Configuration"
+msgstr "Конфигурация на валутата"
+
+msgid "Extension Intl must be enable first."
+msgstr "Първо трябва да се активира разширението Intl."
+
+msgid "Enable system currency?"
+msgstr "Да се активира ли системна валута?"
+
+msgid "Region"
+msgstr "Регион"
+
+msgid "By default region value same as default language"
+msgstr "По подразбиране регионът съвпада с езика по подразбиране"
+
+msgid "Number of decimal position"
+msgstr "Брой десетични позиции"
+
+msgid "SLiMS Environment Mode"
+msgstr "Режим на средата на SLiMS"
+
+msgid "env.sample.php file is not exists!"
+msgstr "Файлът env.sample.php не съществува!"
+
+msgid "Configuration has been saved!"
+msgstr "Конфигурацията е запазена!"
+
+msgid "System Environment Settings"
+msgstr "Настройки на средата"
+
+msgid "SLiMS Environment preferences."
+msgstr "Настройки на средата на SLiMS."
+
+msgid "Production"
+msgstr "Продукционна"
+
+msgid "Development"
+msgstr "Разработка"
+
+msgid "System Environment Mode"
+msgstr "Режим на средата"
+
+msgid "Environment for some IP?"
+msgstr "Среда за определени IP?"
+
+msgid "Range Ip wil be impacted with Environment. Example : 10.120.33.40;20.100.34.10. "
+msgstr ""
+
+msgid "Leave it empty, if you want to set environment to impact for all IP"
+msgstr "Оставете празно, за да важи средата за всички IP"
+
+msgid "Main Logo"
+msgstr "Основно лого"
+
+msgid "Favicon"
+msgstr "Иконка (favicon)"
+
+msgid "List of timezones supported by PHP"
+msgstr "Списък на часовите зони, поддържани от PHP"
+
+msgid "Default App. Timezone"
+msgstr "Часова зона по подразбиране"
+
+msgid "Search Engine"
+msgstr "Търсачка"
+
+msgid "Separate ip with ;"
+msgstr "Разделяйте IP с ;"
+
+msgid "Activate Confirm Alert?"
+msgstr "Активирай потвърждаващо съобщение?"
+
+msgid "Ignore SSL verification"
+msgstr "Пренебрегвай SSL проверката"
+
+msgid "SLiMS will ignore all error about SSL validation while download contents from other resource"
+msgstr "SLiMS ще пренебрегва грешките за SSL при изтегляне на съдържание от други източници"
+
+msgid "NB : Password is hidden for security reason"
+msgstr "Забележка: паролата е скрита от съображения за сигурност"
+
+msgid "Example"
+msgstr "Пример"
+
+msgid "Directory config is not writeable."
+msgstr "Папката config не е записваема."
+
+msgid "E-Mail Configuration"
+msgstr "Конфигурация на имейла"
+
+msgid "E-Mail test"
+msgstr "Тест на имейла"
+
+msgid "Modify E-Mail preferences"
+msgstr "Промени настройките на имейла"
+
+msgid "Make the following files and directories (and their contents) writeable (i.e., by changing the owner or permissions with chown or chmod)"
+msgstr "Направете следните файлове и папки (и съдържанието им) записваеми (напр. чрез chown или chmod)"
+
+msgid "Environment"
+msgstr "Среда"
+
+msgid "SMTP Encryption"
+msgstr "SMTP криптиране"
+
+msgid "SMTP Server address"
+msgstr "Адрес на SMTP сървъра"
+
+msgid "SMTP Port"
+msgstr "SMTP порт"
+
+msgid "Authentication Username"
+msgstr "Потребителско име за удостоверяване"
+
+msgid "Authentication Password"
+msgstr "Парола за удостоверяване"
+
+msgid "Password does not appearance for security reason. If you want to look it, open sysconfig.mail.inc.php file."
+msgstr "Паролата е скрита от съображения за сигурност. За да я видите, отворете файла sysconfig.mail.inc.php."
+
+msgid "Email Sender Address"
+msgstr "Адрес на подателя"
+
+msgid "Email Sender Label"
+msgstr "Име на подателя"
+
+msgid "Do Test"
+msgstr "Тествай"
+
+msgid "Send Mail"
+msgstr "Изпрати имейл"
+
+msgid "Receiver Name"
+msgstr "Име на получателя"
+
+msgid "Receiver Address"
+msgstr "Адрес на получателя"
+
+msgid "Dummy Content"
+msgstr "Примерно съдържание"
+
+msgid "Plugin"
+msgstr "Приставка"
+
+msgid "Enable plugin"
+msgstr "Активирай приставката"
+
+msgid "Extension ZIP is not exists."
+msgstr "Разширението ZIP не съществува."
+
+msgid "Install plugin from .zip file"
+msgstr "Инсталирай приставка от .zip файл"
+
+msgid "Upload Plugin"
+msgstr "Качи приставка"
+
+msgid "Enable/Disable"
+msgstr "Включи/изключи"
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "By"
+msgstr "От"
+
+msgid "System Environment Setting"
+msgstr "Настройка на средата"
+
+msgid "Configure System Environment Mode"
+msgstr "Настрой режима на средата"
+
+msgid "Currency Setting"
+msgstr "Настройка на валутата"
+
+msgid "Configure System Currency"
+msgstr "Настрой системната валута"
+
+msgid "E-Mail Setting"
+msgstr "Настройка на имейла"
+
+msgid "Configure E-Mail Preferences"
+msgstr "Настрой имейла"
+
+msgid "Captcha Setting"
+msgstr "Настройка на кода от картинката"
+
+msgid "Configure Captcha"
+msgstr "Настрой кода от картинката"
+
+msgid "Settings "
+msgstr "Настройки "
+
+msgid "Captcha Error : {class} is not compatible with captcha contract!"
+msgstr ""
+
+msgid "Backup database has been finished as %s"
+msgstr ""
+
+msgid "No table to repair. Everything is all right."
+msgstr "Няма таблици за поправка. Всичко е наред."
+
+msgid "Success migrating database"
+msgstr "Миграцията на базата е успешна"
+
+msgid "All plugin has been disabled"
+msgstr "Всички приставки са изключени"
+
+msgid "Mime {mime} is not allowed!"
+msgstr ""
+
+msgid "Extension {extension} is not allowed!"
+msgstr ""
+
+msgid "Size {fileSize} greater than {maxSize}."
+msgstr ""
+
+msgid "Main List"
+msgstr "Основен списък"
+
+msgid "Publication Year"
+msgstr "Година на издаване"
+
+msgid "On Shelf"
+msgstr "На рафта"
+
+msgid "Attachment"
+msgstr "Притурка"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "Audio"
+msgstr "Аудио"
+
+msgid "Video"
+msgstr "Видео"
+
+msgid "See More"
+msgstr "Виж още"
+
+msgid "Most relevant"
+msgstr "Най-подходящи"
+
+msgid "Recently Added"
+msgstr "Наскоро добавени"
+
+msgid "Most Loaned"
+msgstr "Най-заемани"
+
+msgid "Publication Year [newest]"
+msgstr "Година на издаване (най-нови)"
+
+msgid "Publication Year [oldest]"
+msgstr "Година на издаване (най-стари)"
+
+msgid "Title Ascending"
+msgstr "Заглавие (А-Я)"
+
+msgid "Title Descending"
+msgstr "Заглавие (Я-А)"
+
+msgid "Error not available"
+msgstr "Няма налична грешка"
+
+msgid "Access to file restricted. Member logged in but doesnt have privilege to download"
+msgstr "Достъпът до файла е ограничен. Читателят е влязъл, но няма права за изтегляне"
+
+msgid "Invalid login form!"
+msgstr "Невалиден формуляр за вход!"
+
+msgid "Login FAILED! Wrong Member ID or password!"
+msgstr "Входът е неуспешен! Грешен читателски номер или парола!"
+
+msgid "Data has been deleted"
+msgstr "Данните са изтрити"
+
+msgid "Bookmarked"
+msgstr "Отбелязано"
+
+msgid "Data failed saved"
+msgstr "Неуспешно запазване на данните"
+
+msgid "Please, login first!"
+msgstr "Моля, първо влезте!"
+
+msgid "Marked At"
+msgstr "Отбелязано на"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "title currently on list"
+msgstr ""
+
+msgid "Click to view detail"
+msgstr "Щракнете за детайли"
+
+msgid "Reservation e-mail sent successfully!. please contact librarians for further info."
+msgstr "Имейлът за резервация е изпратен успешно! За повече информация се обърнете към библиотекарите."
+
+msgid "Title Bookmark"
+msgstr "Отметки"
+
+msgid "My Title Bookmark"
+msgstr "Моите отметки"
+
+msgid "Please wait. your reservation is being sent"
+msgstr "Моля, изчакайте. Резервацията се изпраща"
+
+msgid "Reservation request sent"
+msgstr "Заявката за резервация е изпратена"
+
+msgid "Reservation e-mail sent"
+msgstr "Имейлът за резервация е изпратен"
+
+msgid "Unexcpected error. Please tell it to the librarian"
+msgstr "Неочаквана грешка. Съобщете на библиотекаря"
+
+msgid "Link copied to clipboard"
+msgstr "Връзката е копирана"
+
+msgid "FAILED to store you comment. Please Contact System Administrator"
+msgstr "Неуспешно записване на коментара. Свържете се със системния администратор."
+
+msgid "Member ID can't be empty"
+msgstr "Полето не може да е празно"
+
+msgid "Please login to see this attachment"
+msgstr "Влезте, за да видите тази притурка"
+
+msgid "You have no authorization to download this file."
+msgstr "Нямате права да изтеглите този файл."
+
+msgid "Currently On Loan (Due on "
+msgstr "В момента заета (връщане на "
+
+msgid "Location name is not set"
+msgstr "Името на локацията не е зададено"
+
+msgid "Select All"
+msgstr "Избери всички"
+
+msgid "Unselect All"
+msgstr "Изчисти избора"
+
+msgid "Select Invert"
+msgstr "Обърни избора"
+
+msgid "Warning"
+msgstr "Внимание"
+
+msgid "You don't have access to interact with this module. Call system administrator to give you right to access it."
+msgstr "Нямате достъп до този модул. Обърнете се към администратора за права."
+
+msgid "%s insert bibliographic data from Inlislite MARC-XML service (server: %s) with title (%s) and biblio_id (%s)"
+msgstr ""
+
+msgid "Search/Retrieve from Inlislite via MARC-XML"
+msgstr "Търсене/извличане от Inlislite чрез MARC-XML"
+
+msgid "Inlislite Server"
+msgstr "Inlislite сървър"
+
+msgid "Have found <strong>%s</strong> records from searched keywords <strong>%s</strong> from <i>%s</i>"
+msgstr ""
+
+msgid "No data found with item code {itemcode}."
+msgstr ""
+
+msgid "Read Counter Report"
+msgstr "Справка за броя четения"
+
+msgid "Read Start"
+msgstr ""
+
+msgid "Read Until"
+msgstr ""
+
+msgid "Enlarge Debug Box"
+msgstr ""
+
+msgid "Items is not available"
+msgstr "Няма наличен екземпляр"
+
+msgid "MARC Download"
+msgstr "Изтегляне на MARC"
+
+msgid "Item Not Available"
+msgstr "Екземплярът не е наличен"
+
+msgid "Bookmark"
+msgstr "Отметка"
+
+msgid "Share"
+msgstr "Сподели"
+
+msgid "Publish Year"
+msgstr "Година на издаване"
+
+msgid "Enter publish year"
+msgstr "Въведете година на издаване"
+
+msgid "Where do you want to share?"
+msgstr "Къде искате да споделите?"
+
+msgid "Filter by"
+msgstr "Филтрирай по"
+
+msgid "Disable Slide"
+msgstr "Изключи слайдшоуто"
+
+msgid "Import for bibliographics data from CSV file. For guide on CVS fields order and format please refer to documentation or visit <a href=\"http://senayan.diknas.go.id\" target=\"_blank\">Official Website</a>"
+msgstr ""
+
+msgid "Error authenticating user and password to database"
+msgstr ""
+
+msgid "copies at"
+msgstr ""
+
+msgid "Welcome to Library Automation,"
+msgstr "Добре дошли в библиотечната система, "
+
+msgid "Unavailable"
+msgstr ""
+
+msgid "Full Site"
+msgstr ""
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "User Login"
+msgstr ""
+
+msgid "Invalid token!"
+msgstr ""
+
+
+#: lib/contents/news.inc.php
+#, php-format
+msgid "We have %d news for you!"
+msgstr "Публикувани новини: %d"
