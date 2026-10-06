@@ -15,6 +15,10 @@ $main_menus = [
     'text' => 'Читалището',
     'url' => 'index.php?p=chitalishte'
   ],
+  'selo' => [
+    'text' => 'Селото',
+    'url' => 'index.php?p=selo'
+  ],
   'libinfo' => [
     'text' => 'Библиотеката',
     'url' => 'index.php?p=libinfo'

@@ -26,6 +26,7 @@
                 <h4 class="mb-3">Страници</h4>
                 <ul class="list-reset prosveta-footer-links">
                     <li><a href="index.php?p=chitalishte">За читалището</a></li>
+                    <li><a href="index.php?p=selo">Село Храбърско</a></li>
                     <li><a href="index.php?p=libinfo">Библиотеката</a></li>
                     <li><a href="index.php?p=news"><?= __('News'); ?></a></li>
                     <li><a href="index.php?p=kontakti">Контакти</a></li>

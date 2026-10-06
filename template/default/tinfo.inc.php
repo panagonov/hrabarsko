@@ -34,14 +34,14 @@ $sysconf['template']['prosveta_keywords'] = 'читалище, библиоте�
 $sysconf['template']['prosveta_street'] = 'ул. „Липа“ № 6';
 $sysconf['template']['prosveta_postcode'] = '2224';
 $sysconf['template']['prosveta_address_html'] = 'ул. „Липа“ № 6 (сградата на кметството)<br>2224 с. Храбърско, общ. Божурище, обл. София';
-$sysconf['template']['prosveta_phone'] = '0886 708 656';
+$sysconf['template']['prosveta_phone'] = '0899 819 134';
 $sysconf['template']['prosveta_email'] = 'n.ch.prosveta1925@abv.bg';
-$sysconf['template']['prosveta_hours'] = 'Понеделник – петък, пълен работен ден<br><span class="prosveta-muted">Преди посещение уточнете часовете на тел. 0886 708 656.</span>';
+$sysconf['template']['prosveta_hours'] = 'Понеделник – петък, пълен работен ден<br><span class="prosveta-muted">Преди посещение уточнете часовете на тел. 0899 819 134.</span>';
 $sysconf['template']['prosveta_lat'] = '42.80530';
 $sysconf['template']['prosveta_lon'] = '23.06017';
 
 $sysconf['template']['classic_map_link'] = 'https://maps.google.com/maps?q=42.80530,23.06017&hl=bg&z=17&output=embed';
-$sysconf['template']['classic_map_desc'] = '<p>Читалището и библиотеката се помещават в сградата на кметството, на няколко минути пеша от ЖП гара Храбърско.</p><p><strong>Адрес:</strong> ул. „Липа“ № 6, 2224 с. Храбърско, общ. Божурище<br><strong>Телефон:</strong> <a href="tel:0886708656">0886 708 656</a><br><strong>E-mail:</strong> <a href="mailto:n.ch.prosveta1925@abv.bg">n.ch.prosveta1925@abv.bg</a></p>';
+$sysconf['template']['classic_map_desc'] = '<p>Читалището и библиотеката се помещават в сградата на кметството, на няколко минути пеша от ЖП гара Храбърско.</p><p><strong>Адрес:</strong> ул. „Липа“ № 6, 2224 с. Храбърско, общ. Божурище<br><strong>Телефон:</strong> <a href="tel:0899819134">0899 819 134</a><br><strong>E-mail:</strong> <a href="mailto:n.ch.prosveta1925@abv.bg">n.ch.prosveta1925@abv.bg</a></p>';
 // Социалните мрежи се показват само ако има попълнен адрес
 $sysconf['template']['classic_fb_link'] = '';
 $sysconf['template']['classic_twitter_link'] = '';
