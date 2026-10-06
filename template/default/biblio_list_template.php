@@ -87,7 +87,7 @@ function biblio_list_format($dbs, $biblio_detail, $n, $settings = array(), &$ret
     $_authors_string = '';
     if ($_authors) {
         if (!is_array($_authors)) {
-            $_authors = explode('-', $_authors);
+            $_authors = explode(' - ', $_authors); // двойните фамилии (Петрова-Чомпалова) не се разделят
         }
         foreach ($_authors as $a) {
             $a = trim($a);

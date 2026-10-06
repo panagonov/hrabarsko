@@ -620,7 +620,11 @@ const urls = new URLSearchParams(location.search);
 const filter = (clear = false) => {
   const filterData = {};
   const $filterForm = $('#search-filter');
-  
+
+  // ограниченията от разширеното търсене вече са отметнати във филтъра – махаме ги от адреса,
+  // иначе премахнато отметнато поле би продължило да действа
+  ['years', 'availability', 'attachment', 'colltype', 'gmd', 'location', 'lang'].forEach(k => urls.delete(k));
+
   // Collect filter data
   $filterForm.serializeArray().forEach(item => {
     if (clear) {

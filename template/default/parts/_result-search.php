@@ -35,7 +35,7 @@
                 <div class="d-flex justify-content-between align-items-center mt-1 mb-2 text-sm">
                     <div>
                         <?php
-                        $keywords_info = '<span class="search-keyword-info" title="' . htmlentities($keywords) . '">' . ((strlen($keywords) > 30) ? substr($keywords, 0, 30) . '...' : $keywords) . '</span>';
+                        $keywords_info = '<span class="search-keyword-info" title="' . htmlentities($keywords) . '">' . htmlspecialchars((mb_strlen($keywords) > 80) ? mb_substr($keywords, 0, 80) . '…' : $keywords) . '</span>';
                         $search_result_info = '<div class="search-found-info">';
                         $search_result_info .= __('Found <strong>{biblio_list->num_rows}</strong> from your keywords') . ': <strong class="search-found-info-keywords">' . $keywords_info . '</strong>';
                         $search_result_info .= '</div>';

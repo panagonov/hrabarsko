@@ -37,6 +37,7 @@
     <script type="text/javascript" src="<?php echo JWB; ?>updater.js?v=<?php echo date('this') ?>"></script>
     <script type="text/javascript" src="<?php echo JWB; ?>gui.js??v=<?php echo date('this') ?>"></script>
     <script type="text/javascript" src="<?php echo JWB; ?>form.js?v=<?php echo date('this') ?>"></script>
+    <script type="text/javascript" src="<?php echo JWB; ?>bg_catalog.js?v=<?php echo date('this') ?>"></script>
     <script type="text/javascript" src="<?php echo JWB; ?>calendar.js?v=<?php echo date('this') ?>"></script>
     <script type="text/javascript" src="<?php echo JWB; ?>chosen/chosen.jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo JWB; ?>chosen/ajax-chosen.min.js"></script>

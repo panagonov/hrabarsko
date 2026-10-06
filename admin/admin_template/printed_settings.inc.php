@@ -29,7 +29,9 @@ function loadPrintSettings($dbs, $type) {
   if ($barcode_settings_q->num_rows) {
     $barcode_settings_d = $barcode_settings_q->fetch_row();
     if ($barcode_settings_d[0]) {
-      $barcode_settings = @unserialize(stripslashes($barcode_settings_d[0]));
+      // utility::unserialize поправя грешните дължини на низовете (напр. в стандартните настройки
+      // за читателски карти) – голото unserialize() дава E_WARNING в PHP 8.3, а SLiMS го показва като грешка 500
+      $barcode_settings = utility::unserialize(stripslashes($barcode_settings_d[0]));
       if (is_array($barcode_settings) && count($barcode_settings) > 0) {
         foreach ($barcode_settings as $setting_name => $val) {
           $sysconf['print'][$type][$setting_name] = $val;
@@ -187,8 +189,17 @@ $sysconf['print']['membercard']['address_left'] = "";
 $sysconf['print']['membercard']['address_top'] = "";
 
 // catalog card settings
+// card_layout: bg = по образеца на НБКМ/ISBD (редна дума, сигнатура, УДК), classic = класическият вид на SLiMS
+$sysconf['print']['catalog']['card_layout'] = 'bg';
+// page_layout: card_packed (плътно за рязане – 5 на A4), card_a4_3 (A4 вертикално – 3), card_a4_4 (A4 хоризонтално – 4), card_single (по една 12,5 × 7,5 см)
+$sysconf['print']['catalog']['page_layout'] = 'card_packed';
+// signature_source: auto (сигнатура, иначе инв. №), call_number, inventory
+$sysconf['print']['catalog']['signature_source'] = 'auto';
+$sysconf['print']['catalog']['font_size'] = '10';
+$sysconf['print']['catalog']['border'] = '1';
+// self_list_card = основната картичка; останалите – допълнителни картички (за заглавие, съавтори, рубрики)
 $sysconf['print']['catalog']['self_list_card'] = '1';
-$sysconf['print']['catalog']['title_card'] = '1';
-$sysconf['print']['catalog']['author_card'] = '1';
-$sysconf['print']['catalog']['subject_card'] = '1';
+$sysconf['print']['catalog']['title_card'] = '0';
+$sysconf['print']['catalog']['author_card'] = '0';
+$sysconf['print']['catalog']['subject_card'] = '0';
 

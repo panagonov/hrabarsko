@@ -86,8 +86,15 @@ if (isset($_POST['remove'])) {
     echo '<script type="text/javascript">';
     echo 'self.location.href = \'iframe_item_list.php?biblioID='.$bid.'\';';
     echo '</script>';
+  } elseif (($bg_reason = \SLiMS\Bg\Inventory::canDelete($id)) !== null) {
+    // инвентарните номера не се изтриват (Наредба № 3, чл. 16–17 и 28)
+    utility::jsToastr(__('Item'), $bg_reason, 'error');
+    echo '<script type="text/javascript">';
+    echo 'self.location.href = \'iframe_item_list.php?biblioID='.$bid.'\';';
+    echo '</script>';
   } else {
     if ($sql_op->delete('item', 'item_id='.$id)) {
+        $sql_op->delete('item_custom', 'item_id='.$id);
         utility::jsToastr('Item', __('Item succesfully removed!'), 'success');
       echo '<script type="text/javascript">';
       echo 'self.location.href = \'iframe_item_list.php?biblioID='.$bid.'\';';

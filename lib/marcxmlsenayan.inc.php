@@ -99,9 +99,9 @@ function marcXMLsenayan($str_marcxml, $str_xml_type = 'string')
                     if ((string)$subfield['code'] == 'a') {
                         $language = $subfield;
                     }
-                } else if ((string)$field['tag'] == '082') {
+                } else if ((string)$field['tag'] == '080' || ((string)$field['tag'] == '082' && empty($classification))) {
                     if ((string)$subfield['code'] == 'a') {
-                        // DDC classification
+                        // УДК (080), иначе DDC (082)
                         $classification = $subfield;
                     }
                 } else if ((string)$field['tag'] == '100') {

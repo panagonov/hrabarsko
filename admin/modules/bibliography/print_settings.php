@@ -236,6 +236,11 @@ $measure['print']['membercard']['address_left']             = __('(px)');
 $measure['print']['membercard']['address_top']              = __('(px)');
 
 // catalog card
+$measure['print']['catalog']['card_layout']                  = array(array('bg', __('Bulgarian (NLB / ISBD)')), array('classic', __('Classic SLiMS')));
+$measure['print']['catalog']['page_layout']                  = array(array('card_packed', __('Packed on A4 for cutting – 5 cards (some rotated 90°)')), array('card_a4_3', __('A4 portrait – 3 cards')), array('card_a4_4', __('A4 landscape – 4 cards')), array('card_single', __('One card per page (12.5 × 7.5 cm)')));
+$measure['print']['catalog']['signature_source']             = array(array('auto', __('Automatic')), array('call_number', __('Call Number')), array('inventory', __('Inventory number')));
+$measure['print']['catalog']['font_size']                    = __('(pt)');
+$measure['print']['catalog']['border']                       = $visibility_options;
 $measure['print']['catalog']['self_list_card']               = $visibility_options;
 $measure['print']['catalog']['title_card']                   = $visibility_options;
 $measure['print']['catalog']['author_card']                  = $visibility_options;

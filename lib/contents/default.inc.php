@@ -21,6 +21,8 @@
  *
  */
 
+use SLiMS\SearchEngine\BgCatalogEngine;
+use SLiMS\SearchEngine\BgQueryParser;
 use SLiMS\SearchEngine\Contract;
 use SLiMS\SearchEngine\Criteria;
 use SLiMS\SearchEngine\DefaultEngine;
@@ -72,7 +74,11 @@ if (isset($_GET['search'])) {
         // initialize criteria
         $criteria = new Criteria;
         $searched_fields = array_intersect($engine->searchable_fields, array_keys($_GET));
-        if (!empty($searched_fields) && !isset($_GET['filter'])) {
+        if ($engine instanceof BgCatalogEngine) {
+            // търсене като в COBISS: до 3 условия с И / ИЛИ / И НЕ, ограничения, команди AU= TI= PY=…
+            $criteria = BgQueryParser::fromRequest($_GET);
+            $keywords = $criteria->display;
+        } elseif (!empty($searched_fields) && !isset($_GET['filter'])) {
             // get criteria from advanced search
             foreach ($searched_fields as $field) {
                 $value = !is_array($_GET[$field]) ? trim(strip_tags(urldecode($_GET[$field]))) : '';
@@ -148,7 +154,7 @@ if (isset($_GET['search'])) {
                 // default to HTML mode
                 // generate search result info
                 $keywords = str_replace(['\\'], '', $keywords);
-                $keywords_info = '<span class="search-keyword-info" title="' . htmlentities($keywords) . '">' . ((strlen($keywords) > 30) ? substr($keywords, 0, 30) . '...' : $keywords) . '</span>';
+                $keywords_info = '<span class="search-keyword-info" title="' . htmlentities($keywords) . '">' . htmlspecialchars((mb_strlen($keywords) > 80) ? mb_substr($keywords, 0, 80) . '…' : $keywords) . '</span>';
                 $search_result_info .= '<div class="search-found-info">';
                 $search_result_info .= __('Found <strong>{biblio_list->num_rows}</strong> from your keywords') . ': <strong class="search-found-info-keywords">' . $keywords_info . '</strong>';
                 $search_result_info .= '</div>';

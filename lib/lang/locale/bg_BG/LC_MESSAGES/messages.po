@@ -121,8 +121,7 @@ msgid "Search"
 msgstr "Търсене"
 
 msgid "Item Code"
-msgstr "Код на екземпляр (баркод)"
-
+msgstr "Инв. № (баркод)"
 msgid "Member ID"
 msgstr "Читателски №"
 
@@ -139,8 +138,7 @@ msgid "Found <strong>{result->num_rows}</strong> from your keywords"
 msgstr "Намерени <strong>{result->num_rows}</strong> по вашите ключови думи"
 
 msgid "Selected items NOT ADDED to print queue. Only {max_print} can be printed at once"
-msgstr ""
-
+msgstr "Избраните НЕ са добавени в опашката за печат. Наведнъж могат да се отпечатат само {max_print}"
 msgid "Selected items added to print queue"
 msgstr "Избраните са добавени към опашката за печат"
 
@@ -667,8 +665,7 @@ msgid "Order Date"
 msgstr "Дата на поръчка"
 
 msgid "Receiving Date"
-msgstr "Дата на получаване"
-
+msgstr "Дата на вписване (постъпване)"
 msgid "Supplier"
 msgstr "Доставчик"
 
@@ -4099,8 +4096,7 @@ msgid "Print Again"
 msgstr "Отпечатай отново"
 
 msgid "ERROR! Label failed to generate, possibly because {directory} directory is not writable"
-msgstr ""
-
+msgstr "ГРЕШКА! Етикетите не бяха създадени – вероятно в папката {directory} не може да се записва"
 msgid "Change print label settings"
 msgstr "Промени настройките за печат на етикети"
 
@@ -4123,11 +4119,9 @@ msgid "Invalid form submission token!"
 msgstr "Невалиден токен на формуляра!"
 
 msgid "Field %s only number for allowed"
-msgstr ""
-
+msgstr "Полето %s приема само числа"
 msgid "Field %s is date format, empty not allowed"
-msgstr ""
-
+msgstr "Полето %s е дата и не може да е празно"
 msgid "Item Data FAILED to Save. Insert batch item maximum %s copies"
 msgstr ""
 
@@ -4177,17 +4171,14 @@ msgid "Current url is not valid or your internet is down."
 msgstr "URL адресът е невалиден или няма интернет."
 
 msgid "ERROR! Item barcodes failed to generate, possibly because {directory} directory is not writable"
-msgstr ""
-
+msgstr "ГРЕШКА! Баркодовете не бяха създадени – вероятно в папката {directory} не може да се записва"
 msgid "File type not allowed or the size is more than"
 msgstr "Непозволен тип или размерът надвишава"
 
 msgid "%s insert bibliographic data from MARC SRU service (server: %s) with title (%s) and biblio_id (%s)"
-msgstr ""
-
+msgstr "%s внесе библиографски запис от MARC SRU (сървър: %s) със заглавие (%s) и biblio_id (%s)"
 msgid "Found {hits} records from Marc SRU Server."
-msgstr ""
-
+msgstr "Намерени са {hits} записа в MARC SRU сървъра."
 msgid "Save Marc Records to Database"
 msgstr "Запази MARC записите в базата"
 
@@ -4243,14 +4234,11 @@ msgid "Please, fill length serial number more than 2"
 msgstr "Дължината на серийния номер трябва да е повече от 2"
 
 msgid "(0 if you prefer without title)"
-msgstr ""
-
+msgstr "(0, ако предпочитате без заглавие)"
 msgid "Change print %s settings"
-msgstr ""
-
+msgstr "Настройки за печат: %s"
 msgid "ERROR! Catalog card failed to generate, possibly because {directory} directory is not writable"
-msgstr ""
-
+msgstr "ГРЕШКА! Картичките не бяха създадени – вероятно в папката {directory} не може да се записва"
 msgid "Change print catalog settings"
 msgstr "Промени настройките за печат на каталог"
 
@@ -4270,8 +4258,7 @@ msgid "COPY CATALOGUING"
 msgstr "Копиращо каталогизиране"
 
 msgid "MARC SRU"
-msgstr ""
-
+msgstr "MARC SRU"
 msgid "Grab Bibliographic Data from Other MARC Services"
 msgstr "Изтегли записи от други MARC услуги"
 
@@ -4543,8 +4530,7 @@ msgid "Stock Take Error Logs"
 msgstr "Дневник на грешките при инвентаризация"
 
 msgid "ERROR! Stock take report failed to generate, possibly because {directory} directory is not writable"
-msgstr ""
-
+msgstr "ГРЕШКА! Отчетът от инвентаризацията не беше създаден – вероятно в папката {directory} не може да се записва"
 msgid "View"
 msgstr "Преглед"
 
@@ -5578,8 +5564,7 @@ msgid "New Item Status Data Successfully Updated"
 msgstr "Данните са обновени успешно"
 
 msgid "%s still in use %d item "
-msgstr ""
-
+msgstr "%s се използва от %d екз. "
 msgid "Label need image uploaded"
 msgstr "Етикетът изисква качено изображение"
 
@@ -6191,3 +6176,1863 @@ msgstr ""
 #, php-format
 msgid "We have %d news for you!"
 msgstr "Публикувани новини: %d"
+
+#: bg_catalog
+msgid "Labels and Barcodes (A4)"
+msgstr "Етикети и баркодове (A4)"
+
+#: bg_catalog
+msgid "Not found: %s"
+msgstr "Не са намерени: %s"
+
+#: bg_catalog
+msgid "Custom size"
+msgstr "Друг размер"
+
+#: bg_catalog
+msgid "Template"
+msgstr "Шаблон"
+
+#: bg_catalog
+msgid "Sticker sheet"
+msgstr "Лист със стикери"
+
+#: bg_catalog
+msgid "A4 sheets; dimensions are written on the sticker package"
+msgstr "Листове A4; размерите са написани на опаковката със стикери"
+
+#: bg_catalog
+msgid "Columns"
+msgstr "Колони"
+
+#: bg_catalog
+msgid "Rows"
+msgstr "Редове"
+
+#: bg_catalog
+msgid "Label width/height (mm)"
+msgstr "Ширина/височина на етикета (мм)"
+
+#: bg_catalog
+msgid "Top/left margin (mm)"
+msgstr "Горно/ляво поле (мм)"
+
+#: bg_catalog
+msgid "Horizontal/vertical gap (mm)"
+msgstr "Хоризонтален/вертикален отстъп (мм)"
+
+#: bg_catalog
+msgid "Correction X/Y (mm)"
+msgstr "Корекция X/Y (мм)"
+
+#: bg_catalog
+msgid "Shift of all labels after calibration: + right / + down"
+msgstr "Отместване на всички етикети след калибриране: + надясно / + надолу"
+
+#: bg_catalog
+msgid "Start at position"
+msgstr "Започни от позиция"
+
+#: bg_catalog
+msgid "Copies per item"
+msgstr "Копия на екземпляр"
+
+#: bg_catalog
+msgid "To use a partly used sheet: positions are counted left to right, top to bottom"
+msgstr "За започнат лист: позициите се броят отляво надясно, отгоре надолу"
+
+#: bg_catalog
+msgid "Inventory numbers"
+msgstr "Инвентарни номера"
+
+#: bg_catalog
+msgid "e.g. 101-130, 135"
+msgstr "напр. 101-130, 135"
+
+#: bg_catalog
+msgid "KDBF entry"
+msgstr "Запис в КДБФ"
+
+#: bg_catalog
+msgid "Print queue (%d)"
+msgstr "Опашка за печат (%d)"
+
+#: bg_catalog
+msgid "Text above the barcode"
+msgstr "Текст над баркода"
+
+#: bg_catalog
+msgid "Show title"
+msgstr "Показвай заглавието"
+
+#: bg_catalog
+msgid "Title length"
+msgstr "Дължина на заглавието"
+
+#: bg_catalog
+msgid "Show call number"
+msgstr "Показвай сигнатурата"
+
+#: bg_catalog
+msgid "Print a frame"
+msgstr "Печат на рамка"
+
+#: bg_catalog
+msgid "Inner margin (mm)"
+msgstr "Вътрешно поле (мм)"
+
+#: bg_catalog
+msgid "Save these settings as default"
+msgstr "Запази настройките по подразбиране"
+
+#: bg_catalog
+msgid "Calibration page"
+msgstr "Тестова страница"
+
+#: bg_catalog
+msgid "Preview and print"
+msgstr "Преглед и печат"
+
+#: bg_catalog
+msgid "Tip: first print the calibration page on plain paper at 100% and compare it with a sticker sheet against the light. The red lines must be exactly 100 mm."
+msgstr "Съвет: първо отпечатайте тестовата страница на обикновена хартия при 100% и я сравнете с лист стикери срещу светлината. Червените линии трябва да са точно 100 мм."
+
+#: bg_catalog
+msgid "Acquisitions (KDBF part 1)"
+msgstr "Постъпления (КДБФ ч. 1)"
+
+#: bg_catalog
+msgid "Entry date"
+msgstr "Дата на вписване"
+
+#: bg_catalog
+msgid "Entry number"
+msgstr "Номер на записа"
+
+#: bg_catalog
+msgid "How acquired"
+msgstr "Начин на постъпване"
+
+#: bg_catalog
+msgid "Enter from whom the books were received (or choose a supplier)"
+msgstr "Въведете от кого са постъпили книгите (или изберете доставчик)"
+
+#: bg_catalog
+msgid "From whom"
+msgstr "От кого"
+
+#: bg_catalog
+msgid "Document type"
+msgstr "Вид документ"
+
+#: bg_catalog
+msgid "Document number"
+msgstr "Номер на документа"
+
+#: bg_catalog
+msgid "Document date"
+msgstr "Дата на документа"
+
+#: bg_catalog
+msgid "Total number of copies"
+msgstr "Общ брой екземпляри"
+
+#: bg_catalog
+msgid "Not inventoried (count)"
+msgstr "Неинвентирани (брой)"
+
+#: bg_catalog
+msgid "Not inventoried copies cannot be more than the total"
+msgstr "Неинвентираните не могат да са повече от общия брой"
+
+#: bg_catalog
+msgid "Entry number %d/%d is already used"
+msgstr "Запис № %d/%d вече съществува"
+
+#: bg_catalog
+msgid "Numbers %d–%d of %d are skipped"
+msgstr "Пропуснати са номерата %d–%d за %d г."
+
+#: bg_catalog
+msgid "Data FAILED to save"
+msgstr "Данните НЕ бяха записани"
+
+#: bg_catalog
+msgid "KDBF entry %d/%d saved"
+msgstr "Записът в КДБФ %d/%d е запазен"
+
+#: bg_catalog
+msgid "The entry has items linked to it and cannot be deleted"
+msgstr "Към записа има екземпляри и не може да се изтрие"
+
+#: bg_catalog
+msgid "Only the last entry of the year can be deleted (the numbering must stay continuous)"
+msgstr "Може да се изтрие само последният запис за годината (номерацията трябва да е непрекъсната)"
+
+#: bg_catalog
+msgid "Entry deleted"
+msgstr "Записът е изтрит"
+
+#: bg_catalog
+msgid "List"
+msgstr "Списък"
+
+#: bg_catalog
+msgid "New entry"
+msgstr "Нов запис"
+
+#: bg_catalog
+msgid "Numbering starts from 1 every calendar year"
+msgstr "Номерацията започва от 1 всяка календарна година"
+
+#: bg_catalog
+msgid "e.g. donation from Ivan Petrov, Ministry of Culture programme"
+msgstr "напр. дарение от Иван Петров, програма на Министерството на културата"
+
+#: bg_catalog
+msgid "Accounting document"
+msgstr "Счетоводен документ"
+
+#: bg_catalog
+msgid "Invoice / donation deed / protocol"
+msgstr "Фактура / дарствен договор / протокол"
+
+#: bg_catalog
+msgid "Type, number and date of the primary accounting document"
+msgstr "Вид, номер и дата на първичния счетоводен документ"
+
+#: bg_catalog
+msgid "Total value"
+msgstr "Обща стойност"
+
+#: bg_catalog
+msgid "Not inventoried"
+msgstr "Неинвентирани"
+
+#: bg_catalog
+msgid "copies, value"
+msgstr "екз., стойност"
+
+#: bg_catalog
+msgid "Not inventoried (value)"
+msgstr "Неинвентирани (стойност)"
+
+#: bg_catalog
+msgid "Brochures, periodicals and other documents that are registered only in total"
+msgstr "Брошури, периодика и други документи, които се отчитат само сумарно"
+
+#: bg_catalog
+msgid "KDBF entry %s"
+msgstr "Запис в КДБФ %s"
+
+#: bg_catalog
+msgid "New KDBF entry"
+msgstr "Нов запис в КДБФ"
+
+#: bg_catalog
+msgid "Inventoried copies"
+msgstr "Инвентирани екземпляри"
+
+#: bg_catalog
+msgid "Inventoried %d of %d (remaining %d)"
+msgstr "Инвентирани %d от %d (остават %d)"
+
+#: bg_catalog
+msgid "Value"
+msgstr "Стойност"
+
+#: bg_catalog
+msgid "Add a title to this entry"
+msgstr "Добави заглавие към този запис"
+
+#: bg_catalog
+msgid "Print inventory book (this entry)"
+msgstr "Печат на инвентарната книга (този запис)"
+
+#: bg_catalog
+msgid "Labels and barcodes"
+msgstr "Етикети и баркодове"
+
+#: bg_catalog
+msgid "Inv. No."
+msgstr "Инв. №"
+
+#: bg_catalog
+msgid "Volume"
+msgstr "Том"
+
+#: bg_catalog
+msgid "Department"
+msgstr "Отдел"
+
+#: bg_catalog
+msgid "Delete this entry?"
+msgstr "Да се изтрие ли този запис?"
+
+#: bg_catalog
+msgid "Delete entry"
+msgstr "Изтрий записа"
+
+#: bg_catalog
+msgid "No KDBF entries for %d yet."
+msgstr "Все още няма записи в КДБФ за %d г."
+
+#: bg_catalog
+msgid "Document"
+msgstr "Документ"
+
+#: bg_catalog
+msgid "Inventoried"
+msgstr "Инвентирани"
+
+#: bg_catalog
+msgid "Annual Results (KDBF part 3)"
+msgstr "Годишни резултати (КДБФ ч. 3)"
+
+#: bg_catalog
+msgid "You are not allowed to change these settings"
+msgstr "Нямате право да променяте тези настройки"
+
+#: bg_catalog
+msgid "Copies at the beginning of the year"
+msgstr "Екземпляри в началото на годината"
+
+#: bg_catalog
+msgid "Opening balance for %d saved"
+msgstr "Началната наличност за %d г. е запазена"
+
+#: bg_catalog
+msgid "Only a past year can be closed"
+msgstr "Може да се приключи само изминала година"
+
+#: bg_catalog
+msgid "Year %d is closed: %d copies, %s € carried over to %d"
+msgstr "%d г. е приключена: %d екз., %s € са пренесени в %d г."
+
+#: bg_catalog
+msgid "Must be a whole number (0 or more)"
+msgstr "Трябва да е цяло число (0 или повече)"
+
+#: bg_catalog
+msgid "Unknown department code \"%s\""
+msgstr "Непознат код на отдел „%s“"
+
+#: bg_catalog
+msgid "Prefix \"%s\" must be short and without spaces"
+msgstr "Префиксът „%s“ трябва да е кратък и без интервали"
+
+#: bg_catalog
+msgid "entered manually"
+msgstr "въведена ръчно"
+
+#: bg_catalog
+msgid "from the closed previous year"
+msgstr "от приключената предходна година"
+
+#: bg_catalog
+msgid "computed from the previous year"
+msgstr "изчислена от предходната година"
+
+#: bg_catalog
+msgid "no data – enter the opening balance below"
+msgstr "няма данни – въведете началната наличност по-долу"
+
+#: bg_catalog
+msgid "Movement of the library fund in %d"
+msgstr "Движение на библиотечния фонд през %d г."
+
+#: bg_catalog
+msgid "At the beginning of %d"
+msgstr "В началото на %d г."
+
+#: bg_catalog
+msgid "+ Received"
+msgstr "+ Постъпили"
+
+#: bg_catalog
+msgid "− Written off"
+msgstr "− Отчислени"
+
+#: bg_catalog
+msgid "At the end of %d"
+msgstr "В края на %d г."
+
+#: bg_catalog
+msgid "Print KDBF part 3"
+msgstr "Печат на КДБФ ч. 3"
+
+#: bg_catalog
+msgid "Print KDBF part 1"
+msgstr "Печат на КДБФ ч. 1"
+
+#: bg_catalog
+msgid "Print KDBF part 2"
+msgstr "Печат на КДБФ ч. 2"
+
+#: bg_catalog
+msgid "Opening balance for %d"
+msgstr "Начална наличност за %d г."
+
+#: bg_catalog
+msgid "This balance comes from closing the previous year. Change it only if the paper KDBF says otherwise."
+msgstr "Тази наличност идва от приключването на предходната година. Променяйте я само ако хартиената КДБФ показва друго."
+
+#: bg_catalog
+msgid "From the paper KDBF part 3 (for the first year kept in the system)"
+msgstr "От хартиената КДБФ ч. 3 (за първата година, водена в системата)"
+
+#: bg_catalog
+msgid "Close the year? The end balance will become the opening balance of the next year."
+msgstr "Да се приключи ли годината? Наличността в края ще стане начална за следващата година."
+
+#: bg_catalog
+msgid "Close year %d"
+msgstr "Приключи %d г."
+
+#: bg_catalog
+msgid "Settings"
+msgstr "Настройки"
+
+#: bg_catalog
+msgid "Last number of the paper inventory book"
+msgstr "Последен номер от хартиената инвентарна книга"
+
+#: bg_catalog
+msgid "Numbers up to it are for entering the old books with their paper numbers; new acquisitions continue after it. 0 = numbering starts from 1."
+msgstr "Номерата до него са за въвеждане на старите книги с хартиените им номера; новите постъпления продължават след него. 0 = номерацията започва от 1."
+
+#: bg_catalog
+msgid "Department prefixes in the call number"
+msgstr "Префикси на отделите в сигнатурата"
+
+#: bg_catalog
+msgid "One per line: department code=prefix, e.g. DO=Д. There is no national standard – each library keeps its own table (as in COBISS)."
+msgstr "По един на ред: код на отдела=префикс, напр. DO=Д. Национален стандарт няма – всяка библиотека води своя таблица (както в COBISS)."
+
+#: bg_catalog
+msgid "Departments"
+msgstr "Отдели"
+
+#: bg_catalog
+msgid "Write-off Acts (KDBF part 2)"
+msgstr "Актове за отчисляване (КДБФ ч. 2)"
+
+#: bg_catalog
+msgid "The act is approved – only the notes were saved"
+msgstr "Актът е утвърден – записана е само забележката"
+
+#: bg_catalog
+msgid "Act date"
+msgstr "Дата на акта"
+
+#: bg_catalog
+msgid "Act number"
+msgstr "Номер на акта"
+
+#: bg_catalog
+msgid "Reason"
+msgstr "Причина"
+
+#: bg_catalog
+msgid "Details"
+msgstr "Подробности"
+
+#: bg_catalog
+msgid "For theft or natural disaster enter the protocol number and date"
+msgstr "При кражба или бедствие въведете номера и датата на протокола"
+
+#: bg_catalog
+msgid "Enter the commission members (one per line)"
+msgstr "Въведете членовете на комисията (по един на ред)"
+
+#: bg_catalog
+msgid "Act number %d/%d is already used"
+msgstr "Акт № %d/%d вече съществува"
+
+#: bg_catalog
+msgid "These items were entered after the act date: %s"
+msgstr "Тези екземпляри са вписани след датата на акта: %s"
+
+#: bg_catalog
+msgid "Write-off act %d/%d saved"
+msgstr "Акт за отчисляване %d/%d е запазен"
+
+#: bg_catalog
+msgid "Added %d items"
+msgstr "Добавени са %d екз."
+
+#: bg_catalog
+msgid "Items can be removed only from a draft act"
+msgstr "Екземпляри могат да се махат само от чернова на акт"
+
+#: bg_catalog
+msgid "You are not allowed to approve write-off acts"
+msgstr "Нямате право да утвърждавате актове за отчисляване"
+
+#: bg_catalog
+msgid "Enter who approves the act (chairperson)"
+msgstr "Въведете кой утвърждава акта (председател)"
+
+#: bg_catalog
+msgid "Approved by"
+msgstr "Утвърдил"
+
+#: bg_catalog
+msgid "Approval date"
+msgstr "Дата на утвърждаване"
+
+#: bg_catalog
+msgid "The act is approved and the items are written off"
+msgstr "Актът е утвърден и екземплярите са отчислени"
+
+#: bg_catalog
+msgid "The empty draft was deleted"
+msgstr "Празната чернова е изтрита"
+
+#: bg_catalog
+msgid "The draft is cancelled; its number stays in the register as cancelled"
+msgstr "Черновата е анулирана; номерът ѝ остава в регистъра като анулиран"
+
+#: bg_catalog
+msgid "New act"
+msgstr "Нов акт"
+
+#: bg_catalog
+msgid "Write-off act %s"
+msgstr "Акт за отчисляване %s"
+
+#: bg_catalog
+msgid "KDBF part 2 entry No %s from %s"
+msgstr "Вписан в КДБФ ч. 2 под № %s от %s"
+
+#: bg_catalog
+msgid "New write-off act"
+msgstr "Нов акт за отчисляване"
+
+#: bg_catalog
+msgid "One act – one reason (Ordinance No 3, art. 30)"
+msgstr "Един акт – една причина (Наредба № 3, чл. 30)"
+
+#: bg_catalog
+msgid "e.g. police protocol No … / date"
+msgstr "напр. протокол на МВР № … / дата"
+
+#: bg_catalog
+msgid "Commission"
+msgstr "Комисия"
+
+#: bg_catalog
+msgid "Chairperson and members, one per line"
+msgstr "Председател и членове, по един на ред"
+
+#: bg_catalog
+msgid "Appointed by order; includes a librarian and an accountant"
+msgstr "Назначава се със заповед; включва библиотекар и счетоводител"
+
+#: bg_catalog
+msgid "copies, value (BGN)"
+msgstr "екз., стойност (лв.)"
+
+#: bg_catalog
+msgid "Items in the act"
+msgstr "Екземпляри в акта"
+
+#: bg_catalog
+msgid "%d items"
+msgstr "%d екз."
+
+#: bg_catalog
+msgid "Print the list"
+msgstr "Печат на списъка"
+
+#: bg_catalog
+msgid "Inventory numbers, e.g. 120, 125-130 (barcode scanner works too)"
+msgstr "Инвентарни номера, напр. 120, 125-130 (може и с баркод скенер)"
+
+#: bg_catalog
+msgid "Approve the act? The items will be written off and the act will be locked."
+msgstr "Да се утвърди ли актът? Екземплярите ще бъдат отчислени, а актът – заключен."
+
+#: bg_catalog
+msgid "Chairperson of the community centre"
+msgstr "Председател на читалището"
+
+#: bg_catalog
+msgid "on"
+msgstr "на"
+
+#: bg_catalog
+msgid "Approve the act"
+msgstr "Утвърди акта"
+
+#: bg_catalog
+msgid "Cancel this draft act?"
+msgstr "Да се анулира ли тази чернова на акт?"
+
+#: bg_catalog
+msgid "Cancel the draft"
+msgstr "Анулирай черновата"
+
+#: bg_catalog
+msgid "No write-off acts for %d yet."
+msgstr "Все още няма актове за отчисляване за %d г."
+
+#: bg_catalog
+msgid "Act"
+msgstr "Акт"
+
+#: bg_catalog
+msgid "KDBF part 2"
+msgstr "КДБФ ч. 2"
+
+#: bg_catalog
+msgid "Inventory Book"
+msgstr "Инвентарна книга"
+
+#: bg_catalog
+msgid "All departments"
+msgstr "Всички отдели"
+
+#: bg_catalog
+msgid "Inventory No."
+msgstr "Инв. №"
+
+#: bg_catalog
+msgid "from"
+msgstr "от"
+
+#: bg_catalog
+msgid "All items"
+msgstr "Всички екземпляри"
+
+#: bg_catalog
+msgid "In the fund"
+msgstr "Във фонда"
+
+#: bg_catalog
+msgid "Written off"
+msgstr "Отчислени"
+
+#: bg_catalog
+msgid "Ordinance No 3 of 18.11.2014, Annex 4"
+msgstr "Наредба № 3 от 18.11.2014 г., Приложение № 4"
+
+#: bg_catalog
+msgid "from No"
+msgstr "от №"
+
+#: bg_catalog
+msgid "to No"
+msgstr "до №"
+
+#: bg_catalog
+msgid "entered from"
+msgstr "вписани от"
+
+#: bg_catalog
+msgid "entered to"
+msgstr "вписани до"
+
+#: bg_catalog
+msgid "department"
+msgstr "отдел"
+
+#: bg_catalog
+msgid "in the fund"
+msgstr "във фонда"
+
+#: bg_catalog
+msgid "written off"
+msgstr "отчислени"
+
+#: bg_catalog
+msgid "KDBF No and date"
+msgstr "№ и дата в КДБФ"
+
+#: bg_catalog
+msgid "UDC"
+msgstr "УДК"
+
+#: bg_catalog
+msgid "Write-off act No and date"
+msgstr "№ и дата на акта за отчисляване"
+
+#: bg_catalog
+msgid "Check marks"
+msgstr "Отметки при проверка"
+
+#: bg_catalog
+msgid "Only the first %d of %d rows are shown – narrow the range of inventory numbers or use CSV/xlsx."
+msgstr "Показани са само първите %d от %d реда – стеснете интервала от инвентарни номера или ползвайте CSV/xlsx."
+
+#: bg_catalog
+msgid "Free numbers in the range"
+msgstr "Незаети номера в интервала"
+
+#: bg_catalog
+msgid "none"
+msgstr "няма"
+
+#: bg_catalog
+msgid "Check marks: ✓ found, ✓з on loan at the check, ✗ missing."
+msgstr "Отметки при проверка: ✓ наличен, ✓з зает при проверката, ✗ липсващ."
+
+#: bg_catalog
+msgid "\"?\" after a price: the currency is not recorded and is assumed by the entry date."
+msgstr "„?“ след цена: валутата не е записана и е определена по датата на вписване."
+
+#: bg_catalog
+msgid "KDBF part 1 – Acquisitions"
+msgstr "КДБФ ч. 1 – Постъпления"
+
+#: bg_catalog
+msgid "No and date"
+msgstr "№ и дата"
+
+#: bg_catalog
+msgid "From where and how"
+msgstr "Откъде и как"
+
+#: bg_catalog
+msgid "Inventory No. from–to"
+msgstr "Инв. № от–до"
+
+#: bg_catalog
+msgid "By content: UDC main classes; \"Fiction\" includes UDC 82 and the old 83–89 (e.g. 886.7); \"Children\" – collection type \"Children's literature\"."
+msgstr "По съдържание: основните класове на УДК; „Художествена“ включва УДК 82 и старите 83–89 (напр. 886.7); „Детска“ – вид колекция „Детска литература“."
+
+#: bg_catalog
+msgid "Year %d"
+msgstr "%d г."
+
+#: bg_catalog
+msgid "KDBF part 2 – Written off documents"
+msgstr "КДБФ ч. 2 – Отчислени документи"
+
+#: bg_catalog
+msgid "Act No and date"
+msgstr "№ и дата на акта"
+
+#: bg_catalog
+msgid "Cancelled"
+msgstr "Анулиран"
+
+#: bg_catalog
+msgid "KDBF part 3 – Results of the fund movement"
+msgstr "КДБФ ч. 3 – Резултати от движението на фонда"
+
+#: bg_catalog
+msgid "At the beginning – copies"
+msgstr "В началото – екз."
+
+#: bg_catalog
+msgid "At the beginning – €"
+msgstr "В началото – €"
+
+#: bg_catalog
+msgid "Received – copies"
+msgstr "Постъпили – екз."
+
+#: bg_catalog
+msgid "Received – €"
+msgstr "Постъпили – €"
+
+#: bg_catalog
+msgid "Written off – copies"
+msgstr "Отчислени – екз."
+
+#: bg_catalog
+msgid "Written off – €"
+msgstr "Отчислени – €"
+
+#: bg_catalog
+msgid "At the end – copies"
+msgstr "В края – екз."
+
+#: bg_catalog
+msgid "At the end – €"
+msgstr "В края – €"
+
+#: bg_catalog
+msgid "At the end – лв."
+msgstr "В края – лв."
+
+#: bg_catalog
+msgid "Source of the opening balance"
+msgstr "Източник на началната наличност"
+
+#: bg_catalog
+msgid "closed year"
+msgstr "приключена година"
+
+#: bg_catalog
+msgid "computed"
+msgstr "изчислена"
+
+#: bg_catalog
+msgid "no data"
+msgstr "няма данни"
+
+#: bg_catalog
+msgid "At the end = at the beginning + received − written off. 1 EUR = 1.95583 BGN."
+msgstr "В края = в началото + постъпили − отчислени. 1 EUR = 1,95583 лв."
+
+#: bg_catalog
+msgid "Up to %d"
+msgstr "До %d г."
+
+#: bg_catalog
+msgid "No data"
+msgstr "Няма данни"
+
+#: bg_catalog
+msgid "Printed on %s"
+msgstr "Отпечатано на %s"
+
+#: bg_catalog
+msgid "Act not found"
+msgstr "Актът не е намерен"
+
+#: bg_catalog
+msgid "List of documents written off with act No %s"
+msgstr "Списък на отчислените документи с акт № %s"
+
+#: bg_catalog
+msgid "Not inventoried documents"
+msgstr "Неинвентирани документи"
+
+#: bg_catalog
+msgid "Total: %d copies, value %s лв. (%s €)"
+msgstr "Общо: %d екз. на стойност %s лв. (%s €)"
+
+#: bg_catalog
+msgid "DRAFT"
+msgstr "ЧЕРНОВА"
+
+#: bg_catalog
+msgid "CANCELLED"
+msgstr "АНУЛИРАН"
+
+#: bg_catalog
+msgid "Number of copies"
+msgstr "Брой копия"
+
+#: bg_catalog
+msgid "%s is required"
+msgstr "%s е задължително"
+
+#: bg_catalog
+msgid "Status \"Written off\" is set only by an approved write-off act"
+msgstr "Статусът „Отчислен“ се поставя само от утвърден акт за отчисляване"
+
+#: bg_catalog
+msgid "Paper KDBF reference"
+msgstr "Справка от хартиената КДБФ"
+
+#: bg_catalog
+msgid "Order date is after the entry date"
+msgstr "Датата на поръчката е след датата на вписване"
+
+#: bg_catalog
+msgid "The selected KDBF entry does not exist"
+msgstr "Избраният запис в КДБФ не съществува"
+
+#: bg_catalog
+msgid "Entry date is before the date of the KDBF entry"
+msgstr "Датата на вписване е преди датата на записа в КДБФ"
+
+#: bg_catalog
+msgid "Choose the KDBF entry (acquisition) for these copies"
+msgstr "Изберете записа в КДБФ (постъплението) за тези екземпляри"
+
+#: bg_catalog
+msgid "No KDBF entry – fill in the reference from the paper KDBF if you have it"
+msgstr "Няма запис в КДБФ – попълнете справката от хартиената КДБФ, ако я имате"
+
+#: bg_catalog
+msgid "These inventory numbers are already used: %s"
+msgstr "Тези инвентарни номера вече са заети: %s"
+
+#: bg_catalog
+msgid "Inventory number %d is far above the next free number %d – please confirm"
+msgstr "Инвентарен № %d е много над следващия свободен № %d – моля, потвърдете"
+
+#: bg_catalog
+msgid "not selected"
+msgstr "не е избран"
+
+#: bg_catalog
+msgid "Inventory No. from"
+msgstr "Инв. № от"
+
+#: bg_catalog
+msgid "The inventory number is also the barcode. Next free number: %d"
+msgstr "Инвентарният номер е и баркод. Следващ свободен номер: %d"
+
+#: bg_catalog
+msgid "e.g. 12/1987 – for books entered before the system"
+msgstr "напр. 12/1987 – за книгите отпреди системата"
+
+#: bg_catalog
+msgid "e.g. 2"
+msgstr "напр. 2"
+
+#: bg_catalog
+msgid "Item Notes"
+msgstr "Забележка"
+
+#: bg_catalog
+msgid "Enter inventory numbers"
+msgstr "Въведете инвентарни номера"
+
+#: bg_catalog
+msgid "Wrong range \"%s\""
+msgstr "Грешен интервал „%s“"
+
+#: bg_catalog
+msgid "Range \"%s\" is too large (max %d numbers)"
+msgstr "Интервалът „%s“ е твърде голям (до %d номера)"
+
+#: bg_catalog
+msgid "\"%s\" is not a number or a range"
+msgstr "„%s“ не е номер или интервал"
+
+#: bg_catalog
+msgid "Too many numbers (max %d)"
+msgstr "Твърде много номера (до %d)"
+
+#: bg_catalog
+msgid "Inventory numbers are not deleted (Ordinance No 3, art. 16–17 and 28). To remove a book from the fund, use a write-off act; to fix a mistake, correct the record and describe the correction in \"Notes\"."
+msgstr "Инвентарните номера не се изтриват (Наредба № 3, чл. 16–17 и 28). За изваждане от фонда – акт за отчисляване; за грешка – поправете записа и опишете поправката в „Забележка“."
+
+#: bg_catalog
+msgid "Item %s was not entered today."
+msgstr "Екземпляр %s не е въведен днес."
+
+#: bg_catalog
+msgid "Item %s has loan history."
+msgstr "Екземпляр %s има история на заемания."
+
+#: bg_catalog
+msgid "Item %s is included in a write-off act."
+msgstr "Екземпляр %s е включен в акт за отчисляване."
+
+#: bg_catalog
+msgid "Item %s has stock-take records."
+msgstr "Екземпляр %s има отметки от инвентаризация."
+
+#: bg_catalog
+msgid "price"
+msgstr "цена"
+
+#: bg_catalog
+msgid "currency"
+msgstr "валута"
+
+#: bg_catalog
+msgid "entry date"
+msgstr "дата на вписване"
+
+#: bg_catalog
+msgid "paper KDBF ref."
+msgstr "справка от хартиената КДБФ"
+
+#: bg_catalog
+msgid "volume"
+msgstr "том"
+
+#: bg_catalog
+msgid "Purchase"
+msgstr "Покупка"
+
+#: bg_catalog
+msgid "Donation"
+msgstr "Дарение"
+
+#: bg_catalog
+msgid "Exchange"
+msgstr "Замяна"
+
+#: bg_catalog
+msgid "Transfer from another library"
+msgstr "Прехвърляне от друга библиотека"
+
+#: bg_catalog
+msgid "Replacement of lost books (from readers)"
+msgstr "Заместване на изгубени (от читатели)"
+
+#: bg_catalog
+msgid "Other"
+msgstr "Друго"
+
+#: bg_catalog
+msgid "Outdated in content"
+msgstr "Остарели по съдържание"
+
+#: bg_catalog
+msgid "Surplus copies"
+msgstr "Многоекземплярност"
+
+#: bg_catalog
+msgid "Not suitable for the library profile"
+msgstr "Неподходящи за профила на библиотеката"
+
+#: bg_catalog
+msgid "Physically worn out"
+msgstr "Физически изхабени"
+
+#: bg_catalog
+msgid "Damaged or not returned by readers"
+msgstr "Повредени или невърнати от читатели"
+
+#: bg_catalog
+msgid "Missing at stock take"
+msgstr "Липсващи при инвентаризация"
+
+#: bg_catalog
+msgid "Unusable media"
+msgstr "Неизползваеми носители"
+
+#: bg_catalog
+msgid "Natural disaster"
+msgstr "Стихийно бедствие"
+
+#: bg_catalog
+msgid "Theft (with police report)"
+msgstr "Кражба (с протокол на МВР)"
+
+#: bg_catalog
+msgid "Draft"
+msgstr "Чернова"
+
+#: bg_catalog
+msgid "Approved"
+msgstr "Утвърден"
+
+#: bg_catalog
+msgid "Books"
+msgstr "Книги"
+
+#: bg_catalog
+msgid "Periodicals"
+msgstr "Периодика"
+
+#: bg_catalog
+msgid "AV and electronic"
+msgstr "АВ и електронни"
+
+#: bg_catalog
+msgid "Fiction"
+msgstr "Художествена"
+
+#: bg_catalog
+msgid "Children"
+msgstr "Детска"
+
+#: bg_catalog
+msgid "Unclassified"
+msgstr "Некласифицирани"
+
+#: bg_catalog
+msgid "Bulgarian"
+msgstr "Български"
+
+#: bg_catalog
+msgid "Other languages"
+msgstr "Други езици"
+
+#: bg_catalog
+msgid "Items can be added only to a draft act"
+msgstr "Екземпляри могат да се добавят само към чернова на акт"
+
+#: bg_catalog
+msgid "%s: no such inventory number"
+msgstr "%s: няма такъв инвентарен номер"
+
+#: bg_catalog
+msgid "%s: already written off"
+msgstr "%s: вече е отчислен"
+
+#: bg_catalog
+msgid "%s: already in act %s"
+msgstr "%s: вече е в акт %s"
+
+#: bg_catalog
+msgid "%s: is on loan – return it first"
+msgstr "%s: заемат е – първо трябва да се върне"
+
+#: bg_catalog
+msgid "%s: entered after the act date"
+msgstr "%s: вписан е след датата на акта"
+
+#: bg_catalog
+msgid "%s: is not marked as missing"
+msgstr "%s: не е отбелязан като липсващ"
+
+#: bg_catalog
+msgid "A cancelled act cannot be approved"
+msgstr "Анулиран акт не може да се утвърди"
+
+#: bg_catalog
+msgid "The act has no items"
+msgstr "Актът няма екземпляри"
+
+#: bg_catalog
+msgid "These items are on loan and must be returned first: %s"
+msgstr "Тези екземпляри са заети и първо трябва да се върнат: %s"
+
+#: bg_catalog
+msgid "Only a draft act can be cancelled"
+msgstr "Може да се анулира само чернова на акт"
+
+#: bg_catalog
+msgid "Created automatically at the end of a stock take"
+msgstr "Създаден автоматично при приключване на инвентаризация"
+
+#: bg_catalog
+msgid "Closing balance of %d"
+msgstr "Наличност в края на %d г."
+
+#: bg_catalog
+msgid "Barcode label"
+msgstr "Баркод етикет"
+
+#: bg_catalog
+msgid "Call number (spine) label"
+msgstr "Сигнатурен етикет"
+
+#: bg_catalog
+msgid "Combined: call number + barcode"
+msgstr "Комбиниран: сигнатура + баркод"
+
+#: bg_catalog
+msgid "Cannot encode this code"
+msgstr "Този код не може да се кодира"
+
+#: bg_catalog
+msgid "Catalogue cards: A4 portrait – 3"
+msgstr "Каталожни картички: A4 вертикално – 3"
+
+#: bg_catalog
+msgid "Catalogue cards: A4 landscape – 4"
+msgstr "Каталожни картички: A4 хоризонтално – 4"
+
+#: bg_catalog
+msgid "Catalogue cards: one card per page (12.5 × 7.5 cm)"
+msgstr "Каталожни картички: по една на страница (12,5 × 7,5 см)"
+
+#: bg_catalog
+msgid "Nothing to print"
+msgstr "Няма какво да се отпечата"
+
+#: bg_catalog
+msgid "Print at 100% / \"Actual size\", margins \"None\", without headers and footers."
+msgstr "Печат при 100% / „Действителен размер“, полета „Няма“, без горен и долен колонтитул."
+
+#: bg_catalog
+msgid "Measure the red 100 mm lines. Put the printout over a sticker sheet against a window and enter the X/Y correction if the frames do not match."
+msgstr "Измерете червените линии от 100 мм. Сложете разпечатката върху лист стикери срещу прозореца и въведете корекция X/Y, ако рамките не съвпадат."
+
+#: bg_catalog
+msgid "%d labels"
+msgstr "%d етикета"
+
+#: bg_catalog
+msgid "ISBN/ISSN \"%s\" contains invalid characters (only digits, X, hyphens and spaces are allowed)"
+msgstr "ISBN/ISSN „%s“ съдържа недопустими знаци (разрешени са само цифри, X, тирета и интервали)"
+
+#: bg_catalog
+msgid "\"%s\" is not an ISBN (10 or 13 digits) or ISSN (8 digits)"
+msgstr "„%s“ не е ISBN (10 или 13 цифри) или ISSN (8 цифри)"
+
+#: bg_catalog
+msgid "The check digit of \"%s\" is wrong (kept because it is marked as wrong)"
+msgstr "Контролната цифра на „%s“ е грешна (запазен е, защото е отбелязан като грешен)"
+
+#: bg_catalog
+msgid "The check digit of \"%s\" is wrong. If the book really has this wrong number printed, add \"(грешен)\" after it"
+msgstr "Контролната цифра на „%s“ е грешна. Ако в книгата наистина е отпечатан този грешен номер, добавете „(грешен)“ след него"
+
+#: bg_catalog
+msgid "Publishing year is required (write [б. г.] if the book has no year)"
+msgstr "Годината на издаване е задължителна (напишете [б. г.], ако книгата е без година)"
+
+#: bg_catalog
+msgid "Publishing year must look like 2019, [2019], 2019?, [ок. 1900], 2010–2012 or [б. г.]"
+msgstr "Годината трябва да е във вида 2019, [2019], 2019?, [ок. 1900], 2010–2012 или [б. г.]"
+
+#: bg_catalog
+msgid "Publishing year must be between 1450 and %d"
+msgstr "Годината на издаване трябва да е между 1450 и %d"
+
+#: bg_catalog
+msgid "The second year of a range cannot be before the first one"
+msgstr "Втората година в интервала не може да е преди първата"
+
+#: bg_catalog
+msgid "Price is required (for donations enter an estimated value)"
+msgstr "Цената е задължителна (за дарения въведете оценъчна стойност)"
+
+#: bg_catalog
+msgid "Price must be a number with up to 2 decimals, e.g. 12.50"
+msgstr "Цената трябва да е число с до 2 знака след десетичната точка, напр. 12.50"
+
+#: bg_catalog
+msgid "Price is 0 – for donations enter an estimated value"
+msgstr "Цената е 0 – за дарения въведете оценъчна стойност"
+
+#: bg_catalog
+msgid "Currency must be EUR or BGN"
+msgstr "Валутата трябва да е EUR или BGN"
+
+#: bg_catalog
+msgid "Inventory number is required"
+msgstr "Инвентарният номер е задължителен"
+
+#: bg_catalog
+msgid "Inventory number \"%s\" must be a whole number without leading zeros (e.g. 1234)"
+msgstr "Инвентарният номер „%s“ трябва да е цяло число без водещи нули (напр. 1234)"
+
+#: bg_catalog
+msgid "%s must be a whole number between 1 and %d"
+msgstr "%s трябва да е цяло число между 1 и %d"
+
+#: bg_catalog
+msgid "%s must be a whole number (0 or more)"
+msgstr "%s трябва да е цяло число (0 или повече)"
+
+#: bg_catalog
+msgid "%s is not a valid date (YYYY-MM-DD)"
+msgstr "%s не е валидна дата (ГГГГ-ММ-ДД)"
+
+#: bg_catalog
+msgid "%s cannot be after %s"
+msgstr "%s не може да е след %s"
+
+#: bg_catalog
+msgid "%s cannot be before %s"
+msgstr "%s не може да е преди %s"
+
+#: bg_catalog
+msgid "%s \"%s\" does not look like a UDC index (e.g. 886.7-31 or 351.82:332.2(497.2))"
+msgstr "%s „%s“ не прилича на УДК индекс (напр. 886.7-31 или 351.82:332.2(497.2))"
+
+#: bg_catalog
+msgid "Author mark \"%s\" usually is a capital letter followed by 1–3 digits (e.g. П47)"
+msgstr "Авторският знак „%s“ обикновено е главна буква и 1–3 цифри (напр. П47)"
+
+#: bg_catalog
+msgid "Physical description usually looks like \"208 с. : ил. ; 20 см\""
+msgstr "Обемът обикновено е във вида „208 с. : ил. ; 20 см“"
+
+#: bg_catalog
+msgid "%s is too long (max %d characters)"
+msgstr "%s е твърде дълго (до %d знака)"
+
+#: bg_catalog
+msgid "%s has an invalid value"
+msgstr "%s има невалидна стойност"
+
+#: bg_catalog
+msgid "Inventory number must be a whole number without leading zeros (e.g. 1234)"
+msgstr "Инвентарният номер трябва да е цяло число без водещи нули (напр. 1234)"
+
+#: bg_catalog
+msgid "This number is more than 100 above the next free number (%s). Continue?"
+msgstr "Номерът е с повече от 100 над следващия свободен (%s). Да продължа ли?"
+
+#: bg_catalog
+msgid "Only digits, X, hyphens and spaces are allowed"
+msgstr "Разрешени са само цифри, X, тирета и интервали"
+
+#: bg_catalog
+msgid "An ISBN has 10 or 13 digits, an ISSN has 8"
+msgstr "ISBN има 10 или 13 цифри, ISSN – 8"
+
+#: bg_catalog
+msgid "Wrong check digit – check the number. If the book really has a wrong number printed, add \"(грешен)\""
+msgstr "Грешна контролна цифра – проверете номера. Ако в книгата наистина е отпечатан грешен номер, добавете „(грешен)“"
+
+#: bg_catalog
+msgid "Publishing year must be between 1450 and %s"
+msgstr "Годината на издаване трябва да е между 1450 и %s"
+
+#: bg_catalog
+msgid "Does not look like a UDC index (e.g. 886.7-31)"
+msgstr "Не прилича на УДК индекс (напр. 886.7-31)"
+
+#: bg_catalog
+msgid "Usually a capital letter followed by 1–3 digits (e.g. П47)"
+msgstr "Обикновено главна буква и 1–3 цифри (напр. П47)"
+
+#: bg_catalog
+msgid "Usually looks like \"208 с. : ил. ; 20 см\""
+msgstr "Обикновено е във вида „208 с. : ил. ; 20 см“"
+
+#: bg_catalog
+msgid "The date cannot be in the future"
+msgstr "Датата не може да е в бъдещето"
+
+#: bg_catalog
+msgid "Not a valid date"
+msgstr "Невалидна дата"
+
+#: bg_catalog
+msgid "Must be a whole number greater than 0"
+msgstr "Трябва да е цяло число, по-голямо от 0"
+
+#: bg_catalog
+msgid "Use numbers and ranges, e.g. 101-130, 135"
+msgstr "Въведете номера и интервали, напр. 101-130, 135"
+
+#: bg_catalog
+msgid "This field is required"
+msgstr "Полето е задължително"
+
+#: bg_catalog
+msgid "Please correct the marked fields"
+msgstr "Моля, поправете отбелязаните полета"
+
+#: bg_catalog
+msgid "Keywords (all fields)"
+msgstr "Ключови думи (всички полета)"
+
+#: bg_catalog
+msgid "Subject heading"
+msgstr "Предметна рубрика"
+
+#: bg_catalog
+msgid "Place of publication"
+msgstr "Място на издаване"
+
+#: bg_catalog
+msgid "Series"
+msgstr "Поредица"
+
+#: bg_catalog
+msgid "Original title"
+msgstr "Оригинално заглавие"
+
+#: bg_catalog
+msgid "AND"
+msgstr "И"
+
+#: bg_catalog
+msgid "OR"
+msgstr "ИЛИ"
+
+#: bg_catalog
+msgid "AND NOT"
+msgstr "И НЕ"
+
+#: bg_catalog
+msgid "Material type"
+msgstr "Вид материал"
+
+#: bg_catalog
+msgid "Years"
+msgstr "Години"
+
+#: bg_catalog
+msgid "Copy from {type}"
+msgstr "Копие от {type}"
+
+#: bg_catalog
+msgid "Print on A4 sheets"
+msgstr "Печат на A4 листове"
+
+#: bg_catalog
+msgid "No CSV file selected to import, please choose CSV file first!"
+msgstr "Не е избран CSV файл за внасяне – първо изберете файл!"
+
+#: bg_catalog
+msgid "Success importing bibliographic data : {title}"
+msgstr "Внесен библиографски запис: {title}"
+
+#: bg_catalog
+msgid "Success imported <strong>{row_count}</strong> title in <strong>{time_to_finish}</strong> second"
+msgstr "Внесени са <strong>{row_count}</strong> записа за <strong>{time_to_finish}</strong> секунди"
+
+#: bg_catalog
+msgid "Download Sample"
+msgstr "Изтегли образец"
+
+#: bg_catalog
+msgid "Process"
+msgstr "Обработи"
+
+#: bg_catalog
+msgid "_You are not authorized to view this section"
+msgstr "Нямате права да разглеждате този раздел"
+
+#: bg_catalog
+msgid "Series Number"
+msgstr "№ в поредицата"
+
+#: bg_catalog
+msgid "Author Mark"
+msgstr "Авторски знак"
+
+#: bg_catalog
+msgid "Printing House"
+msgstr "Печатница"
+
+#: bg_catalog
+msgid "Price/Terms (ISBD area 8)"
+msgstr "Цена/условия (обл. 8 на ISBD)"
+
+#: bg_catalog
+msgid "Cropped image data is invalid, uses disallowed type, or exceeds max size."
+msgstr "Изрязаното изображение е невалидно, от неразрешен вид или твърде голямо."
+
+#: bg_catalog
+msgid "Created items with inventory numbers %s"
+msgstr "Създадени са екземпляри с инв. № %s"
+
+#: bg_catalog
+msgid "These items were NOT created: %s"
+msgstr "Тези екземпляри НЕ са създадени: %s"
+
+#: bg_catalog
+msgid "Create copies"
+msgstr "Създаване на екземпляри"
+
+#: bg_catalog
+msgid "Several numbers are separated with \";\", e.g. 978-… (т. 1); 978-… (т. 2)"
+msgstr "Няколко номера се разделят с „;“, напр. 978-… (т. 1); 978-… (т. 2)"
+
+#: bg_catalog
+msgid "The price printed in the book, e.g. 14.95 лв. (shown after the ISBN on the catalogue card)"
+msgstr "Цената, отпечатана в книгата, напр. 14.95 лв. (показва се след ISBN на каталожната картичка)"
+
+#: bg_catalog
+msgid "Place of printing : printer, as given in the book (optional)"
+msgstr "Място на печат : печатница, както е в книгата (по желание)"
+
+#: bg_catalog
+msgid "ISBD: pages : illustrations ; size + accompanying material"
+msgstr "ISBD: страници : илюстрации ; размер + придружаващ материал"
+
+#: bg_catalog
+msgid "Number of the book within the series"
+msgstr "Номер на книгата в поредицата"
+
+#: bg_catalog
+msgid "First letter of the heading word and the number from the author tables, e.g. П47"
+msgstr "Първата буква на редната дума и числото от таблиците за авторски знаци, напр. П47"
+
+#: bg_catalog
+msgid "Compose call number"
+msgstr "Сглоби сигнатура"
+
+#: bg_catalog
+msgid "Shelf UDC + author mark, e.g. 886.7-3 П47. The department prefix (e.g. Д) is added to each copy automatically."
+msgstr "УДК за подреждане + авторски знак, напр. 886.7-3 П47. Префиксът на отдела (напр. Д) се добавя автоматично към всеки екземпляр."
+
+#: bg_catalog
+msgid "The item is written off – only the notes were saved"
+msgstr "Екземплярът е отчислен – записана е само забележката"
+
+#: bg_catalog
+msgid "The inventory number cannot be changed after the day of entry – describe the correction in \"Notes\""
+msgstr "Инвентарният номер не може да се променя след деня на въвеждане – опишете поправката в „Забележка“"
+
+#: bg_catalog
+msgid "Inventory number %s is already used"
+msgstr "Инвентарен № %s вече е зает"
+
+#: bg_catalog
+msgid "Choose the KDBF entry (acquisition) for this copy"
+msgstr "Изберете записа в КДБФ (постъплението) за този екземпляр"
+
+#: bg_catalog
+msgid "The inventory number cannot be changed after the day of entry"
+msgstr "Инвентарният номер не може да се променя след деня на въвеждане"
+
+#: bg_catalog
+msgid "Volume or part (inventory book column \"Volume\")"
+msgstr "Том или част (колона „Том“ в инвентарната книга)"
+
+#: bg_catalog
+msgid "Write-off act"
+msgstr "Акт за отчисляване"
+
+#: bg_catalog
+msgid "For books entered before the system: number/year of the entry in the paper KDBF"
+msgstr "За книгите отпреди системата: номер/година на записа в хартиената КДБФ"
+
+#: bg_catalog
+msgid "For donations enter an estimated value. Reports also show the amount in euro (1 EUR = 1.95583 BGN)."
+msgstr "За дарения въведете оценъчна стойност. Справките показват сумата и в евро (1 EUR = 1,95583 лв.)."
+
+#: bg_catalog
+msgid "Corrections of the record are described here with date (Ordinance No 3, art. 17)"
+msgstr "Поправките по записа се описват тук с дата (Наредба № 3, чл. 17)"
+
+#: bg_catalog
+msgid "Skipped row %s: %s"
+msgstr "Пропуснат ред %s: %s"
+
+#: bg_catalog
+msgid "Success importing item data : {item_code} ({title})"
+msgstr "Внесен екземпляр: {item_code} ({title})"
+
+#: bg_catalog
+msgid "MARC record text"
+msgstr "Текст на MARC записа"
+
+#: bg_catalog
+msgid "Feature MARC needs some PHP extension such as %s"
+msgstr "MARC изисква PHP разширения като %s"
+
+#: bg_catalog
+msgid "Extension XML is not enabled"
+msgstr "Разширението XML не е включено"
+
+#: bg_catalog
+msgid "Bulgarian (NLB / ISBD)"
+msgstr "Български (НБКМ / ISBD)"
+
+#: bg_catalog
+msgid "Classic SLiMS"
+msgstr "Класически SLiMS"
+
+#: bg_catalog
+msgid "A4 portrait – 3 cards"
+msgstr "A4 вертикално – 3 картички"
+
+#: bg_catalog
+msgid "A4 landscape – 4 cards"
+msgstr "A4 хоризонтално – 4 картички"
+
+#: bg_catalog
+msgid "One card per page (12.5 × 7.5 cm)"
+msgstr "По една картичка на страница (12,5 × 7,5 см)"
+
+#: bg_catalog
+msgid "Automatic"
+msgstr "Автоматично"
+
+#: bg_catalog
+msgid "Inventory number"
+msgstr "Инвентарен номер"
+
+#: bg_catalog
+msgid "KDBF AND INVENTORY"
+msgstr "КДБФ И ИНВЕНТАР"
+
+#: bg_catalog
+msgid "Register of acquisitions in the book of library fund movement"
+msgstr "Регистриране на постъпленията в книгата за движение на фонда"
+
+#: bg_catalog
+msgid "Write-off acts, their lists and approval"
+msgstr "Актове за отчисляване, списъци и утвърждаване"
+
+#: bg_catalog
+msgid "Fund at the beginning and end of the year, inventory settings"
+msgstr "Фондът в началото и края на годината, настройки на инвентара"
+
+#: bg_catalog
+msgid "Approve Write-off Acts"
+msgstr "Утвърждаване на актове за отчисляване"
+
+#: bg_catalog
+msgid "Approve write-off acts, close years, change inventory settings"
+msgstr "Утвърждаване на актове, приключване на години, настройки на инвентара"
+
+#: bg_catalog
+msgid "Barcodes, call number labels and combined labels on A4 sticker sheets"
+msgstr "Баркодове, сигнатурни и комбинирани етикети върху A4 листове със стикери"
+
+#: bg_catalog
+msgid "Status %s is used by write-off and stock take and cannot be deleted"
+msgstr "Статусът %s се използва при отчисляване и инвентаризация и не може да се изтрие"
+
+#: bg_catalog
+msgid "Inventory book (Ordinance No 3, Annex 4) – print, Excel, CSV"
+msgstr "Инвентарна книга (Наредба № 3, Прил. № 4) – печат, Excel, CSV"
+
+#: bg_catalog
+msgid "Book of library fund movement, part 1"
+msgstr "Книга за движение на библиотечния фонд, част 1"
+
+#: bg_catalog
+msgid "Book of library fund movement, part 2"
+msgstr "Книга за движение на библиотечния фонд, част 2"
+
+#: bg_catalog
+msgid "Book of library fund movement, part 3"
+msgstr "Книга за движение на библиотечния фонд, част 3"
+
+#: bg_catalog
+msgid "Coverage"
+msgstr "Обхват"
+
+#: bg_catalog
+msgid "%d of %d active items checked (%s%%)"
+msgstr "Проверени %d от %d екземпляра във фонда (%s%%)"
+
+#: bg_catalog
+msgid "A draft write-off act %s was created for the missing items."
+msgstr "За липсващите екземпляри е създадена чернова на акт за отчисляване %s."
+
+#: bg_catalog
+msgid "Create a draft write-off act for the missing items"
+msgstr "Създай чернова на акт за отчисляване за липсващите"
+
+#: bg_catalog
+msgid "Your site is not register"
+msgstr "Сайтът не е регистриран"
+
+#: bg_catalog
+msgid "Register"
+msgstr "Регистрирай"
+
+#: bg_catalog
+msgid "Your site is already registered"
+msgstr "Сайтът вече е регистриран"
+
+#: bg_catalog
+msgid "Search Engine Settings"
+msgstr "Настройки на търсачката"
+
+#: bg_catalog
+msgid "Remember Me Timeout (in day)"
+msgstr "Срок на „Запомни ме“ (дни)"
+
+#: bg_catalog
+msgid "Simplified the simple search. narrowing search aspects"
+msgstr "Опростено търсене – по-тесен обхват"
+
+#: bg_catalog
+msgid "Strong Password Policy"
+msgstr "Строга политика за пароли"
+
+#: bg_catalog
+msgid "Password Minimum Characters (If Strong Password Policy is Yes)"
+msgstr "Минимален брой знаци в паролата (при строга политика)"
+
+#: bg_catalog
+msgid "Maybe the data is temporary unvailable"
+msgstr "Данните може би временно не са достъпни"
+
+#: bg_catalog
+msgid "The year must be a 4-digit number"
+msgstr "Годината трябва да е четирицифрено число"
+
+#: bg_catalog
+msgid "The start year cannot be after the end year"
+msgstr "Началната година не може да е след крайната"
+
+#: bg_catalog
+msgid "Invalid ISBN – only digits, X, hyphens and spaces are allowed"
+msgstr "Невалиден ISBN – разрешени са цифри, X, тирета и интервали"
+
+#: bg_catalog
+msgid "Enter at least one search word or limit"
+msgstr "Въведете поне една дума за търсене или ограничение"
+
+#: bg_catalog
+msgid "e.g. 2019 or 2010-2020"
+msgstr "напр. 2019 или 2010-2020"
+
+#: bg_catalog
+msgid "word or \"phrase in quotes\""
+msgstr "дума или „фраза в кавички“"
+
+#: bg_catalog
+msgid "Operator"
+msgstr "Оператор"
+
+#: bg_catalog
+msgid "Field"
+msgstr "Поле"
+
+#: bg_catalog
+msgid "Search term"
+msgstr "Дума за търсене"
+
+#: bg_catalog
+msgid "Limits"
+msgstr "Ограничения"
+
+#: bg_catalog
+msgid "Year from / to"
+msgstr "Година от / до"
+
+#: bg_catalog
+msgid "All languages"
+msgstr "Всички езици"
+
+#: bg_catalog
+msgid "All types"
+msgstr "Всички видове"
+
+#: bg_catalog
+msgid "* replaces the end of a word (истори* → история, истории); words in quotes are searched as a phrase (\"Под игото\"); capital and small letters do not matter."
+msgstr "* замества края на дума (истори* → история, истории); думи в кавички се търсят като фраза („Под игото“); главните и малките букви нямат значение."
+
+#: bg_catalog
+msgid "Clear"
+msgstr "Изчисти"
+
+#: bg_catalog
+msgid "Sort by"
+msgstr "Подреди по"
+
+#: bg_catalog
+msgid "Catalogue Cards (card catalogue)"
+msgstr "Каталожни картички (картотека)"
+
+#: bg_catalog
+msgid "Main card – alphabetical catalogue (heading word), with inventory numbers"
+msgstr "Основна картичка – азбучен каталог (по редна дума), с инвентарните номера"
+
+#: bg_catalog
+msgid "Systematic catalogue card (filed by UDC)"
+msgstr "Картичка за систематичния каталог (подрежда се по УДК)"
+
+#: bg_catalog
+msgid "Shelf-list card (by call number, all copies and departments)"
+msgstr "Топографска картичка (по сигнатура, с всички екземпляри и отдели)"
+
+#: bg_catalog
+msgid "Added entry: title (when the heading is an author)"
+msgstr "Допълнителна картичка: заглавие (когато редната дума е автор)"
+
+#: bg_catalog
+msgid "Added entries: co-authors"
+msgstr "Допълнителни картички: съавтори"
+
+#: bg_catalog
+msgid "Added entries: subject headings"
+msgstr "Допълнителни картички: предметни рубрики"
+
+#: bg_catalog
+msgid "Titles"
+msgstr "Заглавия"
+
+#: bg_catalog
+msgid "Selected titles: %d"
+msgstr "Избрани заглавия: %d"
+
+#: bg_catalog
+msgid "Select titles in the bibliographic list and choose \"Catalogue cards\" – or print only blank cards below."
+msgstr "Изберете заглавия в списъка с библиографски записи и натиснете „Каталожни картички“ – или отпечатайте само празни картички по-долу."
+
+#: bg_catalog
+msgid "Cards for each title"
+msgstr "Картички за всяко заглавие"
+
+#: bg_catalog
+msgid "The alphabetical catalogue is arranged by the heading word, the systematic one by UDC, the shelf list by call number."
+msgstr "Азбучният каталог се подрежда по редната дума, систематичният – по УДК, топографският – по сигнатура."
+
+#: bg_catalog
+msgid "Blank cards"
+msgstr "Празни картички"
+
+#: bg_catalog
+msgid "Cards with ruled fields for describing and classifying books by hand; the data is entered in the program later."
+msgstr "Картички с разграфени полета за описване и класифициране на книгите на ръка; данните се въвеждат в програмата по-късно."
+
+#: bg_catalog
+msgid "Page layout"
+msgstr "Подреждане на листа"
+
+#: bg_catalog
+msgid "Signature Source"
+msgstr "Източник на сигнатурата"
+
+#: bg_catalog
+msgid "Font size (pt)"
+msgstr "Размер на шрифта (pt)"
+
+#: bg_catalog
+msgid "Card size 12.5 × 7.5 cm. Print at 100% / \"Actual size\". The card shows the heading word in bold, the call number top left and the full UDC index bottom right (NLB handbook)."
+msgstr "Размер на картичката 12,5 × 7,5 см. Печат при 100% / „Действителен размер“. На картичката редната дума е в получер, сигнатурата – горе вляво, пълният УДК индекс – долу вдясно (наръчника на НБКМ)."
+
+#: bg_catalog
+msgid "Selected titles: %d (%d copies)"
+msgstr "Избрани заглавия: %d (%d екз.)"
+
+#: bg_catalog
+msgid "Barcodes"
+msgstr "Баркодове"
+
+#: bg_catalog
+msgid "Call number labels"
+msgstr "Сигнатурни етикети"
+
+#: bg_catalog
+msgid "Combined labels"
+msgstr "Комбинирани етикети"
+
+#: bg_catalog
+msgid "Catalogue cards"
+msgstr "Каталожни картички"
+
+#: bg_catalog
+msgid "Print selected:"
+msgstr "Печат на избраните:"
+
+#: bg_catalog
+msgid "Select at least one title"
+msgstr "Изберете поне едно заглавие"
+
+#: bg_catalog
+msgid "Cards for the alphabetical, systematic and shelf-list catalogues, blank cards"
+msgstr "Картички за азбучния, систематичния и топографския каталог, празни картички"
+
+#: bg_catalog
+msgid "Packed on A4 for cutting – 5 cards (some rotated 90°)"
+msgstr "Плътно на A4 за рязане – 5 картички (част завъртени на 90°)"
+
+#: bg_catalog
+msgid "Printer margin (mm)"
+msgstr "Поле на принтера (мм)"
+
+#: bg_catalog
+msgid "For the packed layout: the strip at the paper edge that the printer cannot print; the cards are cut edge to edge."
+msgstr "При плътното подреждане: ивицата по ръба на листа, в която принтерът не печата; картичките се режат контур до контур."
+
+#: bg_catalog
+msgid "Packed layout: the frame is printed as cutting lines shared by neighbouring cards."
+msgstr "При плътното подреждане рамката се печата като обща линия за рязане между съседните картички."
+
+#: bg_catalog
+msgid "Plain paper: as many as fit, edge to edge, cut with straight cuts. Sticker sheets: the positions are fixed by the manufacturer."
+msgstr "Обикновена хартия: колкото се побират, контур до контур, рязане с прави разрези. Листове със стикери: позициите са дадени от производителя."
+
+#: bg_catalog
+msgid "Rotate 90° when more fit"
+msgstr "Завъртане на 90°, ако така се побират повече"
+
+#: bg_catalog
+msgid "Plain paper"
+msgstr "Обикновена хартия"
+
+#: bg_catalog
+msgid "The program finds the arrangement with the most labels (both page orientations, with or without rotation); all cuts go from edge to edge."
+msgstr "Програмата намира подредбата с най-много етикети (двете ориентации на листа, със и без завъртане); всеки разрез минава от край до край."
+
+#: bg_catalog
+msgid "Print cutting lines"
+msgstr "Печат на линии за рязане"
+
+#: bg_catalog
+msgid "Plain paper – packed for cutting (maximum per sheet)"
+msgstr "Обикновена хартия – плътно за рязане (максимален брой на лист)"
+
+#: bg_catalog
+msgid "Catalogue cards: packed on A4 for cutting – 5 per sheet"
+msgstr "Каталожни картички: плътно на A4 за рязане – по 5 на лист"
+
+#: bg_catalog
+msgid "%d per sheet, %s × %s mm, packed for cutting"
+msgstr "по %d на лист, %s × %s мм, плътно за рязане"
+
+#: bg_catalog
+msgid "some are rotated 90°"
+msgstr "част са завъртени на 90°"

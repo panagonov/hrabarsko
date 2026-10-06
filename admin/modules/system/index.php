@@ -428,7 +428,7 @@ $html .= '<select id="search_engine_select" name="search_engine" class="custom-s
 foreach ($engine as $opt) {
     $val = $opt[0];
     $label = $opt[1];
-    $selected = ($val == ($sysconf['search_engine'] ?? DefaultEngine::class)) ? ' selected' : '';
+    $selected = ($val === \SLiMS\SearchEngine\Engine::active()) ? ' selected' : '';
     $html .= '<option value="'.htmlspecialchars($val).'"'.$selected.'>'.htmlspecialchars($label).'</option>';
 }
 $html .= '</select>';

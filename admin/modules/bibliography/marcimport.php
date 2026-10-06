@@ -68,7 +68,7 @@ if (!Extension::forFeature('MARC')->isFulfilled($marcExtRequirement)) {
 // max chars in line for file operations
 $max_chars = 1024 * 100;
 
-if (Engine::active() == SearchBiblioEngine::class) {
+if (in_array(Engine::active(), [SearchBiblioEngine::class, \SLiMS\SearchEngine\BgCatalogEngine::class], true)) {
   require MDLBS . 'system/biblio_indexer.inc.php';
   // create biblio_indexer class instance
   $indexer = new biblio_indexer($dbs);
@@ -159,13 +159,23 @@ if (isset($_POST['doImport'])) {
         }
       }
 
-      // Classification DDC
-      $cls_fld = $record->getField('082');
+      // Classification: УДК (080 $a + спомагателните $x), иначе DDC (082) или друга (084)
+      $cls_fld = $record->getField('080');
       if ($cls_fld) {
-        $classification = $cls_fld->getSubfields('a');
-        if (isset($classification[0])) {
-          // echo 'Classification: '.$classification[0]->getData();
-          $data['classification'] = $classification[0]->getData();
+        $udc = '';
+        foreach ($cls_fld->getSubfields() as $sf) {
+          if (in_array($sf->getCode(), ['a', 'x'], true)) $udc .= trim($sf->getData());
+        }
+        if ($udc !== '') $data['classification'] = mb_substr($udc, 0, 100);
+      }
+      foreach (['082', '084'] as $cls_tag) {
+        if (!empty($data['classification'])) break;
+        $cls_fld = $record->getField($cls_tag);
+        if ($cls_fld) {
+          $classification = $cls_fld->getSubfields('a');
+          if (isset($classification[0])) {
+            $data['classification'] = $classification[0]->getData();
+          }
         }
       }
 
@@ -388,7 +398,7 @@ if (isset($_POST['doImport'])) {
       }
 
       // create biblio index
-      if (Engine::active() == SearchBiblioEngine::class) {
+      if (in_array(Engine::active(), [SearchBiblioEngine::class, \SLiMS\SearchEngine\BgCatalogEngine::class], true)) {
         $indexer->makeIndex($biblio_id);
       }
     }

@@ -83,7 +83,7 @@ const show_advanced = new Vue({
         },
         searchSubmit: function () {
             if (this.keywords !== '') this.saveKeyword()
-            window.location.href = `index.php?${this.searchBy}=${this.keywords}&search=search`;
+            window.location.href = `index.php?${this.searchBy}=${encodeURIComponent(this.keywords)}&search=search`;
         },
         saveKeyword: function () {
             let rawKeywords = localStorage.getItem('keywords')

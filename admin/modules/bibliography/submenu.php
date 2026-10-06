@@ -30,12 +30,23 @@ $menu['bibliography.bibliography-add'] = array(__('Add New Bibliography'), MWB.'
 $menu['bibliography.header-items'] = array('Header', __('ITEMS'));
 $menu['bibliography.item-list'] = array(__('Item List'), MWB.'bibliography/item.php', __('Show List of Library Items'));
 $menu['bibliography.checkout-items'] = array(__('Checkout Items'), MWB.'bibliography/checkout_item.php', __('Show List of Checkout Items'));
+// Книга за движение на библиотечния фонд и инвентар (Наредба № 3 от 18.11.2014 г.)
+$menu['bibliography.header-kdbf'] = array('Header', __('KDBF AND INVENTORY'));
+$menu['bibliography.kdbf-entries'] = array(__('Acquisitions (KDBF part 1)'), MWB.'bibliography/kdbf_entry.php', __('Register of acquisitions in the book of library fund movement'));
+$menu['bibliography.kdbf-writeoffs'] = array(__('Write-off Acts (KDBF part 2)'), MWB.'bibliography/kdbf_writeoff.php', __('Write-off acts, their lists and approval'));
+$menu['bibliography.kdbf-results'] = array(__('Annual Results (KDBF part 3)'), MWB.'bibliography/kdbf_results.php', __('Fund at the beginning and end of the year, inventory settings'));
+if (isset($for_select_privileges) && $for_select_privileges) {
+    // само за настройка на правата: утвърждаване на актове, приключване на година, настройки
+    $menu['bibliography.kdbf-approve'] = array(__('Approve Write-off Acts'), MWB.'bibliography/kdbf_writeoff.php', __('Approve write-off acts, close years, change inventory settings'));
+}
 $menu['bibliography.header-copy-cataloguing'] = array('Header', __('COPY CATALOGUING'));
 $menu['bibliography.marc-sru'] = array(__('MARC SRU'), MWB.'bibliography/marcsru.php', __('Grab Bibliographic Data from Other MARC Services'));
 $menu['bibliography.z3950-sru'] = array(__('Z3950 SRU'), MWB.'bibliography/z3950sru.php', __('Grab Bibliographic Data from Z3950 SRU Web Services'));
 //$menu['bibliography.z3950-service'] = array(__('Z3950 Service'), MWB.'bibliography/z3950.php', __('Grab Bibliographic Data from Z3950 Web Services'));
 $menu['bibliography.p2p-service'] = array(__('P2P Service'), MWB.'bibliography/p2p.php', __('Grab Bibliographic Data from Other SLiMS Web Services'));
 $menu['bibliography.header-tools'] = array('Header', __('TOOLS'));
+$menu['bibliography.bg-labels'] = array(__('Labels and Barcodes (A4)'), MWB.'bibliography/bg_labels.php', __('Barcodes, call number labels and combined labels on A4 sticker sheets'));
+$menu['bibliography.bg-cards'] = array(__('Catalogue Cards (card catalogue)'), MWB.'bibliography/bg_cards.php', __('Cards for the alphabetical, systematic and shelf-list catalogues, blank cards'));
 $menu['bibliography.labels-printing'] = array(__('Labels Printing'), MWB.'bibliography/dl_print.php', __('Print Document Labels'));
 $menu['bibliography.item-barcodes-printing'] = array(__('Item Barcodes Printing'), MWB.'bibliography/item_barcode_generator.php', __('Print Item Barcodes'));
 $menu['bibliography.marc-export'] = array(__('MARC Export'), MWB.'bibliography/marcexport.php', __('Export Bibliographic Data to MARC file'));

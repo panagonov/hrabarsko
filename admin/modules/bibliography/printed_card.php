@@ -94,7 +94,7 @@ if (isset($_POST['itemID']) and !empty($_POST['itemID']) and isset($_POST['itemA
             break;
         }
         $itemID = (int)$itemID;
-        if (isset($_SESSION['cards'][$itemID])) {
+        if (isset($_SESSION['cards']['item'][$itemID])) {
             continue;
         }
         $_SESSION['cards']['item'][$itemID] = $itemID;
@@ -147,6 +147,39 @@ if (isset($_GET['action']) and $_GET['action'] == 'print') {
     }
     // strip the last comma
     $item_ids = substr_replace($item_ids, '', -1);
+
+    // български вид (наръчник на НБКМ, ISBD) – по подразбиране; класическият вид на SLiMS остава като избор
+    if (($sysconf['print']['catalog']['card_layout'] ?? 'bg') === 'bg') {
+        $bg_cfg = $sysconf['print']['catalog'];
+        $bg_types = [];
+        if (($bg_cfg['self_list_card'] ?? '1') == '1') $bg_types[] = 'main';
+        if (($bg_cfg['title_card'] ?? '0') == '1') $bg_types[] = 'title';
+        if (($bg_cfg['author_card'] ?? '0') == '1') $bg_types[] = 'author';
+        if (($bg_cfg['subject_card'] ?? '0') == '1') $bg_types[] = 'subject';
+        if (!$bg_types) $bg_types = ['main'];
+        $bg_cells = [];
+        foreach (array_filter(array_map('intval', explode(',', $item_ids))) as $bg_bid) {
+            $bg_b = \SLiMS\Catalog\BgCatalogCard::load($bg_bid);
+            if ($bg_b) {
+                $bg_cells = array_merge($bg_cells, \SLiMS\Catalog\BgCatalogCard::cards($bg_b, ['card_types' => $bg_types, 'signature_source' => $bg_cfg['signature_source'] ?? 'auto']));
+            }
+        }
+        $bg_layout = (string)($bg_cfg['page_layout'] ?? 'card_packed');
+        $bg_packed = $bg_layout === 'card_packed';
+        $bg_border = ($bg_cfg['border'] ?? '1') == '1';
+        $bg_g = \SLiMS\Bg\PrintSheet::geometry($bg_layout, [], 0, 0, ['margin' => 5, 'rotate' => true]);
+        $html_str = \SLiMS\Bg\PrintSheet::render($bg_cells, $bg_g, 1, __('Catalog Printing'),
+            \SLiMS\Catalog\BgCatalogCard::css((int)($bg_cfg['font_size'] ?? 10), $bg_border && !$bg_packed), ['padding' => 0, 'border' => $bg_border && $bg_packed]);
+        unset($_SESSION['cards']);
+        $print_file_name = 'catalog_print_result_' . strtolower(str_replace(' ', '_', $_SESSION['uname'])) . '.html';
+        if (@file_put_contents(UPLOAD . $print_file_name, $html_str)) {
+            echo '<script type="text/javascript">parent.$(\'#queueCount\').html(\'0\');</script>';
+            echo '<script type="text/javascript">top.$.colorbox({href: "' . SWB . FLS . '/' . $print_file_name . '?v=' . time() . '", iframe: true, width: "95%", height: "95%", title: "' . __('Catalog Printing') . '"})</script>';
+        } else {
+            utility::jsToastr(__('Print Catalog Format'), str_replace('{directory}', SB . FLS, __('ERROR! Catalog card failed to generate, possibly because {directory} directory is not writable')), 'error');
+        }
+        exit();
+    }
 
     $criteria = "b.biblio_id IN($item_ids)";
 
@@ -340,7 +373,7 @@ if (isset($_GET['action']) and $_GET['action'] == 'print') {
             <?php
             echo __('Maximum') . ' <font style="color: #FF0000">' . $max_print . '</font> ' . __('records can be printed at once. Currently there is') . ' '; //mfc
             if (isset($_SESSION['cards'])) {
-                echo '<font id="queueCount" style="color: #FF0000">' . count($_SESSION['cards']) . '</font>';
+                echo '<font id="queueCount" style="color: #FF0000">' . count($_SESSION['cards']['item'] ?? []) . '</font>';
             } else {
                 echo '<font id="queueCount" style="color: #FF0000">0</font>';
             }

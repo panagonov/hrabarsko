@@ -234,6 +234,7 @@ if (isset($_GET['action']) and $_GET['action'] == 'print') {
         <a target="blindSubmit" href="<?php echo MWB; ?>bibliography/item_barcode_generator.php?action=clear" class="notAJAX btn btn-default"> <?php echo __('Clear Print Queue'); ?></a>
         <a target="blindSubmit" href="<?php echo MWB; ?>bibliography/item_barcode_generator.php?action=print" class="notAJAX btn btn-default"><?php echo __('Print Barcodes for Selected Data'); ?></a>
         <a href="<?php echo MWB; ?>bibliography/pop_print_settings.php?type=barcode" class="notAJAX btn btn-default openPopUp" width="780" height="500" title="<?php echo __('Change print barcode settings'); ?>"><?php echo __('Change print barcode settings'); ?></a>
+        <a href="<?php echo MWB; ?>bibliography/bg_labels.php?source=queue" class="btn btn-primary"><?php echo __('Print on A4 sheets'); ?></a>
       </div>
       <form name="search" action="<?php echo MWB; ?>bibliography/item_barcode_generator.php" id="search" method="get" class="form-inline"><?php echo __('Search'); ?>
         <input type="text" name="keywords" class="form-control col-md-3" />

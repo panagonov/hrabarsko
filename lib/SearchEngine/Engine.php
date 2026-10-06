@@ -27,7 +27,7 @@ class Engine
 {
     private static $instance;
 
-    protected array $engine = [DefaultEngine::class, SearchBiblioEngine::class, FuzzySearchEngine::class, SphinxSearchEngine::class];
+    protected array $engine = [BgCatalogEngine::class, DefaultEngine::class, SearchBiblioEngine::class, FuzzySearchEngine::class, SphinxSearchEngine::class];
 
     private function __construct()
     {
@@ -50,8 +50,15 @@ class Engine
         return $this->engine;
     }
 
-    static function active($default = FuzzySearchEngine::class): string
+    static function active($default = BgCatalogEngine::class): string
     {
-        return config('search_engine', $default);
+        $value = (string)config('search_engine', $default);
+        if ($value !== '' && class_exists($value)) return $value;
+        // настройката може да е записана без обратните наклонени черти (Config ги маха)
+        $stripped = str_replace('\\', '', $value);
+        foreach (self::init()->get() as $class) {
+            if (str_replace('\\', '', $class) === $stripped && class_exists($class)) return $class;
+        }
+        return class_exists($default) ? $default : FuzzySearchEngine::class;
     }
 }

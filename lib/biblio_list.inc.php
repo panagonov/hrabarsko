@@ -102,7 +102,7 @@ class biblio_list extends biblio_list_model {
       $_previous_field = $_field;
       // check field
       if ($_field == 'title') {
-        if (strlen($_q) < 4) {
+        if (mb_strlen($_q) < 4) {
           $_previous_field = 'title_short';
           $_sql_criteria .= " biblio.title LIKE '%$_q%' ";
           $_title_buffer = '';

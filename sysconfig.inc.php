@@ -360,7 +360,8 @@ $sysconf['mimetype']['mrc'] = 'text/marc';
 $sysconf['mimetype']['txt'] = 'text/plain';
 
 /* PRICE CURRENCIES SETTING */
-$sysconf['currencies'] = array( array('0', 'NONE'), 'Rupiah', 'USD', 'Euro', 'DM', 'Pounds', 'Yen', 'Won', 'Yuan', 'SGD', 'Bath', 'Ruppee', 'Taka', 'AUD');
+// валути: евро (от 1.1.2026 г.) и лев (за по-старите постъпления; 1 EUR = 1.95583 BGN)
+$sysconf['currencies'] = array(array('EUR', 'EUR (€)'), array('BGN', 'BGN (лв.)'));
 
 /* RESERVE PERIODE (In Days) */
 $sysconf['reserve_expire_periode'] = 7;

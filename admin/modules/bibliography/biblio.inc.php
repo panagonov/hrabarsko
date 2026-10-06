@@ -132,7 +132,7 @@ class Biblio
     $copy_q = $this->db->query(sprintf('SELECT i.item_code, i.call_number, loc.location_name, stat.*, i.site FROM item AS i
         LEFT JOIN mst_item_status AS stat ON i.item_status_id=stat.item_status_id
         LEFT JOIN mst_location AS loc ON i.location_id=loc.location_id
-        WHERE i.biblio_id=%d', $this->biblio_id));
+        WHERE i.biblio_id=%d AND (i.item_status_id IS NULL OR i.item_status_id <> \'WO\')', $this->biblio_id)); // отчислените не се показват
     while ($copy_d = $copy_q->fetch_assoc()) {
       $items[] = $copy_d;
     }
@@ -373,10 +373,13 @@ class Biblio
       ), null, null
       ));
       //$tag['041'] = $sd.'a'.$_recs['language'];
-      $marc->appendField(new File_MARC_Data_Field('084', array(
-        new File_MARC_Subfield('a', $_recs['classification']),
-      ), null, null
-      ));
+      // класификацията е по УДК → поле 080
+      if (trim((string)($_recs['classification'] ?? '')) !== '') {
+        $marc->appendField(new File_MARC_Data_Field('080', array(
+          new File_MARC_Subfield('a', $_recs['classification']),
+        ), null, null
+        ));
+      }
       //$tag['084'] = $sd.'a'.$_recs['classification'];
       //$tag['245'] = $_recs['spec_detail_info'];
       if (isset($_recs['collation']) && $_recs['collation'] <> "") {

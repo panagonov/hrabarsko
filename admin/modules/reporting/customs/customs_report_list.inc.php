@@ -43,3 +43,8 @@ $menu['reporting.fines-report'] = array(__('Fines Report'), MWB.'reporting/custo
 $menu['reporting.member-fines-list'] = array(__('Member Fines List'), MWB.'reporting/customs/member_fines_list.php', __('Member Fines List'));
 $menu['reporting.procurement-report'] = array(__('Procurement Report'), MWB.'reporting/customs/procurement_report.php', __('Procurement Report'));
 $menu['reporting.download-counter'] = array(__('Download Counter'), MWB.'reporting/customs/dl_counter.php', __('Downloaded Attachment Report'));
+// Регистри по Наредба № 3 от 18.11.2014 г. (инвентарна книга, КДБФ, актове за отчисляване)
+$menu['reporting.bg-inventory-book'] = array(__('Inventory Book'), MWB.'reporting/customs/bg_inventory_book.php', __('Inventory book (Ordinance No 3, Annex 4) – print, Excel, CSV'));
+$menu['reporting.bg-kdbf-part1'] = array(__('KDBF part 1 – Acquisitions'), MWB.'reporting/customs/bg_kdbf_part1.php', __('Book of library fund movement, part 1'));
+$menu['reporting.bg-kdbf-part2'] = array(__('KDBF part 2 – Written off documents'), MWB.'reporting/customs/bg_kdbf_part2.php', __('Book of library fund movement, part 2'));
+$menu['reporting.bg-kdbf-part3'] = array(__('KDBF part 3 – Results of the fund movement'), MWB.'reporting/customs/bg_kdbf_part3.php', __('Book of library fund movement, part 3'));

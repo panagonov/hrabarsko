@@ -214,6 +214,19 @@ if (isset($_POST['doImport'])) {
                         $field[17] = !empty($field[17])?$field[17]:date('Y-m-d H:i:s');
                         $field[13] = !empty($field[13])?$field[13]:0.0;
 
+                        // инвентарен номер = баркод (цяло число), цена с до 2 знака, валута EUR/BGN
+                        $bg_v = new \SLiMS\Bg\Validator();
+                        if (!isItemExists($item_code)) $bg_v->inventoryNo('itemCode', $item_code);
+                        $bg_price = $bg_v->price('price', (string)$field[13], false);
+                        if ($bg_v->hasErrors() || $field[9] === 'WO') {
+                            VarDumper::dump(sprintf(__('Skipped row %s: %s'), $item_code, $field[9] === 'WO' ? __('Status "Written off" is set only by an approved write-off act') : implode('; ', $bg_v->errors())));
+                            $row_count++;
+                            continue;
+                        }
+                        $field[3] = $item_code;
+                        $field[13] = $bg_price ?? '0.00';
+                        $field[14] = in_array(strtoupper((string)$field[14]), \SLiMS\Bg\Inventory::CURRENCIES, true) ? strtoupper($field[14]) : \SLiMS\Bg\Inventory::defaultCurrency(substr((string)$field[4], 0, 10));
+
                         // get biblio_id
                         $b_q = $dbs->query(sprintf("select biblio_id from biblio where title = '%s'", $dbs->real_escape_string($title)));
                         if($b_q->num_rows < 1) continue;

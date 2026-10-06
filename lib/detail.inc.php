@@ -700,7 +700,7 @@ HTML;
         $_copy_q = $this->db->query(sprintf('SELECT i.item_code, i.call_number, stat.item_status_name, loc.location_name, stat.rules, i.site FROM item AS i '
             .'LEFT JOIN mst_item_status AS stat ON i.item_status_id=stat.item_status_id '
             .'LEFT JOIN mst_location AS loc ON i.location_id=loc.location_id '
-            .'WHERE i.biblio_id=%d', $this->detail_id));
+            .'WHERE i.biblio_id=%d AND (i.item_status_id IS NULL OR i.item_status_id <> \'WO\')', $this->detail_id));
         /*
         $_xml_output .= '<location>'."\n";
         $_xml_output .= '<physicalLocation><![CDATA['.$sysconf['library_name'].' '.$sysconf['library_subname'].']]></physicalLocation>'."\n";
@@ -925,7 +925,7 @@ HTML;
         $_copy_q = $this->db->query('SELECT i.item_code, i.call_number, stat.item_status_name, loc.location_name, stat.rules, i.site FROM item AS i '
             .'LEFT JOIN mst_item_status AS stat ON i.item_status_id=stat.item_status_id '
             .'LEFT JOIN mst_location AS loc ON i.location_id=loc.location_id '
-            .'WHERE i.biblio_id='.$this->detail_id);
+            .'WHERE i.biblio_id='.$this->detail_id.' AND (i.item_status_id IS NULL OR i.item_status_id <> \'WO\')');
         if ($_copy_q->num_rows > 0) {
             while ($_copy_d = $_copy_q->fetch_assoc()) {
               $xml->startElementNS('dc', 'hasPart', null);

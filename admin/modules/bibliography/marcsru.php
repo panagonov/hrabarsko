@@ -132,8 +132,8 @@ if (isset($_POST['saveZ']) AND isset($_SESSION['marcresult'])) {
     if ($c) {
       $data['isbn_issn'] = ($c) ? $c->getSubfield('a') : '';
     }
-    // Set classification
-    $d = $record->getField('082');
+    // Set classification: УДК (080), иначе DDC (082)
+    $d = $record->getField('080') ?: $record->getField('082');
     if ($d) {
       $data['classification'] = ($d) ? $d->getSubfield('a') : '';
     }
@@ -144,12 +144,12 @@ if (isset($_POST['saveZ']) AND isset($_SESSION['marcresult'])) {
     $e = $record->getField(260) ? $record->getField(260)  : $record->getField(264);
     if (isset($e)) {
       $place = $e->getSubfield('a');
-      $place = preg_replace("~[^a-zA-Z0-9\s]~", "", $place);
+      $place = preg_replace("~[^\p{L}\p{N}\s.\-]~u", "", $place); // кирилицата се запазва
       if ($place) {
         $data['publish_place_id'] = utility::getID($dbs, 'mst_place', 'place_id', 'place_name', $place, $place_cache);
       }
       $publisher = $e->getSubfield('b');
-      $publisher = preg_replace("~[^a-zA-Z0-9\s\.]~", "", $publisher);
+      $publisher = preg_replace("~[^\p{L}\p{N}\s.\-]~u", "", $publisher); // кирилицата се запазва
       if ($publisher) {
         $data['publisher_id'] = utility::getID($dbs, 'mst_publisher', 'publisher_id', 'publisher_name', $publisher, $publ_cache);
       }

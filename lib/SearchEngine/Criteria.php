@@ -48,6 +48,12 @@ class Criteria
         return empty($this->queries);
     }
 
+    /** Условията като списък [поле, стойност] (ползва се от BgCatalogEngine за фасетите). */
+    public function toArray(): array
+    {
+        return array_values($this->queries);
+    }
+
     public function exact($field, $value)
     {
         if (!empty($this->queries)) $this->queries[] = ['boolean', 'exact'];

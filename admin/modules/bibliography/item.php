@@ -73,52 +73,111 @@ if (isset($_GET['inPopUp'])) {
 
 /* RECORD OPERATION */
 if (isset($_POST['saveData']) and $can_read and $can_write) {
-    $itemCode = $dbs->escape_string(trim(strip_tags($_POST['itemCode'])));
+    // проверка на полетата (lib/Bg/Validator.php) – при грешка нищо не се записва
+    $bgv = new \SLiMS\Bg\Validator();
+    $bg_update_id = isset($_POST['updateRecordID']) ? (int)$_POST['updateRecordID'] : 0;
+    $bg_old = $bg_update_id ? \SLiMS\Bg\Db::row('SELECT * FROM item WHERE item_id = ?', [$bg_update_id]) : null;
+    if ($bg_update_id && !$bg_old) {
+        die("Invalid updateRecordID");
+    }
+    $itemCode = trim(strip_tags($_POST['itemCode'] ?? ''));
     if (empty($itemCode)) {
         utility::jsToastr('Item', __('Item Code can\'t be empty!'), 'error');
         exit();
     } else {
+        // отчислен екземпляр – заключен, променя се само забележката
+        if ($bg_old && $bg_old['item_status_id'] === 'WO') {
+            $bg_notes = trim(strip_tags($_POST['itemNotes'] ?? ''));
+            \SLiMS\Bg\Db::q('UPDATE item SET item_notes = ?, last_update = NOW() WHERE item_id = ?', [$bg_notes, $bg_update_id]);
+            utility::jsToastr('Item', __('The item is written off – only the notes were saved'), 'warning');
+            echo '<script type="text/javascript">parent.$(\'#mainContent\').simbioAJAX(parent.jQuery.ajaxHistory[0].url);</script>';
+            exit();
+        }
+        // инвентарен номер = баркод: цяло число, уникален, не се сменя след деня на въвеждане
+        if (!$bg_old || $itemCode !== (string)$bg_old['item_code']) {
+            $bgv->inventoryNo('itemCode', $itemCode);
+            if ($bg_old && !\SLiMS\Bg\Inventory::canChangeCode($bg_old['input_date'])) {
+                $bgv->error('itemCode', __('The inventory number cannot be changed after the day of entry – describe the correction in "Notes"'));
+            }
+            if ((int)\SLiMS\Bg\Db::value('SELECT COUNT(*) FROM item WHERE item_code = ? AND item_id <> ?', [$itemCode, $bg_update_id]) > 0) {
+                $bgv->error('itemCode', sprintf(__('Inventory number %s is already used'), $itemCode));
+            }
+            $bg_next = \SLiMS\Bg\Inventory::nextNo();
+            if (ctype_digit($itemCode) && (int)$itemCode > $bg_next + 100 && empty($_POST['confirmBigJump'])) {
+                $bgv->error('itemCode', sprintf(__('Inventory number %d is far above the next free number %d – please confirm'), (int)$itemCode, $bg_next));
+            }
+        }
         // biblio title
-        $title = $dbs->escape_string(trim($_POST['biblioTitle']));
+        $title = trim($_POST['biblioTitle']);
         $data['biblio_id'] = intval($_POST['biblioID']);
         if ($data['biblio_id'] < 1) {
             die("Invalid biblioID");
         }
-        $data['item_code'] = $dbs->escape_string($itemCode);
-        $data['call_number'] = trim($dbs->escape_string($_POST['callNumber']));
-        // check inventory code
-        $inventoryCode = $dbs->escape_string(trim($_POST['inventoryCode']));
-        if ($inventoryCode) {
-            $data['inventory_code'] = $inventoryCode;
-        } else {
-            $data['inventory_code'] = 'literal{NULL}';
-        }
-
-        $data['location_id'] = trim($dbs->escape_string($_POST['locationID']));
-        $data['site'] = trim($dbs->escape_string(strip_tags($_POST['itemSite'])));
+        // стойностите се записват през simbio_dbop (подготвени заявки) – без escape_string
+        $data['item_code'] = $itemCode;
+        $data['inventory_code'] = $itemCode;
+        $data['call_number'] = trim(strip_tags($_POST['callNumber']));
+        $data['volume'] = trim(strip_tags($_POST['itemVolume'] ?? ''));
+        $data['location_id'] = trim(strip_tags($_POST['locationID'] ?? ''));
+        $data['site'] = trim(strip_tags($_POST['itemSite']));
         $data['coll_type_id'] = intval($_POST['collTypeID']);
-        if ($data['coll_type_id'] < 1) {
-            die("Invalid coll_type_id");
-        }
-        $data['item_status_id'] = trim($dbs->escape_string($_POST['itemStatusID']));
+        $data['item_status_id'] = trim(strip_tags($_POST['itemStatusID']));
         $data['source'] = intval($_POST['source']);
         if ($data['source'] < 0) {
             die("Invalid source");
         }
-        $data['order_no'] = trim($dbs->escape_string(strip_tags($_POST['orderNo'])));
-        $data['order_date'] = $_POST['ordDate'];
-        $data['received_date'] = $_POST['recvDate'];
+        $data['order_no'] = trim(strip_tags($_POST['orderNo']));
         $data['supplier_id'] = intval($_POST['supplierID']);
         if ($data['supplier_id'] < 0) {
             die("Invalid supplier_id");
         }
-        $data['invoice'] = trim($dbs->escape_string($_POST['invoice']));
-        $data['invoice_date'] = $_POST['invcDate'];
-        $data['price_currency'] = trim($dbs->escape_string(strip_tags($_POST['priceCurrency'])));
-        if (!$data['price_currency']) {
-            $data['price_currency'] = 'literal{NULL}';
+        $data['invoice'] = trim(strip_tags($_POST['invoice']));
+        $bg_today = date('Y-m-d');
+        $data['received_date'] = $bgv->date('recvDate', $_POST['recvDate'] ?? '', __('Entry date'), true, $bg_today) ?? 'literal{NULL}';
+        $data['order_date'] = $bgv->date('ordDate', $_POST['ordDate'] ?? '', __('Order Date'), false, $bg_today) ?? 'literal{NULL}';
+        $data['invoice_date'] = $bgv->date('invcDate', $_POST['invcDate'] ?? '', __('Invoice Date'), false, $bg_today) ?? 'literal{NULL}';
+        $data['price'] = $bgv->price('price', $_POST['price'] ?? '', true) ?? 'literal{NULL}';
+        $data['price_currency'] = $bgv->currency('priceCurrency', $_POST['priceCurrency'] ?? '', $data['received_date'] === 'literal{NULL}' ? null : $data['received_date']);
+        $data['item_notes'] = trim(strip_tags($_POST['itemNotes'] ?? ''));
+        $data['kdbf_legacy_ref'] = trim(strip_tags($_POST['kdbfLegacyRef'] ?? ''));
+        $bg_entry_id = (int)($_POST['kdbfEntryID'] ?? 0);
+        $data['kdbf_entry_id'] = $bg_entry_id ?: 'literal{NULL}';
+
+        $bgv->required('locationID', $data['location_id'], __('Location'));
+        if ($data['coll_type_id'] < 1) $bgv->error('collTypeID', sprintf(__('%s is required'), __('Collection Type')));
+        if ($data['item_status_id'] === 'WO') $bgv->error('itemStatusID', __('Status "Written off" is set only by an approved write-off act'));
+        $bgv->maxLen('callNumber', $data['call_number'], 50, __('Call Number'));
+        $bgv->maxLen('itemVolume', $data['volume'], 30, __('Volume'));
+        $bgv->maxLen('itemSite', $data['site'], 50, __('Shelf Location'));
+        $bgv->maxLen('orderNo', $data['order_no'], 20, __('Order Number'));
+        $bgv->maxLen('invoice', $data['invoice'], 20, __('Invoice'));
+        $bgv->maxLen('kdbfLegacyRef', $data['kdbf_legacy_ref'], 40, __('Paper KDBF reference'));
+        // връзка с КДБФ (Наредба № 3, чл. 16, т. 8)
+        if ($bg_entry_id) {
+            $bg_entry = \SLiMS\Bg\Kdbf::entry($bg_entry_id);
+            if (!$bg_entry) {
+                $bgv->error('kdbfEntryID', __('The selected KDBF entry does not exist'));
+            } elseif ($data['received_date'] !== 'literal{NULL}' && $data['received_date'] < $bg_entry['entry_date']) {
+                $bgv->warn('recvDate', __('Entry date is before the date of the KDBF entry'));
+            }
+        } elseif ($data['kdbf_legacy_ref'] === '' && ctype_digit($itemCode)) {
+            $bg_was_linked = $bg_old && (!empty($bg_old['kdbf_entry_id']) || !empty($bg_old['kdbf_legacy_ref']));
+            if ((int)$itemCode > \SLiMS\Bg\Inventory::floor() && (!$bg_old || $bg_was_linked)) {
+                $bgv->error('kdbfEntryID', __('Choose the KDBF entry (acquisition) for this copy'));
+            } else {
+                $bgv->warn('kdbfEntryID', __('No KDBF entry – fill in the reference from the paper KDBF if you have it'));
+            }
         }
-        $data['price'] = preg_replace('@[.,\-a-z ]@i', '', strip_tags($_POST['price']));
+        if ($bgv->hasErrors()) {
+            $bgv->failAndExit(__('Item'));
+        }
+        // поправките по стар запис се описват в „Забележка“ (Наредба № 3, чл. 17)
+        if ($bg_old) {
+            $bg_note = \SLiMS\Bg\Inventory::protectedChangeNote($bg_old, $data, (string)$_SESSION['realname']);
+            if ($bg_note) $data['item_notes'] = trim($data['item_notes'] . "\n" . $bg_note);
+        }
+        if ($data['volume'] === '') $data['volume'] = 'literal{NULL}';
+        if ($data['kdbf_legacy_ref'] === '') $data['kdbf_legacy_ref'] = 'literal{NULL}';
         $data['input_date'] = date('Y-m-d H:i:s');
         $data['last_update'] = date('Y-m-d H:i:s');
         $data['uid'] = $_SESSION['uid'];
@@ -147,6 +206,7 @@ if (isset($_POST['saveData']) and $can_read and $can_write) {
                 if ($sysconf['bibliography_item_update_notification']) {
                     utility::jsToastr('Item', __('Item Data Successfully Updated'), 'success');
                 }
+                $bgv->flushWarnings(__('Item'));
                 if ($in_pop_up) {
                     echo '<script type="text/javascript">top.setIframeContent(\'itemIframe\', \'' . MWB . 'bibliography/iframe_item_list.php?biblioID=' . $data['biblio_id'] . '\');</script>';
                     echo '<script type="text/javascript">top.jQuery.colorbox.close();</script>';
@@ -169,6 +229,8 @@ if (isset($_POST['saveData']) and $can_read and $can_write) {
                 // write log
                 writeLog('staff', $_SESSION['uid'], 'bibliography', $_SESSION['realname'] . ' insert item data (' . $data['item_code'] . ') with title (' . $title . ')', 'Item', 'Add');
                 utility::jsToastr('Item', __('New Item Data Successfully Saved'), 'success');
+                $bgv->flushWarnings(__('Item'));
+                if (!empty($data['kdbf_entry_id']) && $data['kdbf_entry_id'] !== 'literal{NULL}') $_SESSION['bg_last_kdbf_entry'] = (int)$data['kdbf_entry_id'];
                 if ($in_pop_up) {
                     echo '<script type="text/javascript">top.setIframeContent(\'itemIframe\', \'' . MWB . 'bibliography/iframe_item_list.php?biblioID=' . $data['biblio_id'] . '\');</script>';
                     echo '<script type="text/javascript">top.jQuery.colorbox.close();</script>';
@@ -192,6 +254,7 @@ if (isset($_POST['saveData']) and $can_read and $can_write) {
     $failed_array = array();
     $error_num = 0;
     $still_on_loan = array();
+    $bg_refused = array();
     if (!is_array($_POST['itemID'])) {
         // make an array
         $_POST['itemID'] = array((int)$_POST['itemID']);
@@ -199,6 +262,13 @@ if (isset($_POST['saveData']) and $can_read and $can_write) {
     // loop array
     foreach ($_POST['itemID'] as $itemID) {
         $itemID = (int)$itemID;
+        // инвентарните номера не се изтриват – само запис, въведен по грешка днес
+        $bg_reason = \SLiMS\Bg\Inventory::canDelete($itemID);
+        if ($bg_reason !== null) {
+            $bg_refused[] = $bg_reason;
+            $error_num++;
+            continue;
+        }
         // check if the item still on loan
         $loan_q = $dbs->query('SELECT i.item_code, b.title, COUNT(l.loan_id) FROM item AS i
             LEFT JOIN biblio AS b ON i.biblio_id=b.biblio_id
@@ -221,6 +291,11 @@ if (isset($_POST['saveData']) and $can_read and $can_write) {
         }
     }
 
+    if ($bg_refused) {
+        utility::jsToastr(__('Item'), implode("\n", array_unique($bg_refused)), 'error');
+        echo '<script type="text/javascript">parent.$(\'#mainContent\').simbioAJAX(\'' . $_SERVER['PHP_SELF'] . '?' . $dbs->escape_string($_POST['lastQueryStr'] ?? '') . '\');</script>';
+        exit();
+    }
     if ($still_on_loan) {
         $items = '';
         foreach ($still_on_loan as $item) {
@@ -338,50 +413,75 @@ if (isset($_POST['detail']) or (isset($_GET['action']) and $_GET['action'] == 'd
     $form->addAnything(__('Title'), $str_input);
     $form->addHidden('biblioTitle', $b_title);
     $form->addHidden('biblioID', $b_id);
-    // item code
+    // инвентарен номер = баркод (пореден, само цифри, не се използва повторно)
+    $bg_next_inv = \SLiMS\Bg\Inventory::nextNo();
+    $bg_is_wo = ($rec_d['item_status_id'] ?? '') === 'WO';
+    $bg_code_locked = $form->edit_mode && !\SLiMS\Bg\Inventory::canChangeCode($rec_d['input_date'] ?? '');
+    $bg_h = fn($v) => htmlspecialchars((string)$v);
     $str_input  = '<div class="container-fluid">';
     $str_input .= '<div class="row">';
-    $str_input .= simbio_form_element::textField('text', 'itemCode', $rec_d['item_code'] ?? '', 'onblur="ajaxCheckID(\'' . SWB . 'admin/AJAX_check_id.php\', \'item\', \'item_code\', \'msgBox\', \'itemCode\')" style="width: 50%;" class="form-control col-5"');
+    $str_input .= '<input type="text" name="itemCode" id="itemCode" value="' . $bg_h($rec_d['item_code'] ?? $bg_next_inv) . '"'
+        . ' onblur="ajaxCheckID(\'' . SWB . 'admin/AJAX_check_id.php\', \'item\', \'item_code\', \'msgBox\', \'itemCode\')" style="width: 50%;" class="form-control col-5"'
+        . ' inputmode="numeric" maxlength="20" data-bg-label="' . $bg_h(__('Item Code')) . '"'
+        . ($form->edit_mode ? '' : ' data-bgval="invno" data-bg-next="' . $bg_next_inv . '"')
+        . ($bg_code_locked || $bg_is_wo ? ' readonly' : '') . ' />';
     $str_input .= '<span id="msgBox" class="col p-2"></span>';
     $str_input .= '</div>';
+    $str_input .= '<small class="form-text text-muted">' . ($form->edit_mode ? __('The inventory number cannot be changed after the day of entry') : sprintf(__('The inventory number is also the barcode. Next free number: %d'), $bg_next_inv)) . '</small>';
     $str_input .= '</div>';
     $form->addAnything(__('Item Code'), $str_input);
-    // call number
-    $form->addTextField('text', 'callNumber', __('Call Number'), $rec_d['call_number'] ?? $def_call_number, 'style="width: 50%;" class="form-control"');
-    // inventory code
-    $form->addTextField('text', 'inventoryCode', __('Inventory Code'), $rec_d['inventory_code'] ?? '', 'style="width: 50%;" class="form-control"');
+    // call number: префиксът на отдела се добавя автоматично (локална таблица, както в COBISS)
+    $bg_base_cn = $rec_d['call_number'] ?? $def_call_number;
+    $bg_biblio_cn = (string)\SLiMS\Bg\Db::value('SELECT call_number FROM biblio WHERE biblio_id = ?', [(int)$b_id]);
+    $form->addTextField('text', 'callNumber', __('Call Number'), $bg_h($bg_base_cn), 'style="width: 50%;" class="form-control" maxlength="50" data-bg-base="' . $bg_h($bg_biblio_cn) . '"');
+    // том / част
+    $form->addTextField('text', 'itemVolume', __('Volume'), $bg_h($rec_d['volume'] ?? ''), 'style="width: 20%;" class="form-control" maxlength="30" placeholder="2"', __('Volume or part (inventory book column "Volume")'));
     // item location
     // get location data related to this record from database
     $location_q = $dbs->query("SELECT location_id, location_name FROM mst_location");
-    $location_options = array();
+    $location_options = array(array('', '-- ' . __('Location') . ' --'));
     while ($location_d = $location_q->fetch_row()) {
         $location_options[] = array($location_d[0], $location_d[1]);
     }
-    $form->addSelectList('locationID', __('Location'), $location_options, $rec_d['location_id'] ?? '', 'style="width: 50%" class="form-control"');
+    $form->addSelectList('locationID', __('Location') . ' *', $location_options, $rec_d['location_id'] ?? '', 'style="width: 50%" class="form-control"');
     // item site
-    $form->addTextField('text', 'itemSite', __('Shelf Location'), $rec_d['site'] ?? '', 'style="width: 50%;" class="form-control"');
+    $form->addTextField('text', 'itemSite', __('Shelf Location'), $bg_h($rec_d['site'] ?? ''), 'style="width: 50%;" class="form-control" maxlength="50"');
     // collection type
     // get collection type data related to this record from database
     $coll_type_q = $dbs->query("SELECT coll_type_id, coll_type_name FROM mst_coll_type");
-    $coll_type_options = array();
+    $coll_type_options = array(array('', '-- ' . __('Collection Type') . ' --'));
     while ($coll_type_d = $coll_type_q->fetch_row()) {
         $coll_type_options[] = array($coll_type_d[0], $coll_type_d[1]);
     }
-    $form->addSelectList('collTypeID', __('Collection Type'), $coll_type_options, $rec_d['coll_type_id'] ?? '', 'style="width: 40%" class="form-control"');
-    // item status
-    // get item status data from database
+    $form->addSelectList('collTypeID', __('Collection Type') . ' *', $coll_type_options, $rec_d['coll_type_id'] ?? '', 'style="width: 40%" class="form-control"');
+    // item status – „Отчислен“ се поставя само от утвърден акт за отчисляване
     $item_status_q = $dbs->query("SELECT item_status_id, item_status_name FROM mst_item_status");
     $item_status_options[] = array('0', __('Available'));
     while ($item_status_d = $item_status_q->fetch_row()) {
+        if ($item_status_d[0] === 'WO' && !$bg_is_wo) continue;
         $item_status_options[] = array($item_status_d[0], $item_status_d[1]);
     }
-    $form->addSelectList('itemStatusID', __('Item Status'), $item_status_options, $rec_d['item_status_id'] ?? '', 'style="width:40%" class="form-control"');
+    $form->addSelectList('itemStatusID', __('Item Status'), $item_status_options, $rec_d['item_status_id'] ?? '', 'style="width:40%" class="form-control"' . ($bg_is_wo ? ' disabled' : ''));
+    if (!empty($rec_d['writeoff_id'])) {
+        $bg_act = \SLiMS\Bg\Kdbf::act((int)$rec_d['writeoff_id']);
+        if ($bg_act) {
+            $bg_status = \SLiMS\Bg\Kdbf::statusLabels()[$bg_act['status']] ?? $bg_act['status'];
+            $form->addAnything(__('Write-off act'), '<b>' . $bg_h(\SLiMS\Bg\Kdbf::actLabel($bg_act)) . '</b> (' . $bg_h($bg_status) . ')');
+        }
+    }
     // order number
-    $form->addTextField('text', 'orderNo', __('Order Number'), $rec_d['order_no'] ?? '', 'style="width: 40%;" class="form-control"');
+    $form->addTextField('text', 'orderNo', __('Order Number'), $bg_h($rec_d['order_no'] ?? ''), 'style="width: 40%;" class="form-control" maxlength="20"');
     // order date
-    $form->addDateField('ordDate', __('Order Date'), $rec_d['order_date'] ?? date('Y-m-d'), 'class="form-control"');
-    // received date
-    $form->addDateField('recvDate', __('Receiving Date'), $rec_d['received_date'] ?? date('Y-m-d'), 'class="form-control"');
+    $form->addDateField('ordDate', __('Order Date'), $rec_d['order_date'] ?? '', 'class="form-control" max="' . date('Y-m-d') . '" data-bgval="date-past" data-bg-label="' . $bg_h(__('Order Date')) . '"');
+    // дата на вписване (постъпване) – колона 1 на инвентарната книга
+    $form->addDateField('recvDate', __('Entry date') . ' *', $rec_d['received_date'] ?? date('Y-m-d'), 'class="form-control" max="' . date('Y-m-d') . '" data-bgval="date-past" data-bg-required="1" data-bg-label="' . $bg_h(__('Entry date')) . '"');
+    // запис в КДБФ (Наредба № 3, чл. 16, т. 8)
+    $bg_entry_sel = (int)($rec_d['kdbf_entry_id'] ?? ($form->edit_mode ? 0 : ($_SESSION['bg_last_kdbf_entry'] ?? 0)));
+    $bg_kdbf_options = \SLiMS\Bg\BatchItems::kdbfOptionsHtml($bg_entry_sel);
+    if ($bg_kdbf_options !== '') {
+        $form->addAnything(__('KDBF entry'), '<select name="kdbfEntryID" id="kdbfEntryID" class="form-control" style="width: 70%">' . $bg_kdbf_options . '</select>');
+    }
+    $form->addTextField('text', 'kdbfLegacyRef', __('Paper KDBF reference'), $bg_h($rec_d['kdbf_legacy_ref'] ?? ''), 'style="width: 40%;" class="form-control" maxlength="40" placeholder="12/1987"', __('For books entered before the system: number/year of the entry in the paper KDBF'));
     // item supplier
     // get item status data from database
     $supplier_q = $dbs->query("SELECT supplier_id, supplier_name FROM mst_supplier");
@@ -395,17 +495,21 @@ if (isset($_POST['detail']) or (isset($_GET['action']) and $_GET['action'] == 'd
     $source_options[] = array('2', __('Prize/Grant'));
     $form->addRadio('source', __('Source'), $source_options, !empty($rec_d['source']) ? $rec_d['source'] : '1');
     // item invoice
-    $form->addTextField('text', 'invoice', __('Invoice'), $rec_d['invoice'] ?? '', 'style="width: 100%;" class="form-control"');
+    $form->addTextField('text', 'invoice', __('Invoice'), $bg_h($rec_d['invoice'] ?? ''), 'style="width: 100%;" class="form-control" maxlength="20"');
     // invoice date
-    $form->addDateField('invcDate', __('Invoice Date'), $rec_d['invoice_date'] ?? date('Y-m-d'), 'class="form-control"');
-    // price
+    $form->addDateField('invcDate', __('Invoice Date'), $rec_d['invoice_date'] ?? '', 'class="form-control" max="' . date('Y-m-d') . '" data-bgval="date-past" data-bg-label="' . $bg_h(__('Invoice Date')) . '"');
+    // price: цена + валута (EUR / BGN), с до 2 знака след десетичната точка
+    $bg_currencies = array_map(fn($c) => is_array($c) ? $c : array($c, $c), $sysconf['currencies']);
     $str_input  = '<div class="container-fluid">';
     $str_input .= '<div class="row">';
-    $str_input .= simbio_form_element::textField('text', 'price', !empty($rec_d['price']) ? $rec_d['price'] : '0', 'style="width: 40%;" class="form-control col-4"');
-    $str_input .= simbio_form_element::selectList('priceCurrency', $sysconf['currencies'], $rec_d['price_currency'] ?? '', 'style="width: 10%;" class="form-control col-2"');
+    $str_input .= '<input type="text" name="price" id="price" value="' . $bg_h(isset($rec_d['price']) && $rec_d['price'] !== null ? number_format((float)$rec_d['price'], 2, '.', '') : '') . '" style="width: 40%;" class="form-control col-4" inputmode="decimal" maxlength="11" placeholder="12.50" data-bgval="price" data-bg-required="1" data-bg-label="' . $bg_h(__('Price')) . '" />';
+    $str_input .= simbio_form_element::selectList('priceCurrency', $bg_currencies, $rec_d['price_currency'] ?? \SLiMS\Bg\Inventory::defaultCurrency(), 'style="width: 10%;" class="form-control col-2"');
     $str_input .= '</div>';
+    $str_input .= '<small class="form-text text-muted">' . __('For donations enter an estimated value. Reports also show the amount in euro (1 EUR = 1.95583 BGN).') . '</small>';
     $str_input .= '</div>';
-    $form->addAnything(__('Price'), $str_input);
+    $form->addAnything(__('Price') . ' *', $str_input);
+    // забележка (колона „Забележка“ на инвентарната книга; поправките се описват тук)
+    $form->addTextField('textarea', 'itemNotes', __('Item Notes'), $bg_h($rec_d['item_notes'] ?? ''), 'rows="2" class="form-control"', __('Corrections of the record are described here with date (Ordinance No 3, art. 17)'));
 
     // load custom field
     $form->loadCustomField('item', 'item_id', $itemID);
@@ -418,11 +522,27 @@ if (isset($_POST['detail']) or (isset($_GET['action']) and $_GET['action'] == 'd
     }
     // print out the form object
     echo $form->printOut();
+    echo \SLiMS\Bg\Validator::jsI18nScript();
+    // сигнатурата на екземпляра = префикс на отдела + сигнатурата на заглавието
+    $bg_prefixes = json_encode(\SLiMS\Bg\Inventory::locationPrefixes(), JSON_UNESCAPED_UNICODE);
+    echo <<<HTML
+<script type="text/javascript">
+(function ($) {
+  var prefixes = {$bg_prefixes};
+  var cn = $('#callNumber'), base = String(cn.data('bg-base') || '');
+  function compose(loc) { var p = prefixes[String(loc || '').toUpperCase()] || ''; return (p && base) ? (p + ' ' + base) : base; }
+  var auto = compose($('#locationID').val());
+  $('#locationID').on('change', function () {
+    if (cn.val() === '' || cn.val() === base || cn.val() === auto) { auto = compose($(this).val()); cn.val(auto); }
+  });
+})(jQuery);
+</script>
+HTML;
 } else {
     require SIMBIO . 'simbio_UTILS/simbio_tokenizecql.inc.php';
     require LIB . 'biblio_list_model.inc.php';
 
-    if (Engine::active() == DefaultEngine::class || (isset($_GET['searchby']) && $_GET['searchby'] == 'item')) {
+    if (in_array(Engine::active(), [DefaultEngine::class, \SLiMS\SearchEngine\BgCatalogEngine::class], true) || (isset($_GET['searchby']) && $_GET['searchby'] == 'item')) {
         require LIB . 'biblio_list.inc.php';
         $title_field_idx = 1;
         // callback function to show title and authors in datagrid

@@ -90,6 +90,13 @@ if (isset($_POST['saveData'])) {
             unset($data['input_date']);
             // filter update record ID
             $updateRecordID = $dbs->escape_string(trim($_POST['updateRecordID']));
+            // системни статуси (отчисляване, инвентаризация): сменя се само името
+            if (in_array($updateRecordID, ['WO', 'MIS'], true)) {
+                $data['item_status_id'] = $updateRecordID;
+                $data['rules'] = 'a:2:{i:0;s:1:"1";i:1;s:1:"2";}';
+                $data['no_loan'] = '1';
+                $data['skip_stock_take'] = '1';
+            }
             // update the data
             $update = $sql_op->update('mst_item_status', $data, 'item_status_id=\''.$updateRecordID.'\'');
             if ($update) {
@@ -131,6 +138,12 @@ if (isset($_POST['saveData'])) {
     // loop array
     foreach ($_POST['itemID'] as $itemID) {
         $itemID = $dbs->escape_string(trim($itemID));
+        // системните статуси не се трият
+        if (in_array($itemID, ['WO', 'MIS'], true)) {
+            $error_num++;
+            utility::jsToastr(__('Item Status'), sprintf(__('Status %s is used by write-off and stock take and cannot be deleted'), $itemID), 'error');
+            continue;
+        }
         // check if this place data still in use items
 
         $_sql_status_item_q = sprintf('SELECT mis.item_status_name, COUNT(mis.item_status_id) FROM item AS i

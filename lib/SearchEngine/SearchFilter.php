@@ -157,6 +157,8 @@ HTML;
 
             switch ($filter['type']) {
                 case 'range':
+                    // годините от разширеното търсене (years=ГГГГ;ГГГГ)
+                    if (is_null($value) && $filter['name'] === 'years' && is_string($_GET['years'] ?? null) && preg_match('/^\d{3,4};\d{3,4}$/', $_GET['years'])) $value = $_GET['years'];
                     list($from, $to) = is_null($value) ? [$filter['from'], $filter['to']] : explode(';', $value);
                     $str .= <<<HTML
                         <div class="row d-flex justify-content-between align-items-center mb-4">
@@ -199,7 +201,7 @@ HTML;
                         }
 
                         # from advanced search
-                        if (isset($_GET[$filter['name']]) && $_GET[$filter['name']] == $item['label'])
+                        if (isset($_GET[$filter['name']]) && is_string($_GET[$filter['name']]) && ($_GET[$filter['name']] == $item['label'] || (string)$_GET[$filter['name']] === (string)$item['value']))
                             $value = $item['value'];
 
                         $checked = $value == $item['value'] ? 'checked' : '';

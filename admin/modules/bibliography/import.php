@@ -66,7 +66,7 @@ if ($_SESSION['uid'] != 1) {
 // initialize indexer variable
 $indexer = null;
 
-if (Engine::active() === SearchBiblioEngine::class) {
+if (in_array(Engine::active(), [SearchBiblioEngine::class, \SLiMS\SearchEngine\BgCatalogEngine::class], true)) {
   require MDLBS . 'system/biblio_indexer.inc.php';
   // create biblio_indexer class instance
   $indexer = new biblio_indexer($dbs);
@@ -293,7 +293,7 @@ if (isset($_POST['doImport'])) {
           }
 
           // create biblio index
-          if (Engine::active() === SearchBiblioEngine::class) {
+          if ($indexer) {
             $indexer->makeIndex($biblio_id ?? 0);
           }
 

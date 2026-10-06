@@ -114,7 +114,7 @@ class biblio_indexer
 	 */
 	public function makeIndex($int_biblio_id)
 	{
-		$bib_sql = 'SELECT b.biblio_id, b.title, b.edition, b.publish_year, b.notes, b.series_title, b.classification, b.spec_detail_info,
+		$bib_sql = 'SELECT b.biblio_id, b.title, b.edition, b.publish_year, b.notes, b.series_title, b.classification, b.spec_detail_info, b.sor, b.series_number,
             g.gmd_name AS `gmd`, pb.publisher_name AS `publisher`, pl.place_name AS `publish_place`, b.isbn_issn,
             lg.language_name AS `language`, b.call_number, b.opac_hide, b.promoted, b.labels, b.`collation`, b.image,
 	    rct.content_type, rmt.media_type, rcrt.carrier_type,
@@ -176,12 +176,14 @@ class biblio_indexer
 
 		/* author  */
 		$au_all = '';
+		$bg_authors = [];
 		$au_sql = 'SELECT ba.biblio_id, ba.level, au.author_name AS `name`, au.authority_type AS `type`
           	FROM biblio_author AS ba LEFT JOIN mst_author AS au ON ba.author_id = au.author_id
           	WHERE ba.biblio_id =' . $int_biblio_id . ' ORDER BY ba.level ASC';
 		$au_id = $this->obj_db->query($au_sql);
 		while ($rs_au = $au_id->fetch_assoc()) {
 			$au_all .= $rs_au['name'] . ' - ';
+			$bg_authors[] = $rs_au['name'];
 		}
 		if ($au_all != '') {
 			$au_all = substr_replace($au_all, '', -3);
@@ -190,12 +192,14 @@ class biblio_indexer
 
 		/* subject  */
 		$topic_all = '';
+		$bg_topics = [];
 		$topic_sql = 'SELECT bt.biblio_id, bt.level, tp.topic, tp.topic_type AS `type`
           	FROM biblio_topic AS bt LEFT JOIN mst_topic AS tp ON bt.topic_id = tp.topic_id
           	WHERE bt.biblio_id =' . $int_biblio_id;
 		$topic_id = $this->obj_db->query($topic_sql);
 		while ($rs_topic = $topic_id->fetch_assoc()) {
 			$topic_all .= $rs_topic['topic'] . ' - ';
+			$bg_topics[] = $rs_topic['topic'];
 		}
 		if ($topic_all != '') {
 			$topic_all = substr_replace($topic_all, '', -3);
@@ -242,6 +246,11 @@ class biblio_indexer
 		if ($colltype_all != '') {
 			$colltype_all = substr_replace($colltype_all, '', -3);
 			$data['collection_types'] = $this->obj_db->escape_string($colltype_all ?? '');
+		}
+
+		// нормализиран текст за търсене на кирилица (lib/SearchEngine/BgText.php) – без escape_string
+		if (class_exists(\SLiMS\SearchEngine\BgText::class)) {
+			$data = array_merge($data, \SLiMS\SearchEngine\BgText::indexColumns($rb_id, $bg_authors, $bg_topics));
 		}
 
 		if ($this->index_type == 'nosql') {

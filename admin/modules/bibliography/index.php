@@ -142,6 +142,29 @@ if (isset($_POST['saveData']) AND $can_read AND $can_write) {
             include MDLBS . 'bibliography/custom_fields.inc.php';
         }
 
+        // проверка на полетата преди каквото и да е записване (lib/Bg/Validator.php)
+        $bgv = new \SLiMS\Bg\Validator();
+        $bg_gmd_code = (string)\SLiMS\Bg\Db::value('SELECT gmd_code FROM mst_gmd WHERE gmd_id = ?', [(int)($_POST['gmdID'] ?? 0)]);
+        $bg_isbn = $bgv->isbnIssn('isbn_issn', strip_tags($_POST['isbn_issn'] ?? ''));
+        $bg_year = $bgv->publishYear('year', strip_tags($_POST['year'] ?? ''), ((int)($_POST['frequencyID'] ?? 0)) > 0);
+        // празният избор в падащото меню идва като „NONE“
+        if (strtoupper(trim((string)($_POST['class'] ?? ''))) === 'NONE') $_POST['class'] = '';
+        $bgv->udc('class', trim(strip_tags(str_ireplace('NEW:', '', $_POST['class'] ?? ''))), __('Classification'));
+        $bgv->authorMark('author_mark', $_POST['author_mark'] ?? '');
+        $bgv->collation('collation', $_POST['collation'] ?? '', in_array($bg_gmd_code, ['', 'TE'], true));
+        foreach ([
+            ['sor', 200, __('Statement of Responsibility')], ['edition', 50, __('Edition')], ['collation', 100, __('Collation')],
+            ['seriesTitle', 200, __('Series Title')], ['series_number', 20, __('Series Number')], ['callNumber', 50, __('Call Number')],
+            ['author_mark', 10, __('Author Mark')], ['printing', 150, __('Printing House')], ['price_terms', 100, __('Price/Terms (ISBD area 8)')],
+            ['class', 100, __('Classification')], ['placeID', 100, __('Publishing Place')], ['publisherID', 100, __('Publisher')],
+        ] as [$bg_f, $bg_max, $bg_label]) {
+            $bgv->maxLen($bg_f, trim(strip_tags(str_ireplace('NEW:', '', (string)($_POST[$bg_f] ?? '')))), $bg_max, $bg_label);
+        }
+        $bg_batch = \SLiMS\Bg\BatchItems::validate($bgv, $_POST, (int)$sysconf['max_insert_batch']);
+        if ($bgv->hasErrors()) {
+            $bgv->failAndExit(__('Bibliography'));
+        }
+
         // create biblio_indexer class instance
         $indexer = new biblio_indexer($dbs);
 
@@ -180,16 +203,18 @@ if (isset($_POST['saveData']) AND $can_read AND $can_write) {
         // Register advance custom field data
         Plugins::getInstance()->execute(Plugins::BIBLIOGRAPHY_CUSTOM_FIELD_DATA, ['custom_data' => &$custom_data]);
 
-        $data['title'] = $dbs->escape_string($title);
+        // стойностите се записват през simbio_dbop (подготвени заявки) – без escape_string
+        $data['title'] = $title;
         /* modified by hendro */
-        $data['sor'] = trim($dbs->escape_string(strip_tags($_POST['sor'])));
+        $data['sor'] = trim(strip_tags($_POST['sor']));
         /* end of modification */
-        $data['edition'] = trim($dbs->escape_string(strip_tags($_POST['edition'])));
+        $data['edition'] = trim(strip_tags($_POST['edition']));
         $data['gmd_id'] = $_POST['gmdID'];
-        $data['isbn_issn'] = trim($dbs->escape_string(strip_tags($_POST['isbn_issn'])));
+        $data['isbn_issn'] = (string)$bg_isbn;
+        $data['price_terms'] = trim(strip_tags($_POST['price_terms'] ?? ''));
 
         $class = str_ireplace('NEW:', '', trim(strip_tags($_POST['class'])));
-        $data['classification'] = trim($dbs->escape_string(strip_tags($class)));
+        $data['classification'] = trim(strip_tags($class));
         $data['uid'] = $_SESSION['uid'];
 
         // check publisher
@@ -202,11 +227,13 @@ if (isset($_POST['saveData']) AND $can_read AND $can_write) {
             $data['publisher_id'] = intval($_POST['publisherID']);
         }
 
-        $data['publish_year'] = trim($dbs->escape_string(strip_tags($_POST['year'])));
-        $data['collation'] = trim($dbs->escape_string(strip_tags($_POST['collation'])));
-        $data['series_title'] = trim($dbs->escape_string(strip_tags($_POST['seriesTitle'])));
-        $data['call_number'] = trim($dbs->escape_string(strip_tags($_POST['callNumber'])));
-        $data['language_id'] = trim($dbs->escape_string(strip_tags($_POST['languageID'])));
+        $data['publish_year'] = $bg_year;
+        $data['collation'] = trim(strip_tags($_POST['collation']));
+        $data['series_title'] = trim(strip_tags($_POST['seriesTitle']));
+        $data['series_number'] = trim(strip_tags($_POST['series_number'] ?? ''));
+        $data['call_number'] = trim(strip_tags($_POST['callNumber']));
+        $data['author_mark'] = trim(strip_tags($_POST['author_mark'] ?? ''));
+        $data['language_id'] = trim(strip_tags($_POST['languageID']));
         // check place
         if (stripos($_POST['placeID'], 'NEW:') === 0) {
             $new_place = str_ireplace('NEW:', '', trim(strip_tags($_POST['placeID'])));
@@ -215,8 +242,9 @@ if (isset($_POST['saveData']) AND $can_read AND $can_write) {
         } else if (intval($_POST['placeID']) > 0) {
             $data['publish_place_id'] = intval($_POST['placeID']);
         }
+        $data['printing'] = trim(strip_tags($_POST['printing'] ?? ''));
 
-        $data['notes'] = trim($dbs->escape_string(strip_tags($_POST['notes'], '<br><p><div><span><i><em><strong><b><code>s')));
+        $data['notes'] = trim(strip_tags($_POST['notes'], '<br><p><div><span><i><em><strong><b><code>s'));
         $data['opac_hide'] = ($_POST['opacHide'] == '0') ? 'literal{0}' : '1';
         $data['promoted'] = ($_POST['promote'] == '0') ? 'literal{0}' : '1';
         // labels
@@ -231,7 +259,7 @@ if (isset($_POST['saveData']) AND $can_read AND $can_write) {
 
         $data['labels'] = $arr_label ? serialize($arr_label) : 'literal{NULL}';
         $data['frequency_id'] = ($_POST['frequencyID'] == '0') ? 'literal{0}' : (integer)$_POST['frequencyID'];
-        $data['spec_detail_info'] = trim($dbs->escape_string(strip_tags($_POST['specDetailInfo'])));
+        $data['spec_detail_info'] = trim(strip_tags($_POST['specDetailInfo']));
 
         // RDA Content, Media anda Carrier Type
         foreach ($rda_cmc as $cmc => $cmc_name) {
@@ -466,52 +494,24 @@ if (isset($_POST['saveData']) AND $can_read AND $can_write) {
             }
         }
 
-        // item batch insert
-        if (trim($_POST['itemCodePattern']) != '' && $_POST['totalItems'] > 0) {
-            $pattern = trim($_POST['itemCodePattern']);
-            $total = (integer)$_POST['totalItems'];
-            $regex = '/0{3,}/';
-
-            if ($total > $sysconf['max_insert_batch']) {
-                utility::jsToastr('Bibliography', sprintf(__('Item Data FAILED to Save. Insert batch item maximum %s copies'), $sysconf['max_insert_batch']), 'warning');
-                die();
-            }
-            preg_match($regex, $pattern, $result);
-            $zeros = strlen($result[0]);
-            $chars = preg_split($regex, $pattern);
-            $chars_first = trim($chars[0]); 
-            $chars_last = (isset($chars[1]) && !empty(trim($chars[1]))) ? trim($chars[1]) : '';
-            $safe_chars_first = preg_quote($chars_first, '/');
-            $safe_chars_last = preg_quote($chars_last, '/');
-            $sql_pattern = '^' . $safe_chars_first . '[0-9]{'.$zeros.',}' . $safe_chars_last . '$';
-            $last_q = $dbs->query("SELECT item_code FROM item WHERE item_code REGEXP '{$sql_pattern}' ORDER BY item_code DESC LIMIT 1");
-            if (!$dbs->errno && $last_q->num_rows > 0) {
-                $last_d = $last_q->fetch_row();
-                $ptn = '/' . $safe_chars_first . '|' . $safe_chars_last . '$/';
-                $last = preg_replace($ptn, '', $last_d[0]);
-                $start = intval($last) + 1;
-            } else {
-                $start = 1;
-            }
-            $start = $start+1;
-            $end = $start + $total;
-            for ($b = $start; $b < $end; $b++) {
-                $itemcode = $chars_first; 
-                if ($zeros > 0) {
-                    $itemcode .= str_pad((string)$b, $zeros, '0', STR_PAD_LEFT);
-                } else {
-                    $itemcode .= $b;
+        // пакетно създаване на екземпляри – поредни инвентарни номера (= баркод), свързани с КДБФ
+        if ($bg_batch) {
+            $bg_biblio_id = isset($updateRecordID) ? (int)$updateRecordID : (int)($last_biblio_id ?? 0);
+            if ($bg_biblio_id) {
+                [$bg_created, $bg_failed] = \SLiMS\Bg\BatchItems::insert($bg_batch, $bg_biblio_id, (string)$data['call_number'], (int)$_SESSION['uid']);
+                if ($bg_created) {
+                    $bg_ranges = \SLiMS\Bg\Inventory::formatRanges($bg_created);
+                    utility::jsToastr(__('Bibliography'), sprintf(__('Created items with inventory numbers %s'), $bg_ranges), 'success');
+                    writeLog('staff', $_SESSION['uid'], 'bibliography', $_SESSION['realname'] . ' create items ' . $bg_ranges . ' for biblio_id (' . $bg_biblio_id . ')');
                 }
-                $itemcode .= $chars_last;
-                $item_insert_sql = sprintf("INSERT IGNORE INTO item (biblio_id, item_code, received_date, supplier_id, order_no, order_date, item_status_id, site, source, invoice, price, price_currency, invoice_date, call_number, coll_type_id, location_id, input_date, last_update, uid)
-        VALUES ( %d, '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%s', '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d)",
-                    isset($updateRecordID) ? $updateRecordID : $last_biblio_id, $itemcode, $dbs->escape_string($_POST['recvDate']), intval($_POST['supplierID']), $dbs->escape_string($_POST['ordNo']), $dbs->escape_string($_POST['orDate']), $dbs->escape_string($_POST['itemStatusID']), $dbs->escape_string($_POST['itemSite']), intval($_POST['source']), $dbs->escape_string($_POST['invoice']), intval($_POST['price']), $dbs->escape_string($_POST['priceCurrency']), $dbs->escape_string($_POST['invcDate']), $data['call_number'], intval($_POST['collTypeID']), $dbs->escape_string($_POST['locationID']), date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_SESSION['uid']);
-                @$dbs->query($item_insert_sql);
+                if ($bg_failed) {
+                    utility::jsToastr(__('Bibliography'), sprintf(__('These items were NOT created: %s'), \SLiMS\Bg\Inventory::formatRanges($bg_failed)), 'error');
+                }
+                // update items data into search_biblio
+                $indexer->updateItems($bg_biblio_id);
             }
-
-            // update items data into search_biblio
-            $indexer->updateItems((isset($updateRecordID) ? $updateRecordID : $last_biblio_id));
         }
+        $bgv->flushWarnings(__('Bibliography'));
 
         #$isset = array_key_exists('last_biblio_id', get_defined_vars());
         if (array_key_exists('last_biblio_id', get_defined_vars())) {
@@ -834,109 +834,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
     $form->addTextField('text', 'edition', __('Edition'), $rec_d['edition'] ?? '', 'class="form-control" style="width: 50%;"', __('A version of publication having substantial changes or additions.'));
     // biblio specific detail info/area
     $form->addTextField('textarea', 'specDetailInfo', __('Specific Detail Info'), $rec_d['spec_detail_info'] ?? '', 'rows="2" class="form-control', __('explain more details about an item e.g. scale within a map, running time in a movie dvd.'));
-    // biblio item batch add (by.ido alit)
-    $pattern_options = array(
-        // default value
-        array($sysconf['batch_item_code_pattern'], $sysconf['batch_item_code_pattern'])
-    );
-    // get pattern from database
-    $pattern_q = $dbs->query('SELECT setting_value FROM setting WHERE setting_name = \'batch_item_code_pattern\'');
-    if (!$dbs->errno) {
-        // empty pattern
-        $pattern_options = array(array('', '-- ' . __('Choose pattern') . ' --'));
-        $pattern_d = $pattern_q->fetch_row();
-        $val = unserialize($pattern_d[0]??'');
-        if (!empty($val)) {
-            foreach ($val as $v) {
-                $pattern_options[] = array($v, $v);
-            }
-        }
-    }
-
-    // Modified by Eddy Subratha
-    // To avoid a miss processing after a pattern created, I think we should hide the Item Code Manager below
-    // $str_input .= '<a href="'.MWB.'master_file/item_code_pattern.php" height="420px" class="s-btn btn btn-default notAJAX openPopUp notIframe" title="'.__('Item code pattern manager').'">'.__('View available pattern').'</a>';
-    $str_input = '<div class="form-inline">';
-    $str_input .= simbio_form_element::selectList('itemCodePattern', $pattern_options, '', 'class="form-control col"') . '&nbsp;';
-    $str_input .= '<input type="text" class="form-control col-4 noAutoFocus" name="totalItems" placeholder="' . __('Total item(s)') . '" />&nbsp;';
-    $str_input .= '<div class="' . $visibility . '">
-  <div class="bnt btn-group"><div class="btn btn-info" data-toggle="collapse" data-target="#batchItemDetail" aria-expanded="false" aria-controls="batchItemDetail">' . __('Options') . '</div>';
-    $str_input .= '<a href="' . MWB . 'bibliography/pop_pattern.php" height="420px" class="s-btn btn btn-default notAJAX openPopUp notIframe"  title="' . __('Add new pattern') . '">' . __('Add New Pattern') . '</a></div></div>';
-    $str_input .= '<div class="collapse" id="batchItemDetail" style="padding:10px;width:100%; text-align:left !important;">';
-
-    // location
-    $location_q = $dbs->query("SELECT location_id, location_name FROM mst_location");
-    $location_options = array(array('', '-- ' . __('Location') . ' --'));
-    while ($location_d = $location_q->fetch_row()) {
-        $location_options[] = array($location_d[0], $location_d[1]);
-    }
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Location') . '</div>';
-    $str_input .= simbio_form_element::selectList('locationID', $location_options, '', 'class="form-control col-4"') . '</div>';
-
-    // item site
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Shelf Location') . '</div>';
-    $str_input .= simbio_form_element::textField('text', 'itemSite', '', 'class="form-control col-4"') . '</div>';
-
-    // collection type
-    $coll_type_q = $dbs->query("SELECT coll_type_id, coll_type_name FROM mst_coll_type");
-    $coll_type_options = array(array('', '--' . __('Collection Type') . '--'));
-    while ($coll_type_d = $coll_type_q->fetch_row()) {
-        $coll_type_options[] = array($coll_type_d[0], $coll_type_d[1]);
-    }
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Collection Type') . '</div>';
-    $str_input .= simbio_form_element::selectList('collTypeID', $coll_type_options, '', 'class="form-control col-4"') . '</div> ';
-
-    // item status
-    $item_status_q = $dbs->query("SELECT item_status_id, item_status_name FROM mst_item_status");
-    $item_status_options[] = array('0', __('Available'));
-    while ($item_status_d = $item_status_q->fetch_row()) {
-        $item_status_options[] = array($item_status_d[0], $item_status_d[1]);
-    }
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Item Status') . '</div>';
-    $str_input .= simbio_form_element::selectList('itemStatusID', $item_status_options, '', 'class="form-control col-4"') . '</div> ';
-
-    // item source
-    $source_options[] = array('1', __('Buy'));
-    $source_options[] = array('2', __('Prize/Grant'));
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Source') . '</div>';
-    $str_input .= simbio_form_element::selectList('source', $source_options, '', 'class="form-control col-4"') . '</div> ';
-
-    //order date
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Order Date') . '</div>';
-    $str_input .= simbio_form_element::dateField('orDate', date('Y-m-d'), 'class="form-control"') . '</div>';
-
-    //receiving date
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Receiving Date') . '</div>';
-    $str_input .= simbio_form_element::dateField('recvDate', date('Y-m-d'), ' class="form-control col-12"') . '</div>';
-
-    // order number
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Order Number') . '</div>';
-    $str_input .= simbio_form_element::textField('text', 'ordNo', '', 'class="form-control"') . '</div>';
-
-    // invoice
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Invoice') . '</div>';
-    $str_input .= simbio_form_element::textField('text', 'invoice', '', 'class="form-control col-4"') . '</div>';
-
-    // invoice date
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Invoice Date') . '</div>';
-    $str_input .= simbio_form_element::dateField('invcDate', date('Y-m-d'), ' class="form-control col-12"') . '</div>';
-
-    // supplier
-    $supplier_q = $dbs->query("SELECT supplier_id, supplier_name FROM mst_supplier");
-    $supplier_options[] = array('0', __('Not Applicable'));
-    while ($supplier_d = $supplier_q->fetch_row()) {
-        $supplier_options[] = array($supplier_d[0], $supplier_d[1]);
-    }
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Supplier') . '</div>';
-    $str_input .= simbio_form_element::selectList('supplierID', $supplier_options, '', 'class="form-control col-4"') . '</div> ';
-
-    //price
-    $str_input .= '<div class="form-group divRow p-1"><div class="col-3">' . __('Price') . '</div>';
-    $str_input .= simbio_form_element::textField('text', 'price', '0', 'class="form-control col-3"');
-    $str_input .= simbio_form_element::selectList('priceCurrency', $sysconf['currencies'], '', 'class="form-control col-2"') . '</div> ';
-
-    $str_input .= '</div>';
-    $form->addAnything(__('Item(s) code batch generator'), $str_input);
+    // пакетно създаване на екземпляри – поредни инвентарни номера (= баркод), свързани с КДБФ
+    $form->addAnything(__('Create copies'), \SLiMS\Bg\BatchItems::formHtml($sysconf, $visibility, isset($_GET['kdbfEntryID']) ? (int)$_GET['kdbfEntryID'] : null));
     // biblio item add
     if (!$in_pop_up AND $form->edit_mode) {
         // $str_input = '<div class="makeHidden s-margin__bottom-1"><a class="notAJAX button" href="javascript: openHTMLpop(\''.MWB.'bibliography/pop_item.php?inPopUp=true&action=detail&biblioID='.$rec_d['biblio_id'].'\', 650, 400, \''.__('Items/Copies').'\')">'.__('Add New Items').'</a></div>';
@@ -983,7 +882,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
     $str_input .= '</div>';
     $form->addAnything(__('Frequency'), $str_input);
     // biblio ISBN/ISSN
-    $form->addTextField('text', 'isbn_issn', __('ISBN/ISSN'), $rec_d['isbn_issn'] ?? '', 'class="form-control" style="width: 40%;"', __('Unique publishing number for each title of publication.'));
+    $form->addTextField('text', 'isbn_issn', __('ISBN/ISSN'), htmlspecialchars($rec_d['isbn_issn'] ?? ''), 'class="form-control" style="width: 40%;" maxlength="100" data-bgval="isbn" data-bg-label="ISBN/ISSN" placeholder="978-619-7043-60-0"', __('Unique publishing number for each title of publication.') . ' ' . __('Several numbers are separated with ";", e.g. 978-… (т. 1); 978-… (т. 2)'));
+    // ISBD област 8: цена / условия за доставяне (както е отпечатана в изданието)
+    $form->addTextField('text', 'price_terms', __('Price/Terms (ISBD area 8)'), htmlspecialchars($rec_d['price_terms'] ?? ''), 'class="form-control" style="width: 40%;" maxlength="100" placeholder="14.95 лв."', __('The price printed in the book, e.g. 14.95 лв. (shown after the ISBN on the catalogue card)'));
     // biblio publisher
     $publ_options[] = array('NONE', '');
     if (isset($rec_d['publisher_id'])) {
@@ -994,7 +895,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
     }
     $form->addSelectList('publisherID', __('Publisher'), $publ_options, $rec_d['publisher_id'] ?? '', 'class="select2" data-src="' . SWB . 'admin/AJAX_lookup_handler.php" data-src-table="new:mst_publisher" data-src-cols="publisher_id:publisher_name"');
     // biblio publish year
-    $form->addTextField('text', 'year', __('Publishing Year'), $rec_d['publish_year'] ?? '', 'class="form-control" style="width: 40%;"', __('Year of publication'));
+    $form->addTextField('text', 'year', __('Publishing Year'), htmlspecialchars($rec_d['publish_year'] ?? ''), 'class="form-control" style="width: 40%;" maxlength="20" data-bgval="year" data-bg-label="' . __('Publishing Year') . '" placeholder="2019"' . ((int)($rec_d['frequency_id'] ?? 0) > 0 ? ' data-bg-serial="1"' : ''), __('Year of publication') . ': 2019, [2019], 2019?, [ок. 1900], 2010–2012, [б. г.]');
     // biblio publish place
     $plc_options[] = array('NONE', '');
     if (isset($rec_d['publish_place_id'])) {
@@ -1004,10 +905,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
         }
     }
     $form->addSelectList('placeID', __('Publishing Place'), $plc_options, $rec_d['publish_place_id'] ?? '', 'class="select2" data-src="' . SWB . 'admin/AJAX_lookup_handler.php" data-src-table="new:mst_place" data-src-cols="place_id:place_name"');
+    // ISBD област 4: място на печат : печатница
+    $form->addTextField('text', 'printing', __('Printing House'), htmlspecialchars($rec_d['printing'] ?? ''), 'class="form-control" style="width: 50%;" maxlength="150" placeholder="Хасково : Полиграфюг АД"', __('Place of printing : printer, as given in the book (optional)'));
     // biblio collation
-    $form->addTextField('text', 'collation', __('Collation'), $rec_d['collation'] ?? '', 'class="form-control" style="width: 40%;"', __('Physical description of a publication e.g. publication length, width, page numbers, etc.'));
+    $form->addTextField('text', 'collation', __('Collation'), htmlspecialchars($rec_d['collation'] ?? ''), 'class="form-control" style="width: 40%;" maxlength="100" data-bgval="collation" data-bg-label="' . __('Collation') . '" placeholder="208 с. : ил. ; 20 см"', __('Physical description of a publication e.g. publication length, width, page numbers, etc.') . ' ' . __('ISBD: pages : illustrations ; size + accompanying material'));
     // biblio series title
     $form->addTextField('textarea', 'seriesTitle', __('Series Title'), $rec_d['series_title'] ?? '', 'rows="1" class="form-control');
+    // ISBD област 6: номер в поредицата
+    $form->addTextField('text', 'series_number', __('Series Number'), htmlspecialchars($rec_d['series_number'] ?? ''), 'class="form-control" style="width: 20%;" maxlength="20"', __('Number of the book within the series'));
     // biblio classification
     $cls_options[] = array('NONE', '');
     if (isset($rec_d['classification'])) {
@@ -1015,7 +920,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
     }
     $form->addSelectList('class', __('Classification'), $cls_options, $rec_d['classification'] ?? '', 'class="select2" data-src="' . SWB . 'admin/AJAX_lookup_handler.php" data-src-table="new:mst_topic" data-src-cols="classification:classification:topic"');
     // biblio call_number
-    $form->addTextField('text', 'callNumber', __('Call Number'), $rec_d['call_number'] ?? '', 'class="form-control" style="width: 40%;"', __('Sets of ID that put in the book spine.'));
+    // авторски знак (по таблиците за авторски знаци) и сигнатура = УДК за подреждане + авторски знак
+    $form->addTextField('text', 'author_mark', __('Author Mark'), htmlspecialchars($rec_d['author_mark'] ?? ''), 'class="form-control" style="width: 15%;" maxlength="10" data-bgval="authormark" data-bg-label="' . __('Author Mark') . '" placeholder="П47"', __('First letter of the heading word and the number from the author tables, e.g. П47'));
+    $str_input = '<div class="form-inline">';
+    $str_input .= '<input type="text" name="callNumber" id="callNumber" value="' . htmlspecialchars($rec_d['call_number'] ?? '') . '" class="form-control" style="width: 40%;" maxlength="50" placeholder="886.7-3 П47" />';
+    $str_input .= '<button type="button" class="btn btn-default ml-2" id="bgComposeCallNumber">' . __('Compose call number') . '</button>';
+    $str_input .= '</div><small class="form-text text-muted">' . __('Shelf UDC + author mark, e.g. 886.7-3 П47. The department prefix (e.g. Д) is added to each copy automatically.') . '</small>';
+    $form->addAnything(__('Call Number'), $str_input);
     // biblio topics
     // $str_input = '<div class="'.$visibility.'"><a class="notAJAX button" href="javascript: openHTMLpop(\''.MWB.'bibliography/pop_topic.php?biblioID='.$rec_d['biblio_id'].'\', 500, 200, \''.__('Subjects/Topics').'\')">'.__('Add Subject(s)').'</a></div>';
     $str_input = '<div class="' . $visibility . ' s-margin__bottom-1"><a class="s-btn btn btn-default notAJAX openPopUp" href="' . MWB . 'bibliography/pop_topic.php?biblioID=' . ($rec_d['biblio_id'] ?? '') . '" title="' . __('Subjects/Topics') . '">' . __('Add Subject(s)') . '</a></div>';
@@ -1028,7 +939,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
     while ($lang_d = $lang_q->fetch_row()) {
         $lang_options[] = array($lang_d[0], $lang_d[1]);
     }
-    $form->addSelectList('languageID', __('Language'), $lang_options, $rec_d['language_id'] ?? '', 'class="select2"', __('Language use by publication.'));
+    $form->addSelectList('languageID', __('Language'), $lang_options, $rec_d['language_id'] ?? 'bg', 'class="select2"', __('Language use by publication.'));
     // biblio note
     $form->addTextField('textarea', 'notes', __('Abstract/Notes'), $rec_d['notes'] ?? '', 'class="form-control" style="width: 100%;" rows="3"', __('Insert here any abstract or notes from the publication.'));
     // biblio cover image
@@ -1176,13 +1087,24 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
     }
     // print out the form object
     echo $form->printOut();
+    echo \SLiMS\Bg\Validator::jsI18nScript();
     // javascript
     ?>
     <script type="text/javascript">
         $(document).ready(function () {
-            // popup pattern
+            // сигнатурата се попълва от класификацията само ако е празна (или е попълнена автоматично)
+            var bgAutoCallNumber = null;
             $('#class').change(function () {
-                $('#callNumber').val($(this).val().replace('NEW:', ''));
+                var cn = $('#callNumber'), udc = String($(this).val() || '').replace('NEW:', '');
+                if (cn.val() === '' || cn.val() === bgAutoCallNumber) {
+                    bgAutoCallNumber = window.BgCat ? BgCat.composeCallNumber(udc, $('#author_mark').val()) : udc;
+                    cn.val(bgAutoCallNumber);
+                }
+            });
+            $('#bgComposeCallNumber').click(function () {
+                var udc = String($('#class').val() || '').replace('NEW:', '');
+                bgAutoCallNumber = window.BgCat ? BgCat.composeCallNumber(udc, $('#author_mark').val()) : (udc + ' ' + $('#author_mark').val()).trim();
+                $('#callNumber').val(bgAutoCallNumber).focus();
             });
 
             $('.removeImage').click(function (e) {
@@ -1267,7 +1189,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
 
     // index choice
     $search_engine = Engine::active();
-    if ($search_engine != DefaultEngine::class) {
+    if (!in_array($search_engine, [DefaultEngine::class, \SLiMS\SearchEngine\BgCatalogEngine::class], true)) {
         if ($search_engine == SphinxSearchEngine::class) {
             require LIB . 'sphinx/sphinxapi.php';
             require LIB . 'biblio_list_sphinx.inc.php';
@@ -1381,5 +1303,37 @@ if (isset($_GET['action']) && $_GET['action'] == 'history') {
     }
 
     echo $datagrid_result;
+
+    // печат от избраните заглавия: баркодове, етикети (A4) и каталожни картички за картотеката
+    if ($can_read AND $can_write) {
+        $bg_kinds = ['barcode' => __('Barcodes'), 'signature' => __('Call number labels'), 'combined' => __('Combined labels'), 'cards' => __('Catalogue cards')];
+        $bg_group = '<div class="btn-group ml-2 bg-print-group" role="group"><span class="btn btn-light disabled">' . __('Print selected:') . '</span>';
+        foreach ($bg_kinds as $bg_kind => $bg_label) {
+            $bg_group .= '<button type="button" class="btn btn-info bg-print-sel" data-kind="' . $bg_kind . '">' . $bg_label . '</button>';
+        }
+        $bg_group .= '</div>';
+        ?>
+        <script type="text/javascript">
+        (function ($) {
+            var group = <?= json_encode($bg_group, JSON_UNESCAPED_UNICODE) ?>;
+            $('#mainContent .datagrid-action-bar td:first-child').each(function () {
+                if (!$(this).find('.bg-print-group').length) $(this).append(group);
+            });
+            $('#mainContent').off('click.bgprint').on('click.bgprint', '.bg-print-sel', function () {
+                var ids = $('#mainContent input.selected-row:checked').map(function () { return this.value; }).get();
+                if (!ids.length) {
+                    top.toastr.warning(<?= json_encode(__('Select at least one title'), JSON_UNESCAPED_UNICODE) ?>, <?= json_encode(__('Bibliography'), JSON_UNESCAPED_UNICODE) ?>);
+                    return;
+                }
+                var kind = $(this).data('kind');
+                var url = kind === 'cards'
+                    ? '<?= MWB ?>bibliography/bg_cards.php?ids='
+                    : '<?= MWB ?>bibliography/bg_labels.php?source=biblio&template=' + kind + '&ids=';
+                $('#mainContent').simbioAJAX(url + ids.join(','));
+            });
+        })(jQuery);
+        </script>
+        <?php
+    }
 }
 /* main content end */

@@ -93,6 +93,8 @@ services:
       # - ./install/sampledata.sql:/docker-entrypoint-initdb.d/02-sampledata.sql
       # Име, публични страници и новини на НЧ „Просвета 1925“ (зарежда се след дъмпа)
       - ./install/prosveta_1925.sql:/docker-entrypoint-initdb.d/03-prosveta_1925.sql
+      # Български изисквания: инвентарна книга, КДБФ, отчисляване, полета по ISBD, търсене на кирилица
+      - ./install/bg_catalog.sql:/docker-entrypoint-initdb.d/04-bg_catalog.sql
       - dbdata:/var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASS}

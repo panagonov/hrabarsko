@@ -95,12 +95,18 @@ class Opac
         $hasKeywords = isset($_GET['search']) && (isset($_GET['keywords'])) && ($_GET['keywords'] != '');
         $hasAdvanceSearch = [];
 
-        foreach ($advanceSearch as $search) { $hasAdvanceSearch[] =  trim($_GET[$search]??''); }
+        foreach ($advanceSearch as $search) { $hasAdvanceSearch[] =  trim(is_string($_GET[$search] ?? null) ? $_GET[$search] : ''); }
+        // редовете от разширеното търсене (t1..t3)
+        foreach (['t1', 't2', 't3'] as $search) { $hasAdvanceSearch[] = trim(is_string($_GET[$search] ?? null) ? $_GET[$search] : ''); }
+        $hasAdvanceSearch = array_values(array_filter($hasAdvanceSearch, fn($v) => $v !== ''));
 
         if ($hasKeywords || $hasAdvanceSearch) 
         {
-            $result = preg_replace('@\b(exact|and|or|not)\b@i', '', $_GET['keywords']??implode(' ', $hasAdvanceSearch));
-            $result = explode(' ', preg_replace('/[^A-Za-z0-9\s]/i', '', $result));
+            $result = $hasKeywords ? $_GET['keywords'] : implode(' ', $hasAdvanceSearch);
+            // без префиксите (AU=), операторите и знаците – оцветяват се само думите (и на кирилица)
+            $result = preg_replace('/(^|\s)[A-Za-zА-Яа-я]{2}=/u', ' ', $result);
+            $result = preg_replace('@\b(exact|and|or|not)\b|(^|\s)(ИЛИ|НЕ|И)(?=\s|$)@u', ' ', $result);
+            $result = array_values(array_filter(explode(' ', preg_replace('/[^\p{L}\p{N}\s]/u', ' ', $result))));
         }
 
         return Json::stringify($result);

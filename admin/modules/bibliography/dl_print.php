@@ -248,6 +248,7 @@ if (isset($_GET['action']) and $_GET['action'] == 'print') {
                 <a target="blindSubmit" href="<?php echo MWB; ?>bibliography/dl_print.php?action=clear" class="btn btn-default notAJAX "><?php echo __('Clear Print Queue'); ?></a>
                 <a target="blindSubmit" href="<?php echo MWB; ?>bibliography/dl_print.php?action=print" class="btn btn-default notAJAX "><?php echo __('Print Labels for Selected Data'); ?></a>
                 <a href="<?php echo MWB; ?>bibliography/pop_print_settings.php?type=label" width="780" height="500" class="btn btn-default notAJAX openPopUp" title="<?php echo __('Change print label settings'); ?>"><?php echo __('Change print label settings'); ?></a>
+                <a href="<?php echo MWB; ?>bibliography/bg_labels.php?source=queue" class="btn btn-primary"><?php echo __('Print on A4 sheets'); ?></a>
             </div>
             <form name="search" action="<?php echo MWB; ?>bibliography/dl_print.php" id="search" method="get" class="form-inline"><?php echo __('Search'); ?>
                 <input type="text" name="keywords" class="form-control col-md-3" />

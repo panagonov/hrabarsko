@@ -122,7 +122,7 @@ function showTitleAuthors($obj_db, $array_data)
   $img = 'images/default/image.png';
   $imageDisk = Storage::images();
   // biblio author detail
-  if (Engine::active() === DefaultEngine::class) {
+  if (in_array(Engine::active(), [DefaultEngine::class, \SLiMS\SearchEngine\BgCatalogEngine::class], true)) {
     $_sql_biblio_q = sprintf('SELECT b.title, a.author_name, opac_hide, promoted, b.labels,b.image, b.source FROM biblio AS b
           LEFT JOIN biblio_author AS ba ON b.biblio_id=ba.biblio_id
           LEFT JOIN mst_author AS a ON ba.author_id=a.author_id

@@ -64,16 +64,23 @@ if (isset($_POST['confirmFinish'])) {
   $finish_time_q = $dbs->query('UPDATE stock_take SET end_date=NOW() WHERE is_active=1');
   $stk_take_report_filename = strtolower(str_replace(' ', '_', trim($stk_take_d[0]))).'_report.html';
   if ($dbs->affected_rows) {
-    // purge item data
-    if (isset($_POST['purge']) AND !empty($_POST['purge'])) {
-      // purge data in item table
-      $purge_item_q = $dbs->query('DELETE FROM item WHERE item_id IN (SELECT item_id FROM stock_take_item WHERE status=\'m\')');
-      // purge data in loan_history table first (due to foreign key constraint)
-      $purge_loan_history_q = $dbs->query('DELETE FROM loan_history WHERE loan_id IN (SELECT loan_id FROM loan WHERE item_code IN (SELECT item_code FROM stock_take_item WHERE status=\'m\'))');
-      // purge data in loan table
-      $purge_loan_q = $dbs->query('DELETE FROM loan WHERE item_code IN (SELECT item_code FROM stock_take_item WHERE status=\'m\')');
-    }
+    // Липсващите екземпляри НЕ се изтриват: инвентарните номера се пазят завинаги и
+    // се изваждат от фонда само с акт за отчисляване (Наредба № 3, чл. 16–17, 28, 30).
+    // Отметки при проверка: всяка инвентаризация остава в историята на екземпляра.
+    $bg_st_id = (int)$stk_take_d[1];
+    \SLiMS\Bg\Db::q("INSERT IGNORE INTO item_check_log (item_id, item_code, stock_take_id, check_date, result, checked_by)
+        SELECT item_id, item_code, stock_take_id, CURDATE(),
+               CASE status WHEN 'e' THEN 'found' WHEN 'l' THEN 'on_loan' ELSE 'missing' END, checked_by
+          FROM stock_take_item WHERE stock_take_id = ?", [$bg_st_id]);
     $update_item_status_to_missing = $dbs->query('UPDATE item SET item_status_id=\'MIS\' WHERE item_code IN (SELECT item_code FROM stock_take_item WHERE status=\'m\')');
+    // чернова на акт за отчисляване за липсващите (причина: липсващи при инвентаризация)
+    $bg_draft_act = null;
+    if (!empty($_POST['draftWriteoff'])) {
+      $bg_draft_act = \SLiMS\Bg\Kdbf::draftActFromStockTake($bg_st_id, (int)$_SESSION['uid']);
+    }
+    // обхват на проверката (чл. 40–41: при фонд до 50 000 тома – поне 10% годишно)
+    $bg_checked = (int)\SLiMS\Bg\Db::value("SELECT COUNT(*) FROM stock_take_item WHERE stock_take_id = ? AND status <> 'm'", [$bg_st_id]);
+    $bg_total = (int)\SLiMS\Bg\Db::value("SELECT COUNT(*) FROM item WHERE item_status_id IS NULL OR item_status_id <> 'WO'");
     // start output buffering content for report generation
     ob_start();
     echo '<html><head><title>'.$stk_take_d[0].' ' . __('Stock Take Report') . '</title>';
@@ -93,6 +100,11 @@ if (isset($_POST['confirmFinish'])) {
     // stock take general report
     echo '<h3>'.$stk_take_d[0].' - ' . __('Stock Take Report') . '</h3><hr />';
     include MDLBS.'stock_take/st_report.php';
+    echo '<p><b>' . __('Coverage') . ':</b> ' . sprintf(__('%d of %d active items checked (%s%%)'), $bg_checked, $bg_total, $bg_total ? number_format($bg_checked * 100 / $bg_total, 1, ',', ' ') : '0') . '</p>';
+    if ($bg_draft_act) {
+      $bg_act = \SLiMS\Bg\Kdbf::act($bg_draft_act);
+      echo '<p><b>' . sprintf(__('A draft write-off act %s was created for the missing items.'), htmlspecialchars(\SLiMS\Bg\Kdbf::actLabel($bg_act))) . '</b></p>';
+    }
 
     // cell row class
     $cellClass = 'alterCell';
@@ -183,9 +195,9 @@ if (isset($_POST['confirmFinish'])) {
     $form->table_content_attr = 'class="alterCell2"';
 
     /* Form Element(s) */
-    // purge lost item
-    $purge_options[] = array('1', __('Yes'));
-    $form->addCheckBox('purge', __('Purge Lost Item'), $purge_options);
+    // липсващите не се изтриват – по желание се създава чернова на акт за отчисляване
+    $draft_options[] = array('1', __('Yes'));
+    $form->addCheckBox('draftWriteoff', __('Create a draft write-off act for the missing items'), $draft_options);
     // hidden item
     $form->addHidden('confirmFinish', 'true');
     // print out the object
